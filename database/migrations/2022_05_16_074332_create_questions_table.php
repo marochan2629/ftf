@@ -18,8 +18,11 @@ class CreateQuestionsTable extends Migration
             $table->string('title');
             $table->text('body');
             $table->string('image')->nullable();
-            $table->integer('user_id');
+            $table->unsignedBigInteger('user_id');
             $table->timestamps();
+
+            $table->foreign('user_id')
+                ->references('id')->on('users');
         });
     }
 

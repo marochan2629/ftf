@@ -17,9 +17,15 @@ class CreateAnswersTable extends Migration
             $table->bigIncrements('id');
             $table->text('body');
             $table->string('image')->nullable();
-            $table->integer('question_id');
-            $table->integer('associate_id');
+            $table->unsignedBigInteger('question_id');
+            $table->unsignedBigInteger('associate_id');
             $table->timestamps();
+
+            $table->foreign('question_id')
+                ->references('id')->on('questions');
+
+            $table->foreign('associate_id')
+                ->references('id')->on('associates');
         });
     }
 

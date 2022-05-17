@@ -15,9 +15,15 @@ class CreateArticleLikesTable extends Migration
     {
         Schema::create('article_likes', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('user_id');
-            $table->integer('article_id');
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('article_id');
             $table->timestamps();
+
+            $table->foreign('user_id')
+                ->references('id')->on('users');
+
+            $table->foreign('article_id')
+                ->references('id')->on('articles');
         });
     }
 
