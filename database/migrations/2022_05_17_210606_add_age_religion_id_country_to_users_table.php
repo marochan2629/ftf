@@ -15,8 +15,8 @@ class AddAgeReligionIdCountryToUsersTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->integer('age');
-            $table->unsignedBigInteger('religion_id');
-            $table->string('country');
+            $table->unsignedBigInteger('religion_id')->nullable();
+            $table->string('country')->nullable();
 
             $table->foreign('religion_id')
                 ->references('id')->on('religions');
