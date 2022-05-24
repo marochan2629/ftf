@@ -20,6 +20,8 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::prefix('associate')->group(function () {
+    Route::get('/register', 'Auth\AssociateRegisterController@showAssociateRegistrationForm')->name('associate.register');
+    Route::post('/register', 'Auth\AssociateRegisterController@store');
     Route::get('/login', 'Auth\AssociateLoginController@showLoginForm')->name('associate.login');
     Route::post('/login', 'Auth\AssociateLoginController@login')->name('associate.login');
     Route::post('/logout', 'Auth\AssociateLoginController@logout')->name('associate.logout');
