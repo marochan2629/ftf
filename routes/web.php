@@ -19,11 +19,18 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::prefix('associate')->group(function () {
-    Route::get('/register', 'Auth\AssociateRegisterController@showAssociateRegistrationForm')->name('associate.register');
-    Route::post('/register', 'Auth\AssociateRegisterController@store');
-    Route::get('/login', 'Auth\AssociateLoginController@showLoginForm')->name('associate.login');
-    Route::post('/login', 'Auth\AssociateLoginController@login')->name('associate.login');
-    Route::post('/logout', 'Auth\AssociateLoginController@logout')->name('associate.logout');
-    Route::get('/', 'Auth\AssociateController@index')->name('associate.index');
-});
+// Route::prefix('associate')->group(function () {
+//     Route::get('/register', 'Auth\AssociateRegisterController@showAssociateRegistrationForm')->name('associate.register');
+//     Route::post('/register', 'Auth\AssociateRegisterController@register');
+//     Route::get('/login', 'Auth\AssociateLoginController@showLoginForm')->name('associate.login');
+//     Route::post('/login', 'Auth\LoginController@login')->name('associate.login');
+//     Route::post('/logout', 'Auth\AssociateLoginController@logout')->name('associate.logout');
+//     Route::get('/', 'Auth\AssociateController@index')->name('associate.index');
+// });
+
+Route::get('associate/register', 'Auth\AssociateRegisterController@showAssociateRegistrationForm')->name('associate.register');
+Route::post('associate/register', 'Auth\AssociateRegisterController@register');
+Route::get('associate/login', 'Auth\AssociateLoginController@showLoginForm')->name('associate.login');
+Route::post('associate/login', 'Auth\LoginController@login')->name('associate.login');
+Route::post('associate/logout', 'Auth\AssociateLoginController@logout')->name('associate.logout');
+Route::get('associate/', 'Auth\AssociateController@index')->name('associate.index');

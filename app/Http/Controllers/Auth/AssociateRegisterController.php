@@ -4,12 +4,12 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
-use App\Models\Admin;
+use App\Models\Associate;
 use App\Models\Religion;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
-// use Illuminate\Http\Request;
+use Illuminate\Http\Request;
 
 class AssociateRegisterController extends Controller
 {
@@ -24,7 +24,7 @@ class AssociateRegisterController extends Controller
     |
     */
 
-    use RegistersUsers;
+    // use RegistersUsers;
 
     /**
      * Where to redirect users after registration.
@@ -33,14 +33,9 @@ class AssociateRegisterController extends Controller
      */
     protected $redirectTo = RouteServiceProvider::HOME;
 
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
     public function __construct()
     {
-        $this->middleware('guest');
+        $this->middleware('guest:associate');
         $this->religion = new Religion();
     }
 
@@ -50,13 +45,7 @@ class AssociateRegisterController extends Controller
         return view('associates.register', compact('religions'));
     }
 
-    /**
-     * Get a validator for an incoming registration request.
-     *
-     * @param  array  $data
-     * @return \Illuminate\Contracts\Validation\Validator
-     */
-    protected function validator(array $data)
+    protected function validatorAssociate(array $data)
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
@@ -68,21 +57,24 @@ class AssociateRegisterController extends Controller
         ]);
     }
 
-    /**
-     * Create a new user instance after a valid registration.
-     *
-     * @param  array  $data
-     * @return \App\User
-     */
-    protected function create(array $data)
+    protected function register(Request $request)
     {
-        return Associate::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'age' => $data['age'],
-            'religion_id' => $data['religion_id'],
-            'country' => $data['country'],
-            'password' => Hash::make($data['password']),
+        $this->validatorAssociate($request->all())->validate();
+        $associate = Associate::create([
+            'name' => $request['name'],
+            'email' => $request['email'],
+            'age' => $request['age'],
+            'religion_id' => $request['religion_id'],
+            'country' => $request['country'],
+            'password' => Hash::make($request['password']),
         ]);
+        // $this->redirectTo = route('/home');
+
+        // $associate = new Associate;
+        // $form = $request->all();
+        // unset($form['_token']);
+        // $associate->fill($form)->save();
+        // return redirect('/associate');
+
     }
 }

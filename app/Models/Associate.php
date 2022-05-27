@@ -9,7 +9,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 class Associate extends Authenticatable
 {
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'age', 'religion_id', 'country', 'password',
     ];
 
     protected $hidden = [

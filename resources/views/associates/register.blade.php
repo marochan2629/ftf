@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('associate.register') }}">
                         @csrf
 
                         <div class="form-group row">
@@ -52,13 +52,14 @@
                             </div>
                         </div>
 
+                        <!-- 宗教の選択 -->
                         <div class="form-group row">
                             <label for="religion_id" class="col-md-4 col-form-label text-md-right">{{ __('Religion') }}</label>
 
                             <div class="col-md-6">
                                 <select class="form-control" id="religion_id" name="religion_id">
-                                    @foreach ($religions as $religion)
-                                        <option value="{{ $religion->religion_id }}">{{ $religion->name }}</option>
+                                    @foreach (config('religion.religions') as $key => $value)
+                                        <option value="{{ $key }}">{{ $value }}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -70,7 +71,7 @@
 
                             <div class="col-md-6">
                                 <select class="form-control" id="country" name="country">
-                                    @foreach (config('CountryConsts.countries') as $key => $value)
+                                    @foreach (config('Country.countries') as $key => $value)
                                         <option value="{{ $key }}">{{ $value }}</option>
                                     @endforeach
                                 </select>
