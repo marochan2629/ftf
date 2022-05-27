@@ -12,5 +12,14 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('app.home');
 });
+
+Route::get('/associate/home', 'AssociateController@home')->name('associate.home');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
