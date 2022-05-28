@@ -16,10 +16,11 @@ Route::get('/', function () {
 });
 
 Route::get('/associate/home', 'AssociateController@home')->name('associate.home');
+Route::get('/index', 'HomeController@index');
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');
 
-Auth::routes();
+// Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');
