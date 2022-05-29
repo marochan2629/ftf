@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.associate.app')
 
 @section('content')
 <div class="container">
@@ -8,7 +8,13 @@
                 <div class="card-header">Dashboard</div>
 
                 <div class="card-body">
-                    This is associate home!
+                    @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+
+                    You are logged in (associate)!
                 </div>
             </div>
         </div>

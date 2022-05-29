@@ -44,7 +44,7 @@ return [
         // Asscoiate用の認証を追加
         'associate' => [
             'driver' => 'session',
-            'provider' => 'associate',
+            'provider' => 'associates',
         ],
 
         'api' => [

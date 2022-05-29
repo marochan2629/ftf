@@ -8,40 +8,36 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class LoginController extends Controller
+class AssociateLoginController extends Controller
 {
     use AuthenticatesUsers;
 
-    protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo = RouteServiceProvider::ASSOCIATE_HOME;
 
     public function __construct()
     {
-        $this->middleware('guest:user')->except('logout');
+        $this->middleware('guest:associate')->except('logout');
     }
 
-    // Guardの認証方法を指定
     protected function guard()
     {
-        return Auth::guard('user');
+        return Auth::guard('associate');
     }
 
-    // ログイン画面
     public function showLoginForm()
     {
-        return view('user.auth.login');
+        return view('associate.auth.login');
     }
 
-    // ログアウト処理
     public function logout(Request $request)
     {
-        Auth::guard('user')->logout();
+        Auth::guard('associate')->logout();
 
         return $this->loggedOut($request);
     }
 
-    // ログアウトした時のリダイレクト先
     public function loggedOut(Request $request)
     {
-        return redirect(route('user.login'));
+        return redirect(route('associate.login'));
     }
 }
