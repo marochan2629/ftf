@@ -1,18 +1,17 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-
 
 class Associate extends Authenticatable
 {
     use Notifiable;
 
     protected $fillable = [
-        'name', 'email', 'age', 'country_id', 'religion', 'password',
+        'name', 'email', 'age', 'religion_id', 'country', 'password',
     ];
 
     protected $hidden = [

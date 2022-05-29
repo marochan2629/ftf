@@ -11,7 +11,7 @@
                         @if(Auth::check())
                             <p>USER: {{ $user->name }}</p>
                         @else
-                            <p>ログインしていません（<a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a> | <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>）</p>
+                            <p>ログインしていません（<a class="nav-link" href="{{ route('user.auth.login') }}">{{ __('Login') }}</a> | <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>）</p>
                         @endif
                     </div>
                 </div>
