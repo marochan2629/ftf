@@ -19,7 +19,7 @@ class CreateAssociatesTable extends Migration
             $table->string('email')->unique();
             $table->integer('age');
             $table->string('password');
-            $table->integer('religion_id');
+            $table->string('religion');
             $table->string('country');
             $table->timestamps();
         });

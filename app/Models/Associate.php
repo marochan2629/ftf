@@ -11,7 +11,7 @@ class Associate extends Authenticatable
     use Notifiable;
 
     protected $fillable = [
-        'name', 'email', 'age', 'religion_id', 'country', 'password',
+        'name', 'email', 'age', 'religion', 'country', 'password',
     ];
 
     protected $hidden = [

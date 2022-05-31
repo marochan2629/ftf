@@ -15,11 +15,8 @@ class AddAgeReligionIdCountryToUsersTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->integer('age');
-            $table->unsignedBigInteger('religion_id');
-            $table->string('country');
-
-            $table->foreign('religion_id')
-                ->references('id')->on('religions');
+            $table->string('religion')->nullable();
+            $table->string('country')->nullable();
         });
     }
 
@@ -31,7 +28,9 @@ class AddAgeReligionIdCountryToUsersTable extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            //
+            $table->dropColumn('age');
+            $table->dropColumn('religion');
+            $table->dropColumn('country');
         });
     }
 }

@@ -41,8 +41,8 @@ class AssociateRegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:associates'],
             'age' => ['required', 'integer', 'between:0, 120'],
-            'religion_id' => ['required', 'integer'],
-            'country' => ['required', 'integer'],
+            'religion' => ['required', 'string'],
+            'country' => ['required', 'string'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }
@@ -53,7 +53,7 @@ class AssociateRegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'age' => $data['age'],
-            'religion_id' => $data['religion_id'],
+            'religion' => $data['religion'],
             'country' => $data['country'],
             'password' => Hash::make($data['password']),
         ]);

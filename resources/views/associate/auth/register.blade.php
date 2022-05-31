@@ -55,12 +55,12 @@
 
                         <!-- 宗教の選択 -->
                         <div class="form-group row">
-                            <label for="religion_id" class="col-md-4 col-form-label text-md-right">{{ __('Religion') }}</label>
+                            <label for="religion" class="col-md-4 col-form-label text-md-right">{{ __('Religion') }}</label>
 
                             <div class="col-md-6">
-                                <select class="form-control" id="religion_id" name="religion_id">
+                                <select class="form-control" id="religion" name="religion">
                                     @foreach (config('religion.religions') as $key => $value)
-                                        <option value="{{ $key }}">{{ $value }}</option>
+                                        <option value="{{ $value }}">{{ $value }}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -73,7 +73,7 @@
                             <div class="col-md-6">
                                 <select class="form-control" id="country" name="country">
                                     @foreach (config('country.countries') as $key => $value)
-                                        <option value="{{ $key }}">{{ $value }}</option>
+                                        <option value="{{ $value }}">{{ $value }}</option>
                                     @endforeach
                                 </select>
                             </div>
