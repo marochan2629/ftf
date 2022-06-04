@@ -15,9 +15,10 @@ Route::get('/', function () {
     return view('app.home');
 });
 
-// Route::get('/associate/home', 'AssociateController@home')->name('associate.home');
-// Route::get('/index', 'HomeController@index');
-// Auth::routes();
+// 写真投稿関係
+Route::get('/photo/index', 'PhotoController@index')->name('photo.index');
+Route::get('/photo/create', 'PhotoController@create')->name('photo.create');
+Route::post('/photo/confirm', 'PhotoController@store')->name('photo.store');
 
 // ユーザー
 Route::prefix('user')->name('user.')->group(function () {
