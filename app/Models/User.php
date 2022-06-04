@@ -31,4 +31,11 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    //追記
+    public function photos()
+    {
+        return $this->hasMany('App\Models\Photo'); 
+    }
+
 }
