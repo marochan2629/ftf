@@ -20,6 +20,11 @@ Route::get('/photo/index', 'PhotoController@index')->name('photo.index');
 Route::get('/photo/create', 'PhotoController@create')->name('photo.create');
 Route::post('/photo/confirm', 'PhotoController@store')->name('photo.store');
 
+// 写真投稿関係
+Route::get('/question/index', 'QuestionController@index')->name('question.index');
+Route::get('/question/create', 'QuestionController@create')->name('question.create');
+Route::post('/question/create', 'QuestionController@store')->name('question.store');
+
 // ユーザー
 Route::prefix('user')->name('user.')->group(function () {
 
