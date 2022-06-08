@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Question;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,12 +24,24 @@ Route::post('/photo/confirm', 'PhotoController@store')->name('photo.store');
 
 // 質問関係
 Route::get('/question/index', 'QuestionController@index')->name('question.index');
+// Route::get('/question/show/{id}', 'QuestionController@show')->name('question.show');
+
+Route::get('/question/show/{id}', function($id) {
+    $question = Question::findOrFail($id);
+    if (!$question->answer) {
+        abort(403, '未回答の質問です');
+    } else {
+        $question = Question::findOrFail($id);
+        return view('app.question.show', compact('question'));
+    }
+})->name('question.show');
+
 Route::get('/question/create', 'QuestionController@create')->name('question.create');
 Route::post('/question/create', 'QuestionController@store')->name('question.store');
 
 // 回答関係
-Route::get('/question/{id}', 'AnswerController@create')->name('answer.create');
-Route::post('/question/{id}', 'AnswerController@store')->name('answer.store');
+Route::get('/question/{id}', 'QuestionController@create_answer')->name('answer.create');
+Route::patch('/question/{id}', 'QuestionController@store_answer')->name('answer.store');
 
 // ユーザー
 Route::prefix('user')->name('user.')->group(function () {
