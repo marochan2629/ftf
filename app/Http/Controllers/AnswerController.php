@@ -11,6 +11,11 @@ use Illuminate\Support\Facades\DB;
 
 class AnswerController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth:associate');
+    }
+
     public function create(Request $request, $id) {
         if (\Auth::guard('associate')->check()) {
             $question = Question::findOrFail($id);

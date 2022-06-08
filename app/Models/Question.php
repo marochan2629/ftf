@@ -10,6 +10,8 @@ class Question extends Model
         'title',
         'body',
         'image',
+        'answer',
+        'sup_image',
         'user_id',
     ];
 
@@ -18,8 +20,4 @@ class Question extends Model
         return $this->belongsTo('App\Models\User');
     }
 
-    public function answer()
-    {
-        return $this->hasOne('App\Models\Answer'); 
-    }
 }

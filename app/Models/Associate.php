@@ -22,8 +22,8 @@ class Associate extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function answers()
-    {
-        return $this->hasMany('App\Models\Answer'); 
-    }
+    // public function answers()
+    // {
+    //     return $this->hasMany('App\Models\Answer'); 
+    // }
 }

@@ -17,7 +17,7 @@
             </div>
         </div>
 
-        <form action="{{ route('answer.store', ['id' => $question->id]) }}" method="POST">
+        <form action="{{ route('answer.store', ['id' => $question->id]), enctype="multipart/form-data" }}" method="POST">
             @csrf
              <div class="form-group row">
                 <p class="col-sm-1 col-form-label">回答</p>

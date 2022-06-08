@@ -3,7 +3,7 @@
 @section('content')
     <h1 class="text-center mt-2 mb-5">質問画面</h1>
     <div class="container mb-5">
-        <form action="{{ route('question.store') }}" method="POST">
+        <form action="{{ route('question.store') }}" method="POST"  enctype="multipart/form-data">
             @csrf
             <div class="form-group row">
                 <p class="col-sm-1 col-form-label">タイトル</p>
