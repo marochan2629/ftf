@@ -23,7 +23,7 @@ class CreateArticleTagTable extends Migration
                 ->references('id')->on('articles');
 
             $table->foreign('tag_id')
-                ->references('id')->on('articles');
+                ->references('id')->on('tags');
         });
     }
 
