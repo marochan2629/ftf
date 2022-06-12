@@ -43,6 +43,11 @@ Route::post('/question/create', 'QuestionController@store')->name('question.stor
 Route::get('/question/{id}', 'QuestionController@create_answer')->name('answer.create');
 Route::patch('/question/{id}', 'QuestionController@store_answer')->name('answer.store');
 
+// 記事関係
+Route::get('/article/index', 'ArticleController@index')->name('article.index');
+Route::get('/article/create', 'ArticleController@create')->name('article.create');
+Route::post('/article/create', 'ArticleController@store')->name('article.store');
+
 // ユーザー
 Route::prefix('user')->name('user.')->group(function () {
 
