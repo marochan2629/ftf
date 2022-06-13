@@ -44,6 +44,10 @@
   box-sizing: border-box;
 }
 
+.liked {
+  color: pink;
+}
+
 html {
   font-family: sans-serif;
   line-height: 1.15;

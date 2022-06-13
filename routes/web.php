@@ -46,6 +46,7 @@ Route::patch('/question/{id}', 'QuestionController@store_answer')->name('answer.
 // 記事関係
 Route::get('/article/index', 'ArticleController@index')->name('article.index');
 Route::get('/article/show/{id}', 'ArticleController@show')->name('article.show');
+Route::post('/article/show/{id}', 'ArticleController@like')->name('article.like');
 Route::get('/article/create', 'ArticleController@create')->name('article.create');
 Route::post('/article/create', 'ArticleController@store')->name('article.store');
 

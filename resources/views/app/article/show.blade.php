@@ -25,6 +25,27 @@
                 </div>
             </div>
         @endif
-        
+
+        @if(\Auth::guard('user')->check() | \Auth::guard('associate')->check())
+        <!-- Review.phpに作ったisLikedByメソッドをここで使用 -->
+            @if (!$article->isLikedBy(Auth::user()))
+                <span class="likes">
+                    <i class="fas fa-music like-toggle" data-article-id="{{ $article->id }}"></i>
+                <span class="like-counter">{{$article->likes_count}}</span>
+                </span><!-- /.likes -->
+            @else
+                <span class="likes">
+                    <i class="fas fa-music heart like-toggle liked" data-article-id="{{ $article->id }}"></i>
+                <span class="like-counter">{{$article->likes_count}}</span>
+                </span><!-- /.likes -->
+            @endif
+        @endif
+        @guest
+            <span class="likes">
+                <i class="fas fa-music heart"></i>
+                <span class="like-counter">{{$article->likes_count}}</span>
+            </span><!-- /.likes -->
+        @endguest
+
     </div>
 @endsection

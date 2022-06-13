@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Article;
 use App\Models\Tag;
 use App\Models\Associate;
+use App\Models\Like;
 use Illuminate\Support\Facades\DB; 
 
 class ArticleController extends Controller
@@ -21,8 +22,23 @@ class ArticleController extends Controller
 
     public function show($id)
     {
-        $article = Article::findOrFail($id);
+
+        // $articles = Article::withCount('likes')->orderBy('id', 'desc')->paginate(10);
+
+        // $param = [
+        //     'articles' => $articles,
+        // ];
+
+        // dd($param);
+
+        // $article = Article::findOrFail($id)->withCount('likes')->orderBy('id', 'desc')->paginate(10);
+        $article = Article::withCount('likes')->findOrFail($id);
+
+        // dd($article);
         return view('app.article.show', compact('article'));
+
+        // $article = Article::findOrFail($id);
+        // return view('app.article.show', compact('article'));
     }
 
     public function create() {
@@ -85,5 +101,27 @@ class ArticleController extends Controller
          }
 
         return redirect()->route('article.index');
+    }
+
+    public function like(Request $request)
+    {
+        $user_id = Auth::user()->id; //1.ログインユーザーのid取得
+        $article_id = $request->article_id; //2.投稿idの取得
+        $already_liked = Like::where('user_id', $user_id)->where('article_id', $article_id)->first(); //3.
+
+        if (!$already_liked) { //もしこのユーザーがこの投稿にまだいいねしてなかったら
+            $like = new Like; //4.Likeクラスのインスタンスを作成
+            $like->article_id = $article_id; //Likeインスタンスにarticle_id,user_idをセット
+            $like->user_id = $user_id;
+            $like->save();
+        } else { //もしこのユーザーがこの投稿に既にいいねしてたらdelete
+            Like::where('article_id', $article_id)->where('user_id', $user_id)->delete();
+        }
+        //5.この投稿の最新の総いいね数を取得
+        $article_likes_count = Article::withCount('likes')->findOrFail($article_id)->likes_count;
+        $param = [
+            'article_likes_count' => $article_likes_count,
+        ];
+        return response()->json($param); //6.JSONデータをjQueryに返す
     }
 }
