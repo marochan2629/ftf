@@ -11,11 +11,6 @@ use Illuminate\Support\Facades\DB;
 
 class QuestionController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth:associate,user');
-    }
-
     // indexは、回答がついた質問を表示するように変更。未回答の質問の表示は、answerコントローラーに記述。ビューもそれぞれ変更。
     public function index()
     {
