@@ -12,15 +12,17 @@ use Illuminate\Support\Facades\DB;
 
 class ArticleController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth:associate,user');
-    }
 
     public function index()
     {
         $articles = Article::get();
         return view('app.article.index', compact('articles'));
+    }
+
+    public function show($id)
+    {
+        $article = Article::findOrFail($id);
+        return view('app.article.show', compact('article'));
     }
 
     public function create() {

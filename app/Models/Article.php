@@ -17,4 +17,9 @@ class Article extends Model
     {
         return $this->belongsToMany('App\Models\Tag','article_tag');
     }
+
+    public function associate()
+    {
+        return $this->belongsTo('App\Models\Associate');
+    }
 }

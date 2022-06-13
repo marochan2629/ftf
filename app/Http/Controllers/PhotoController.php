@@ -11,11 +11,6 @@ use Illuminate\Support\Facades\Config;
 
 class PhotoController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth:associate,user');
-    }
-
     public function index()
     {
         $photos = Photo::get();
