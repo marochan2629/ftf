@@ -88,17 +88,10 @@ class QuestionController extends Controller
 
     public function store_answer(Request $request, $id)
     {
-        // $title = $request->title;
-        // dd($title);
-        // $body = $request->body;
-        // $user_id = Auth::id();
         $answer = $request->answer;
 
         // 画像フォームでリクエストした画像を取得
         $sup_img = $request->sup_image;
-
-        // dd($request);
-        // dd($sup_image);
 
         // 画像情報がセットされていれば、保存処理を実行
         if (isset($answer)) {
@@ -114,14 +107,7 @@ class QuestionController extends Controller
                     'answer' => $answer,
                 ]);
             }
-
-            // store処理が実行できたらDBに保存処理を実行
-            // if ($path) {
-                // DBに登録する処理
-            // }
         }
-
-        // dd('title');
 
         return redirect()->route('question.index');
     }
