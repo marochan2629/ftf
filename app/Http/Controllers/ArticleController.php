@@ -22,23 +22,9 @@ class ArticleController extends Controller
 
     public function show($id)
     {
-
-        // $articles = Article::withCount('likes')->orderBy('id', 'desc')->paginate(10);
-
-        // $param = [
-        //     'articles' => $articles,
-        // ];
-
-        // dd($param);
-
-        // $article = Article::findOrFail($id)->withCount('likes')->orderBy('id', 'desc')->paginate(10);
         $article = Article::withCount('likes')->findOrFail($id);
 
-        // dd($article);
         return view('app.article.show', compact('article'));
-
-        // $article = Article::findOrFail($id);
-        // return view('app.article.show', compact('article'));
     }
 
     public function create() {
@@ -86,7 +72,6 @@ class ArticleController extends Controller
 
         if($request->tags != null) {
             $tags = [];
-            // $tag_list = explode(',', $request->tags);
             foreach($match[1] as $tag) {
                 $record = Tag::firstOrCreate(['name' => $tag]);
                 array_push($tags, $record);
