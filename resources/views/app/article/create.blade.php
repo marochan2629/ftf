@@ -8,14 +8,24 @@
             <div class="form-group row">
                 <p class="col-sm-1 col-form-label">タイトル</p>
                 <div class="col-sm-11">
-                    <input type="text" name="title" class="form-control">
+                    <input type="text" name="title" class="form-control {{ $errors->has('title') ? 'is-invalid' : '' }}" value="{{ old('title') }}">
+                    @if ($errors->has('title'))
+                        <div class="invalid-feedback">
+                        {{ $errors->first('title') }}
+                        </div>
+                    @endif
                 </div>
-            </div>
-            
+            </div>           
+
             <div class="form-group row">
                 <p class="col-sm-1 col-form-label">本文</p>
                 <div class="col-sm-11">
-                    <textarea class="form-control" name="body" id="body" cols="100" rows="15"></textarea>
+                    <textarea class="form-control {{ $errors->has('body') ? 'is-invalid' : '' }}" name="body" id="body" cols="100" rows="15" value="{{ old('title') }}"></textarea>
+                    @if ($errors->has('body'))
+                        <div class="invalid-feedback">
+                        {{ $errors->first('body') }}
+                        </div>
+                    @endif
                 </div>
             </div>
 
@@ -37,5 +47,4 @@
                 <input type="submit" value="記事を投稿する">
             </div>
         </form>
-    </div>
 @endsection

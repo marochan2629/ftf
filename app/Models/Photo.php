@@ -10,6 +10,7 @@ class Photo extends Model
         'name',
         'image',
         'user_id',
+        'associate_id',
     ];
 
     //追記
