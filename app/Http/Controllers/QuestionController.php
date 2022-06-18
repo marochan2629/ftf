@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Question;
 use App\Models\User;
 use Illuminate\Support\Facades\DB; 
-// use Illuminate\Support\Facades\Config; 
+use App\Http\Requests\QuestionRequest;
 
 class QuestionController extends Controller
 {
@@ -37,7 +37,7 @@ class QuestionController extends Controller
     //     return view('app.question.create');
     // }
 
-    public function store(Request $request)
+    public function store(QuestionRequest $request)
     {
         $title = $request->title;
         // dd($title);
@@ -77,7 +77,7 @@ class QuestionController extends Controller
         return redirect()->route('question.index');
     }
 
-    public function create_answer(Request $request, $id) {
+    public function create_answer($id) {
         if (\Auth::guard('associate')->check()) {
             $question = Question::findOrFail($id);
             return view('app.question.create_answer', compact('question'));

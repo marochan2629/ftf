@@ -21,15 +21,15 @@
             @csrf
             @method('PATCH')
              <div class="form-group row">
-                <p class="col-sm-1 col-form-label">回答</p>
-                <div class="col-sm-11">
+                <p class="col-sm-2 col-form-label">回答</p>
+                <div class="col-sm-10">
                     <textarea class="form-control" name="answer" id="answer" cols="100" rows="15"></textarea>
                 </div>
             </div>
 
             <div class="form-group row">
-                <p class="col-sm-1 col-form-label">画像</p>
-                <div class="col-sm-11">
+                <p class="col-sm-2 col-form-label">画像</p>
+                <div class="col-sm-10">
                     <input type="file" name="sup_image">
                 </div>
             </div>

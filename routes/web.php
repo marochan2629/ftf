@@ -40,8 +40,8 @@ Route::get('/question/create', 'QuestionController@create')->name('question.crea
 Route::post('/question/create', 'QuestionController@store')->name('question.store');
 
 // 回答関係
-Route::get('/question/{id}', 'QuestionController@create_answer')->name('answer.create');
-Route::patch('/question/{id}', 'QuestionController@store_answer')->name('answer.store');
+Route::get('/question/answer/{id}', 'QuestionController@create_answer')->name('answer.create');
+Route::patch('/question/answer/{id}', 'QuestionController@store_answer')->name('answer.store');
 
 // 記事関係
 Route::get('/article/index', 'ArticleController@index')->name('article.index');

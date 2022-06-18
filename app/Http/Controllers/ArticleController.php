@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\ArticleRequest;
 
 use Illuminate\Support\Facades\Auth;
 use App\Models\Article;
@@ -35,17 +36,18 @@ class ArticleController extends Controller
         }
     }
 
-    public function store(Request $request)
+    public function store(ArticleRequest $request)
     {
-        $article = $request->validate([
-            'title' => 'required|max:50',
-            'body' => 'required|max:2000',
-        ]);
+        // dd(Auth::guard('associate')->id());
+        // $article = $request->validate([
+        //     'title' => 'required|max:50',
+        //     'body' => 'required|max:3000',
+        // ]);
 
         $title = $request->title;
         $body = $request->body;
         preg_match_all('/#([a-zA-Z0-9０-９ぁ-んァ-ヶー一-龠]+)/', $request->tags, $match);
-        $associate_id = Auth::id();
+        $associate_id = Auth::guard('associate')->id();
 
         // 画像フォームでリクエストした画像を取得
         $img = $request->file('image');
@@ -83,7 +85,7 @@ class ArticleController extends Controller
             }
 
             $article->tags()->sync($tag_ids);
-         }
+        }
 
         return redirect()->route('article.index');
     }

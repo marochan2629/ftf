@@ -8,6 +8,7 @@ use App\Models\Photo;
 use App\Models\User;
 use Illuminate\Support\Facades\DB; 
 use Illuminate\Support\Facades\Config; 
+use App\Http\Requests\PhotoRequest;
 
 class PhotoController extends Controller
 {
@@ -17,7 +18,7 @@ class PhotoController extends Controller
         return view('app.photo.index', compact('photos'));
     }
 
-    public function create(Request $request)
+    public function create()
     {
         if (\Auth::guard('user')->check() || \Auth::guard('associate')->check()) {
             return view('app.photo.create');
@@ -26,9 +27,13 @@ class PhotoController extends Controller
         }
     }
 
-    public function store(Request $request)
+    public function store(PhotoRequest $request)
     {
-        $user_id = Auth::id();
+        // dd($request);
+        // $user_id = Auth::id();
+        $user_id = Auth::guard('user')->id();
+        $associate_id = Auth::guard('associate')->id();
+        // dd($associate_id);
         $name = $request->name;
 
         // 画像フォームでリクエストした画像を取得
@@ -46,6 +51,7 @@ class PhotoController extends Controller
                     'name' => $name,
                     'image' => $path,
                     'user_id' => $user_id,
+                    'associate_id' => $associate_id,
                 ]);
             }
         }
