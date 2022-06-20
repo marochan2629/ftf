@@ -50,6 +50,9 @@ Route::post('/article/show/{id}', 'ArticleController@like')->name('article.like'
 Route::get('/article/create', 'ArticleController@create')->name('article.create');
 Route::post('/article/create', 'ArticleController@store')->name('article.store');
 
+// コメント関係
+Route::post('/comment/store', 'CommentController@store')->name('comment.store');
+
 // ユーザー
 Route::prefix('user')->name('user.')->group(function () {
 

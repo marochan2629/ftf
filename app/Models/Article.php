@@ -29,6 +29,11 @@ class Article extends Model
         return $this->hasMany('App\Models\Like');
     }
 
+    public function comments()
+    {
+        return $this->hasMany('App\Models\Comment');
+    }
+
     //いいねされているかを判定するメソッド。
     public function isLikedBy($user): bool {
         return Like::where('user_id', $user->id)->where('article_id', $this->id)->first() !==null;
