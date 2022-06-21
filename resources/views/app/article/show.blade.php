@@ -67,13 +67,18 @@
                                 </div> -->
                                 <div class="form-group">
                                     <label for="message-text" class="control-label">コメント</label>
-                                    <textarea class="form-control" id="message-text" name="body"></textarea>
+                                    <textarea class="form-control {{ $errors->has('body') ? 'is-invalid' : '' }}" id="message-text" name="body"></textarea>
+                                    @if ($errors->has('body'))
+                                        <div class="invalid-feedback">
+                                            {{ $errors->first('body') }}
+                                        </div>
+                                    @endif
                                 </div>
                             <!-- </form> -->
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">戻る</button>
-                            <button type="submit" class="btn btn-primary">投稿する</button>
+                            <input type="submit" id="comment_submit" class="btn btn-primary" value='投稿' disabled>
                         </div>
                         <input type="hidden" value="{{ $article->id }}" name="article_id">
                     </form>
@@ -94,7 +99,7 @@ window.addEventListener('DOMContentLoaded', function(){
         var modal = $(this)  //モーダルを取得
         modal.find('.modal-title').text('associateid:' + recipient) //モーダルのタイトルに値を表示
         modal.find('.modal-body input#recipient-name').val(recipient) //inputタグにも表示
-    })
+    });
 })
 </script>
 @endsection

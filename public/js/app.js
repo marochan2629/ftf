@@ -55625,9 +55625,25 @@ __webpack_require__.r(__webpack_exports__);
         console.log('fail'); 
       });
     });
-});
+  });
 
-/***/ }),
+  $(function() {
+    $(document).on('input', function() {
+      var input = $('textarea[name="body"]').val(); //input に入力された文字を取得
+
+      if(input){ //もし文字が入っていれば
+
+        $("#comment_submit").prop('disabled', false); //disabled を無効にする＝ボタンが押せる
+
+      }else{
+
+        $("#comment_submit").prop('disabled', true); //disabled を有効にする＝ボタンが押せない
+      }
+
+      });
+  })
+
+}),
 
 /***/ "./resources/sass/app.scss":
 /*!*********************************!*\

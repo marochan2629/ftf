@@ -18,6 +18,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> -->
     <!-- <script src="https://js.stripe.com/v3/"></script> -->
 </head>
 <body>
