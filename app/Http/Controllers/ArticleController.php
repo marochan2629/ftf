@@ -10,6 +10,7 @@ use App\Models\Article;
 use App\Models\Tag;
 use App\Models\Associate;
 use App\Models\Like;
+use App\Models\Comment;
 use Illuminate\Support\Facades\DB; 
 
 class ArticleController extends Controller
@@ -24,8 +25,11 @@ class ArticleController extends Controller
     public function show($id)
     {
         $article = Article::withCount('likes')->findOrFail($id);
+        $comments = Comment::with('article')->where('article_id', $id)->get();
 
-        return view('app.article.show', compact('article'));
+        // dd($comments);
+
+        return view('app.article.show', compact('article', 'comments'));
     }
 
     public function create() {

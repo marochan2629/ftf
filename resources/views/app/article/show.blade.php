@@ -2,8 +2,6 @@
 
 @section('content')
 
-
-
     <h1 class="text-center mt-2 mb-5">記事詳細</h1>
     <div class="container mb-5">
         <div class="row">
@@ -38,16 +36,27 @@
                 <span class="like-counter">{{$article->likes_count}}</span>
                 </span><!-- /.likes -->
             @endif
+            <div class="text-center">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#commentModal" data-whatever={{ $article->title }}>コメントを投稿する</button>
+            </div>
         @else
             <span class="likes">
                 <i class="fas fa-heart heart"></i>
                 <span class="like-counter">{{$article->likes_count}}</span>
             </span><!-- /.likes -->
+            <div class="text-center">
+                <a  href="/user/login">ログインしてコメントを投稿</a>
+            </div>
+            
         @endguest
 
-        <div class="text-center">
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#commentModal" data-whatever={{ $article->title }}>コメントを投稿する</button>
-        </div>
+        @foreach($comments as $comment)
+            <div class="row">
+                <p class="col-sm-2">{{ $comment->user->name }}</p>
+                <p class="col-sm-10">{{ $comment->body }}</p>
+            </div>
+        @endforeach
+
         
 
         <div class="modal fade" id="commentModal" tabindex="-1" role="dialog" aria-labelledby="commentModalLabel" aria-hidden="true">
