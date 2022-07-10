@@ -4532,12 +4532,19 @@ input[type=button].btn-block {
 }
 
 .navbar {
-  position: relative;
+  /* position: relative; */
+  /* background-color: #f6f6f3; */
+  font-family: 'Rubik Moonrocks', cursive;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   padding: 0.5rem 1rem;
+  position: fixed; /* ウィンドウを基準に画面に固定 */
+  top: 0; /* 上下の固定位置を上から0pxにする */
+  left: 0; /* 左右の固定位置を左から0pxにする */
+  width: 100%; /* 幅いっぱいを指定 */
+  z-index:5;
 }
 
 .navbar .container,
