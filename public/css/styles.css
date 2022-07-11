@@ -177,7 +177,7 @@
     transform: scale(1.05);
 }
 
-.card-body a {
+.service-name {
     position: relative;
     display: flex;
     align-items: center;
@@ -308,4 +308,18 @@
     .footer-detail {
         list-style: none;
     }
+}
+
+/* ログイン画面 */
+
+.login-form {
+    margin: 10vw 0;
+}
+
+.login-new-subscriber {
+    margin-top: 1vw;
+}
+
+.user-login-header {
+    font-size: 2vw;
 }

@@ -24,21 +24,21 @@
         <div class="card-deck services">
             <div class="card service service1">
                 <div class="card-body">
-                    <a href="#">読む<br>LEARN</a>
+                    <a class="service-name" href="#">読む<br>LEARN</a>
                     <!-- <p>LEARN</p> -->
                 </div>
             </div>
             <div class="card service service2">
                 <div class="card-body">
                 <!-- <h4 class="card-title">聞く</h4> -->
-                    <a href="#">聞く<br>QUESTIONS</a>
+                    <a class="service-name" href="#">聞く<br>QUESTIONS</a>
                 <!-- <p class="card-text">説明文の欄だけど必要ないかもしれない削除して画像でも差し込むか</p> -->
                 </div>
             </div>
             <div class="card service service3">
                 <div class="card-body">
                 <!-- <h4 class="card-title">見る</h4> -->
-                    <a href="#">見る<br>PHOTOS</a>
+                    <a class="service-name" href="#">見る<br>PHOTOS</a>
                 <!-- <p class="card-text">説明文の欄だけど必要ないかもしれない削除して画像でも差し込むか</p> -->
                 </div>
             </div>
