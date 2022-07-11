@@ -310,7 +310,21 @@
     }
 }
 
-/* ログイン画面 */
+/* ユーザーログイン画面 */
+
+.login-form {
+    margin: 10vw 0;
+}
+
+.login-new-subscriber {
+    margin-top: 1vw;
+}
+
+.login-header {
+    font-size: 2vw;
+}
+
+/* ユーザーログイン画面 */
 
 .login-form {
     margin: 10vw 0;
