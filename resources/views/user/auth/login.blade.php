@@ -5,14 +5,14 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card login-form">
-                <div class="card-header user-login-header"><i class="fa fa-lock"></i>{{ __(' Sign In') }}</div>
+                <div class="card-header login-header"><i class="fa fa-lock"></i>{{ __(' User Sign In') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('user.login') }}">
                         @csrf
 
                         <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Email') }}</label>
+                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-mail') }}</label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
