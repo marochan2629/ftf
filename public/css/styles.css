@@ -320,16 +320,17 @@
     margin-top: 1vw;
 }
 
-.login-header {
+/* .login-header {
     font-size: 2vw;
-}
+} */
 
 /* ユーザー・アソシエイト登録画面 */
 
 .register-form {
-    margin: 10vw 0;
+    margin-top: 21%;
+    margin-bottom: 15%;
 }
 
-.register-header {
+/* .register-header {
     font-size: 2vw;
-}
+} */
