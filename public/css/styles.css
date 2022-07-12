@@ -324,7 +324,7 @@
     font-size: 2vw;
 }
 
-/* ユーザーログイン画面 */
+/* ユーザー・アソシエイトログイン画面 */
 
 .login-form {
     margin: 10vw 0;
@@ -334,6 +334,27 @@
     margin-top: 1vw;
 }
 
-.user-login-header {
+/* .user-login-header {
     font-size: 2vw;
+} */
+
+/* ユーザー・アソシエイト登録画面 */
+
+.register-form {
+    margin-top: 20%;
+    margin-bottom: 15%;
 }
+
+/* .register-new-subscriber {
+    margin-top: 1vw;
+} */
+
+/* @media screen and (max-width:767px) {
+    .register-form {
+        margin: 10vw 0;
+    }
+} */
+
+/* .user-login-header {
+    font-size: 2vw;
+} */
