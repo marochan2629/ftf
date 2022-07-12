@@ -310,7 +310,7 @@
     }
 }
 
-/* ユーザーログイン画面 */
+/* ユーザー・アソシエイトログイン画面 */
 
 .login-form {
     margin: 10vw 0;
@@ -324,16 +324,12 @@
     font-size: 2vw;
 }
 
-/* ユーザーログイン画面 */
+/* ユーザー・アソシエイト登録画面 */
 
-.login-form {
+.register-form {
     margin: 10vw 0;
 }
 
-.login-new-subscriber {
-    margin-top: 1vw;
-}
-
-.user-login-header {
+.register-header {
     font-size: 2vw;
 }
