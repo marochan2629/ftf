@@ -29,6 +29,18 @@
                 </div>
             </div>
 
+            <div class="form-group row">
+                <p class="col-sm-4 col-form-label">詳細</p>
+                <div class="col-m-8">
+                    <textarea name="description" class="form-control {{ $errors->has('description') ? 'is-invalid' : '' }}" value="{{ old('description') }}" cols="70" rows="5"></textarea>
+                    @if ($errors->has('description'))
+                        <div class="invalid-feedback">
+                            {{ $errors->first('description') }}
+                        </div>
+                    @endif
+                </div>
+            </div>
+
             <div class="text-center">
                 <input type="submit" value="アップロード">
             </div>

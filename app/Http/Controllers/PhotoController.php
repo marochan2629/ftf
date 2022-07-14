@@ -38,6 +38,8 @@ class PhotoController extends Controller
 
         // 画像フォームでリクエストした画像を取得
         $img = $request->file('image');
+        $description = $request->description;
+        // dd($description);
 
         // 画像情報がセットされていれば、保存処理を実行
         if (isset($img)) {
@@ -50,6 +52,7 @@ class PhotoController extends Controller
                 Photo::create([
                     'name' => $name,
                     'image' => $path,
+                    'description' => $description,
                     'user_id' => $user_id,
                     'associate_id' => $associate_id,
                 ]);

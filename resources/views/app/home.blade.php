@@ -31,13 +31,13 @@
             </div>
             <div class="card service service2">
                 <div class="card-body">
-                    <a href="#"><img src="../images/grandmother-g1fa961d0c_1920.jpg" class="service-img"><p class="service-name">聞く<br>QUESTIONS</p></a>
+                    <a href="/question/index"><img src="../images/grandmother-g1fa961d0c_1920.jpg" class="service-img"><p class="service-name">聞く<br>QUESTIONS</p></a>
                     
                 </div>
             </div>
             <div class="card service service3">
                 <div class="card-body">
-                    <a href="#"><img src="../images/zhangjiajie-g66b1d36f8_1920.jpg" class="service-img"><p class="service-name">見る<br>PHOTOS</p></a>
+                    <a href="/photo/index"><img src="../images/zhangjiajie-g66b1d36f8_1920.jpg" class="service-img"><p class="service-name">見る<br>PHOTOS</p></a>
                     
                 </div>
             </div>
