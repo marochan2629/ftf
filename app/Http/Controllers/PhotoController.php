@@ -14,8 +14,25 @@ class PhotoController extends Controller
 {
     public function index()
     {
+        $keyword = '';
         $photos = Photo::get();
-        return view('app.photo.index', compact('photos'));
+        return view('app.photo.index', compact('photos', 'keyword'));
+    }
+
+    public function search(Request $request)
+    {
+        $keyword = $request->input('keyword');
+
+        $query = Photo::query();
+
+        if(!empty($keyword)) {
+            $query->where('name', 'LIKE', "%{$keyword}%")
+                ->orWhere('description', 'LIKE', "%{$keyword}%");
+        }
+
+        $photos = $query->get();
+
+        return view('app.photo.index', compact('photos', 'keyword'));
     }
 
     public function create()
