@@ -19,6 +19,7 @@ Route::get('/', function () {
 
 // 写真投稿関係
 Route::get('/photo/index', 'PhotoController@index')->name('photo.index');
+Route::get('/photo/index', 'PhotoController@search')->name('photo.search');
 Route::get('/photo/create', 'PhotoController@create')->name('photo.create');
 Route::post('/photo/confirm', 'PhotoController@store')->name('photo.store');
 
