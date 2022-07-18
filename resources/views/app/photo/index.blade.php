@@ -1,12 +1,17 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1 class="text-center mt-2 mb-5">画像一覧</h1>
-    <div class="container">
-    <h1>一覧画面</h1>
-        @foreach ($photos as $photo)
-            <img src="{{ Storage::url($photo->image) }}" width="25%">
-        @endforeach
+    <div class="container photo-index">
+        <h1>画像一覧画面</h1>
+        <div class="card-columns" id="photo">
+            @foreach ($photos as $photo)
+                    <div class="card">
+                        <a href="{{ Storage::url($photo->image) }}" rel="lightbox">
+                            <img src="{{ Storage::url($photo->image) }}" width="100%">
+                        </a>
+                    </div>
+            @endforeach
+        </div>
     </div>
 
 @endsection
