@@ -300,6 +300,12 @@
     font-size: 2vw;
 } */
 
+/* 写真一覧 */
+
+.article-top {
+    padding-top: 10%;
+}
+
 /* 画像一覧 */
 .photo-top {
     display: flex;

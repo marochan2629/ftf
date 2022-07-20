@@ -1,9 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1 class="text-center mt-2 mb-5">記事一覧</h1>
-    <div class="container">
-    <h1>一覧画面</h1>
+    <div class="container article-top">
+        <h1>読む</h1>
+
+        <div class="article-search-form">
+            <form class="d-flex" action="{{ route('article.search') }}" method="GET">
+                <input type="text" class="article-input" name="keyword"  placeholder="Search" value="{{ $keyword }}">
+                <button type="submit" class="article-input"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+        </div>
+
         @foreach ($articles as $article)
             <div class="card" style="width: 18rem;">
                 <div class="card-body">

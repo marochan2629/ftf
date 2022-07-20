@@ -19,7 +19,24 @@ class ArticleController extends Controller
     public function index()
     {
         $articles = Article::get();
-        return view('app.article.index', compact('articles'));
+        $keyword = '';
+        return view('app.article.index', compact('articles', 'keyword'));
+    }
+    
+    public function search(Request $request)
+    {
+        $keyword = $request->input('keyword');
+
+        $query = Article::query();
+
+        if(!empty($keyword)) {
+            $query->where('title', 'LIKE', "%{$keyword}%")
+                ->orWhere('body', 'LIKE', "%{$keyword}%");
+        }
+
+        $articles = $query->get();
+
+        return view('app.article.index', compact('articles', 'keyword'));
     }
 
     public function show($id)
