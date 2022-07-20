@@ -1,14 +1,18 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container photo-index">
-        <h1>画像一覧画面</h1>
+    <div class="photo-index">
 
-        <div class="">
-            <form class="d-flex" action="{{ route('photo.search') }}" method="GET">
-                <input type="search" class="form-control me-2" name="keyword"  placeholder="検索" value="{{ $keyword }}">
-                <button type="submit" class="btn btn-outline-success">Search</button>
-            </form>
+        <div class="photo-top">
+            <img src="/images/beach-g9fd94e74e_1920.jpg" alt="photo-top-image" class="photo-top-image">
+            <h1>見る <span style="letter-spacing: -0.2em;">—</span> Photo<span style="letter-spacing: -0.2em;">—</span></h1>
+    
+            <div class="photo-search-form">
+                <form class="d-flex" action="{{ route('photo.search') }}" method="GET">
+                    <input type="text" class="photo-input" name="keyword"  placeholder="Search" value="{{ $keyword }}">
+                    <button type="submit" class="photo-input"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
+            </div>
         </div>
 
         <div class="card-columns" id="photo">

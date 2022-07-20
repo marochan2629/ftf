@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&family=Splash&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant&display=swap');
 
 /* トップ画面 */
 
@@ -300,6 +301,56 @@
 } */
 
 /* 画像一覧 */
+.photo-top {
+    display: flex;
+    width: 100%;
+    margin: 10% 0;
+}
+
+.photo-top-image {
+    width: 80%;
+    height: 85%;
+    position: absolute;
+    right: 0%;
+    top: 5%;
+    object-fit: cover;
+    /* z-index: ; */
+}
+
 .photo-index {
-    padding-top: 5vw;
+    /* margin-top: 10%; */
+    padding: 10% 3%;
+}
+
+.photo-search-form {
+    position: fixed;
+    right: 11.5%;
+    z-index: 1;
+ /* top: 150px; */
+}
+
+.photo-input {
+    border: none;
+    background-color: transparent;
+    border-bottom: black 1px solid;
+    border-radius: 0;
+    
+}
+
+.photo-input:-webkit-autofill {
+    transition: background-color 5000s ease-in-out 0s !important;
+}
+
+.photo-input:focus {
+    outline: none;
+}
+
+.photo-index h1{
+    font-family: 'Cormorant', serif;
+    font-weight: 500;
+    font-size: 6vw;
+    /* color: rgb(185, 149, 118); */
+    color: maroon;
+    z-index: 1;
+    margin-top: 22%;
 }
