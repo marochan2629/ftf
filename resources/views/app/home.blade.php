@@ -5,10 +5,10 @@
     <div class="top-page">
         <div class="hero-area">
             <div class="hero-images">
-                    <img src="/images/berlin-cathedral-g76d15908b_1920.jpg" class="slideshow hero-image">
-                    <img src="/images/theravada-buddhism-g391f85ea1_1920.jpg" class="slideshow fadeout hero-image">
-                    <img src="/images/the-pilgrims-guide-g4329790d6_1920.jpg" class="slideshow fadeout hero-image">
-                    <img src="/images/architecture-gcdcb1e724_1920.jpg" class="slideshow fadeout hero-image">
+                <img src="/images/berlin-cathedral-g76d15908b_1920.jpg" class="slideshow hero-image">
+                <img src="/images/theravada-buddhism-g391f85ea1_1920.jpg" class="slideshow fadeout hero-image">
+                <img src="/images/the-pilgrims-guide-g4329790d6_1920.jpg" class="slideshow fadeout hero-image">
+                <img src="/images/architecture-gcdcb1e724_1920.jpg" class="slideshow fadeout hero-image">
             </div>
             
             <div class="main">
