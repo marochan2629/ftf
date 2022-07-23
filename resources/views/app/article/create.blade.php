@@ -20,7 +20,7 @@
             <div class="form-group row">
                 <p class="col-sm-1 col-form-label">本文</p>
                 <div class="col-sm-11">
-                    <textarea class="form-control {{ $errors->has('body') ? 'is-invalid' : '' }}" name="description" id="body" cols="100" rows="15" value="{{ old('title') }}"></textarea>
+                    <textarea class="form-control {{ $errors->has('body') ? 'is-invalid' : '' }}" name="body" id="body" cols="100" rows="15" value="{{ old('title') }}"></textarea>
                     @if ($errors->has('body'))
                         <div class="invalid-feedback">
                         {{ $errors->first('body') }}
@@ -39,7 +39,7 @@
             <div class="form-group row">
                 <p class="col-sm-1 col-form-label">タグ</p>
                 <div class="col-sm-11">
-                    <input type="text" name="tags" id="tags" class="form-control">
+                    <input type="text" name="tags" id="tags" class="form-control" value="{{ old('tags') }}">
                 </div>
             </div>
 

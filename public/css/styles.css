@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cormorant&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@700&display=swap');
 
 /* トップ画面 */
 
@@ -307,13 +308,13 @@
 }
 
 /* 画像一覧 */
-.photo-top {
+.service-top {
     display: flex;
     width: 100%;
     margin: 10% 0;
 }
 
-.photo-top-image {
+.service-top-image {
     width: 80%;
     height: 85%;
     position: absolute;
@@ -323,19 +324,19 @@
     /* z-index: ; */
 }
 
-.photo-index {
+.service-index {
     /* margin-top: 10%; */
     padding: 10% 3%;
 }
 
-.photo-search-form {
+.service-search-form {
     position: fixed;
     right: 11.5%;
     z-index: 1;
  /* top: 150px; */
 }
 
-.photo-input {
+.service-input {
     border: none;
     background-color: transparent;
     border-bottom: black 1px solid;
@@ -343,15 +344,15 @@
     
 }
 
-.photo-input:-webkit-autofill {
+.service-input:-webkit-autofill {
     transition: background-color 5000s ease-in-out 0s !important;
 }
 
-.photo-input:focus {
+.service-input:focus {
     outline: none;
 }
 
-.photo-index h1{
+.service-index h1{
     font-family: 'Cormorant', serif;
     font-weight: 500;
     font-size: 6vw;
@@ -359,4 +360,46 @@
     color: maroon;
     z-index: 1;
     margin-top: 22%;
+}
+
+.article {
+    flex-shrink: 0;
+    /* border: 1px solid gray;
+    border-radius: 0.5rem;
+    background-color: white; */
+    display: flex;
+    flex-wrap: wrap;
+    width: 70%;
+}
+
+.article-wrapper {
+    border: 1px solid lightgrey;
+    border-radius: 0.5rem;
+    background-color: white;
+    width: 45%;
+    margin: 2%;
+}
+
+.article-image {
+    text-align: center;
+}
+
+.article-image img {
+    margin: 5%;
+    width: 90%;
+    /* height: 0%; */
+}
+
+.article-contents {
+    font-family: 'Shippori Mincho', serif;
+    margin: 1% 5%;
+}
+
+.article-tags {
+    display: flex;
+}
+
+.article-tags p {
+    margin-right: 2%;
+    color: grey;
 }
