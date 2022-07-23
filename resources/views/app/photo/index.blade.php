@@ -1,16 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="photo-index">
+    <div class="service-index">
 
-        <div class="photo-top">
-            <img src="/images/beach-g9fd94e74e_1920.jpg" alt="photo-top-image" class="photo-top-image">
+        <div class="service-top">
+            <img src="/images/beach-g9fd94e74e_1920.jpg" alt="photo-top-image" class="service-top-image">
             <h1>見る <span style="letter-spacing: -0.2em;">—</span> Photo<span style="letter-spacing: -0.2em;">—</span></h1>
     
-            <div class="photo-search-form">
+            <div class="service-search-form">
                 <form class="d-flex" action="{{ route('photo.search') }}" method="GET">
-                    <input type="text" class="photo-input" name="keyword"  placeholder="Search" value="{{ $keyword }}">
-                    <button type="submit" class="photo-input"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    <input type="text" class="service-input" name="keyword"  placeholder="Search" value="{{ $keyword }}">
+                    <button type="submit" class="service-input"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </form>
             </div>
         </div>

@@ -59,12 +59,6 @@ class ArticleController extends Controller
 
     public function store(ArticleRequest $request)
     {
-        // dd(Auth::guard('associate')->id());
-        // $article = $request->validate([
-        //     'title' => 'required|max:50',
-        //     'body' => 'required|max:3000',
-        // ]);
-
         $title = $request->title;
         $body = $request->body;
         preg_match_all('/#([a-zA-Z0-9０-９ぁ-んァ-ヶー一-龠]+)/', $request->tags, $match);

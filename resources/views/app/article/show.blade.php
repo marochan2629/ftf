@@ -11,7 +11,7 @@
             
         <div class="row">
             <p class="col-sm-2">記事 ー 本文</p>
-            <p class="col-sm-10">{{ $article->body }}</p>
+            <p class="col-sm-10">{!! nl2br(e($article->body)) !!}</p>
         </div>
 
         @if($article->image)
