@@ -326,7 +326,7 @@
 
 .service-index {
     /* margin-top: 10%; */
-    padding: 10% 3%;
+    padding: 10% 3% 3% 3%;
 }
 
 .service-search-form {
@@ -380,6 +380,10 @@
     margin: 2%;
 }
 
+.article-wrapper a {
+    text-decoration: none;
+}
+
 .article-image {
     text-align: center;
 }
@@ -391,8 +395,13 @@
 }
 
 .article-contents {
-    font-family: 'Shippori Mincho', serif;
+    /* font-family: 'Shippori Mincho', serif; */
     margin: 1% 5%;
+}
+
+.article-title, .article-body {
+    font-family: 'Shippori Mincho', serif;
+    color: black;
 }
 
 .article-tags {
@@ -402,4 +411,8 @@
 .article-tags p {
     margin-right: 2%;
     color: grey;
+}
+
+.article-pagination {
+    margin: 3% auto 0% auto;
 }
