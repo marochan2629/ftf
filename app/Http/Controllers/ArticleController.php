@@ -18,7 +18,7 @@ class ArticleController extends Controller
 
     public function index()
     {
-        $articles = Article::get();
+        $articles = Article::paginate(20);
         $keyword = '';
         return view('app.article.index', compact('articles', 'keyword'));
     }

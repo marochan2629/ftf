@@ -17,20 +17,23 @@
         <div class="article">
             @foreach ($articles as $article)
                 <div class="article-wrapper">
-                    <div class="article-image">
-                        <img src="{{ Storage::url($article->image) }}" alt="Card image cap">
-                    </div>
-                    <div class="article-contents">
-                        <h3 class="article-title">{{ $article->title }}</h5>
-                        <p class="article-body">{{ $article->associate->name }}</p>
-                        <div class="article-tags">
-                            @foreach($article->tags as $tag)
-                                <p>#{{ $tag->name }}</p>
-                            @endforeach
+                    <a href="/article/show/{{ $article->id }}">
+                        <div class="article-image">
+                            <img src="{{ Storage::url($article->image) }}" alt="Card image cap">
                         </div>
-                    </div>
+                        <div class="article-contents">
+                            <h3 class="article-title">{{ $article->title }}</h5>
+                            <p class="article-body">{{ $article->associate->name }}</p>
+                            <div class="article-tags">
+                                @foreach($article->tags as $tag)
+                                    <p>#{{ $tag->name }}</p>
+                                @endforeach
+                            </div>
+                        </div>
+                    </a>
                 </div>
             @endforeach
+            <div class="article-pagination">{{ $articles->links() }}</div>
         </div>
     </div>
 
