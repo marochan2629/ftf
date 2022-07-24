@@ -20,41 +20,46 @@ $tag_names = ['キリスト教','イスラム教','仏教','イエス','ブッ�
             </div>
         </div>
 
-        <div class="article">
-            @foreach ($articles as $article)
-                <div class="article-wrapper">
-                    <a href="/article/show/{{ $article->id }}">
-                        <div class="article-image">
-                            <img src="{{ Storage::url($article->image) }}" alt="Card image cap">
-                        </div>
-                        <div class="article-contents">
-                            <h3 class="article-title">{{ $article->title }}</h5>
-                            <p class="article-body">{{ $article->associate->name }}</p>
-                            <div class="article-tags">
-                                @foreach($article->tags as $tag)
-                                    <p>#{{ $tag->name }}</p>
-                                @endforeach
+        <div class="articles-tag-search">
+            <div class="article">
+                @foreach ($articles as $article)
+                    <div class="article-wrapper">
+                        <a href="/article/show/{{ $article->id }}">
+                            <div class="article-image">
+                                <img src="{{ Storage::url($article->image) }}" alt="Card image cap">
                             </div>
-                        </div>
-                    </a>
+                            <div class="article-contents">
+                                <h3 class="article-title">{{ $article->title }}</h5>
+                                <p class="article-body">{{ $article->associate->name }}</p>
+                                <div class="article-tags">
+                                    @foreach($article->tags as $tag)
+                                        <p>#{{ $tag->name }}</p>
+                                    @endforeach
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                @endforeach
+                <div class="article-pagination">{{ $articles->links() }}</div>
+            </div>
+
+            <div class="tag-search">
+                <div class="article-tag-search-title">
+                    <h3>タグで選ぶ</h3>
+                    <p>Tags</p>
                 </div>
-            @endforeach
-            <div class="article-pagination">{{ $articles->links() }}</div>
+                <div class="article-tag-search-form">
+                    @for($i = 0; $i < 6; $i++)
+                        <form method="GET" name="keyword" action="{{ route('article.tag-search') }}">
+                            <input type="hidden" name="keyword" value="{{ $tag_names[$i] }}">
+                            <a href="javascript:keyword[{{ $i }}].submit()">{{ $tag_names[$i] }}</a>
+                        </form>
+                    @endfor
+                </div>
+            </div>
         </div>
 
-        <div class="article-tag-search">
-            <div class="article-tag-search-title">
-                <h3>タグで検索</h3>
-            </div>
-            <div class="article-tag-search-form">
-                @for($i = 0; $i < 6; $i++)
-                    <form method="GET" name="keyword" action="{{ route('article.tag-search') }}">
-                        <input type="hidden" name="keyword" value="{{ $tag_names[$i] }}">
-                        <a href="javascript:keyword[{{ $i }}].submit()">{{ $tag_names[$i] }}</a>
-                    </form>
-                @endfor
-            </div>
-        </div>
+        
     </div>
 
 @endsection

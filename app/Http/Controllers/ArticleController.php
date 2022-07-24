@@ -20,13 +20,13 @@ class ArticleController extends Controller
     {
         $articles = Article::paginate(20);
         $keyword = '';
+
         return view('app.article.index', compact('articles', 'keyword'));
     }
     
     public function search(Request $request)
     {
         $keyword = $request->input('keyword');
-
         $query = Article::query();
 
         if(!empty($keyword)) {
@@ -60,8 +60,6 @@ class ArticleController extends Controller
     {
         $article = Article::withCount('likes')->findOrFail($id);
         $comments = Comment::with('article')->where('article_id', $id)->get();
-
-        // dd($comments);
 
         return view('app.article.show', compact('article', 'comments'));
     }
