@@ -19,9 +19,10 @@ class ArticleController extends Controller
     public function index()
     {
         $articles = Article::paginate(20);
+        $latest_articles = Article::orderBy('id', 'desc')->take(5)->get();
         $keyword = '';
 
-        return view('app.article.index', compact('articles', 'keyword'));
+        return view('app.article.index', compact('articles', 'latest_articles', 'keyword'));
     }
     
     public function search(Request $request)
