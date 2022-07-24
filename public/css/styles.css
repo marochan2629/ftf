@@ -3,6 +3,8 @@
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cormorant&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+2&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap');
 
 /* トップ画面 */
 
@@ -369,7 +371,7 @@
     background-color: white; */
     display: flex;
     flex-wrap: wrap;
-    width: 70%;
+    width: 75%;
 }
 
 .article-wrapper {
@@ -415,4 +417,46 @@
 
 .article-pagination {
     margin: 3% auto 0% auto;
+}
+
+.articles-tag-search {
+    display: flex;
+}
+
+.tag-search {
+    margin: 1.5% 1%;
+    border: 1px solid black;
+    border-radius: 0.5rem;
+    background-color: #242424;
+    color: white;
+    width: 30%;
+    height: 100%;
+}
+
+.article-tag-search-title {
+    margin: 10% 10% 5% 10%;
+    padding-bottom: 5%;
+    border-bottom: 3px solid white;
+    display: flex;
+}
+
+.article-tag-search-title h3 {
+    font-family: 'M PLUS 2', sans-serif;
+}
+
+.article-tag-search-title p {
+    margin: 1.5% 0 auto 10%;
+    color: gray;
+    font-family: 'Zen Dots', cursive;
+}
+
+.article-tag-search-form form {
+    margin: 5% 0%;
+}
+
+.article-tag-search-form a {
+    margin: 0 10%;
+    text-decoration: none;
+    color: white;
+    font-family: 'M PLUS 2', sans-serif;
 }
