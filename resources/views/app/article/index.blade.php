@@ -1,5 +1,11 @@
 @extends('layouts.app')
 
+<?php
+
+$tag_names = ['キリスト教','イスラム教','仏教','イエス','ブッダ','ムハンマド']
+
+?>
+
 @section('content')
     <div class="service-index">
         <div class="service-top">
@@ -34,6 +40,20 @@
                 </div>
             @endforeach
             <div class="article-pagination">{{ $articles->links() }}</div>
+        </div>
+
+        <div class="article-tag-search">
+            <div class="article-tag-search-title">
+                <h3>タグで検索</h3>
+            </div>
+            <div class="article-tag-search-form">
+                @for($i = 0; $i < 6; $i++)
+                    <form method="GET" name="keyword" action="{{ route('article.tag-search') }}">
+                        <input type="hidden" name="keyword" value="{{ $tag_names[$i] }}">
+                        <a href="javascript:keyword[{{ $i }}].submit()">{{ $tag_names[$i] }}</a>
+                    </form>
+                @endfor
+            </div>
         </div>
     </div>
 

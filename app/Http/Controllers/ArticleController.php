@@ -34,7 +34,24 @@ class ArticleController extends Controller
                 ->orWhere('body', 'LIKE', "%{$keyword}%");
         }
 
-        $articles = $query->get();
+        $articles = $query->paginate(20);
+
+        return view('app.article.index', compact('articles', 'keyword'));
+    }
+
+    public function tagSearch(Request $request)
+    {
+        $keyword = $request->input('keyword');
+        $query = Article::query();
+
+        if(!empty($keyword)) {
+            $query = Article::whereHas('tags', function ($query) use ($keyword) {
+                $query->where('name', 'LIKE', "%{$keyword}%");
+            });
+        }
+
+        $articles = $query->paginate(20);
+        $keyword = '';
 
         return view('app.article.index', compact('articles', 'keyword'));
     }
