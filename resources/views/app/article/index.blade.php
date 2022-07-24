@@ -20,8 +20,8 @@ $tag_names = ['キリスト教','イスラム教','仏教','イエス','ブッ�
             </div>
         </div>
 
-        <div class="articles-tag-search">
-            <div class="article">
+        <div class="articles-and-sidebar">
+            <div class="articles">
                 @foreach ($articles as $article)
                     <div class="article-wrapper">
                         <a href="/article/show/{{ $article->id }}">
@@ -42,20 +42,36 @@ $tag_names = ['キリスト教','イスラム教','仏教','イエス','ブッ�
                 @endforeach
             </div>
 
-            <div class="tag-search">
-                <div class="article-tag-search-title">
-                    <h3>タグで選ぶ</h3>
-                    <p>Tags</p>
+            <div class="article-sidebar">
+                <div class="article-tag-search">
+                    <div class="article-tag-search-title">
+                        <h3>タグで選ぶ</h3>
+                        <p>Tags</p>
+                    </div>
+                    <div class="article-tag-search-form">
+                        @for($i = 0; $i < 6; $i++)
+                            <form method="GET" name="keyword" action="{{ route('article.tag-search') }}">
+                                <input type="hidden" name="keyword" value="{{ $tag_names[$i] }}">
+                                <a href="javascript:keyword[{{ $i }}].submit()">{{ $tag_names[$i] }}</a>
+                            </form>
+                        @endfor
+                    </div>
                 </div>
-                <div class="article-tag-search-form">
-                    @for($i = 0; $i < 6; $i++)
-                        <form method="GET" name="keyword" action="{{ route('article.tag-search') }}">
-                            <input type="hidden" name="keyword" value="{{ $tag_names[$i] }}">
-                            <a href="javascript:keyword[{{ $i }}].submit()">{{ $tag_names[$i] }}</a>
-                        </form>
-                    @endfor
-                </div>
+                <div class="latest-articles">
+                        <div class="latest-articles-title">
+                            <h3>最新記事</h3>
+                            <p>New Topics</p>
+                        </div>
+                        @foreach ($latest_articles as $latest_article)
+                            <div class="latest-article">
+                                <img src="{{ Storage::url($latest_article->image) }}" alt="Card image cap">
+                                <h5>{{ $latest_article->title }}</h5>
+                            </div>
+                        @endforeach
+                    </div>
             </div>
+
+            
         </div>
 
         <div class="test">{{ $articles->links() }}</div>
