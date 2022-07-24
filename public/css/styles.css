@@ -379,7 +379,7 @@
     border-radius: 0.5rem;
     background-color: white;
     width: 45%;
-    margin: 2%;
+    margin: 1.5% 2.5%;
 }
 
 .article-wrapper a {
@@ -459,4 +459,9 @@
     text-decoration: none;
     color: white;
     font-family: 'M PLUS 2', sans-serif;
+}
+
+.test ul {
+    width: 75%;
+    justify-content: center;
 }
