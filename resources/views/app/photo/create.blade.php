@@ -1,49 +1,60 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1 class="text-center mt-2 mb-5">画像アップロード - 投稿画面</h1>
-    <div class="container mb-5">
-        <form action="{{ route('photo.store') }}" method="POST" enctype="multipart/form-data">
-            @csrf
-            <div class="form-group row">
-                <p class="col-sm-4 col-form-label">タイトル</p>
-                <div class="col-m-8">
-                    <input type="text" name="name" class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}" value="{{ old('name') }}">
-                    @if ($errors->has('name'))
-                        <div class="invalid-feedback">
-                            {{ $errors->first('name') }}
-                        </div>
-                    @endif
-                </div>
-            </div>
-            
-            <div class="form-group row">
-                <p class="col-sm-4 col-form-label">画像</p>
-                <div class="col-m-8">
-                    <input type="file" name="image" class="{{ $errors->has('image') ? 'is-invalid' : '' }}" value="{{ old('image') }}">
-                    @if ($errors->has('image'))
-                        <div class="invalid-feedback">
-                            {{ $errors->first('image') }}
-                        </div>
-                    @endif
-                </div>
-            </div>
+    <div class="service-index">
+        <div class="service-top">
+            <img src="/images/beach-g9fd94e74e_1920.jpg" alt="photo-top-image" class="service-top-image">
+            <h1>写真投稿 <span style="letter-spacing: -0.2em;">—</span> Post Photos<span style="letter-spacing: -0.2em;">—</span></h1>
+        </div>
 
-            <div class="form-group row">
-                <p class="col-sm-4 col-form-label">詳細</p>
-                <div class="col-m-8">
-                    <textarea name="description" class="form-control {{ $errors->has('description') ? 'is-invalid' : '' }}" value="{{ old('description') }}" cols="70" rows="5"></textarea>
-                    @if ($errors->has('description'))
-                        <div class="invalid-feedback">
-                            {{ $errors->first('description') }}
-                        </div>
-                    @endif
+        <div class="photo-create">
+            <div class="photo-create-form">
+                <div class="photo-create-form-title">
+                    <h3>写真投稿</h3>
                 </div>
+                <form action="{{ route('photo.store') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    <div class="form-group row">
+                        <p class="col-sm-2 col-form-label photo-create-form-item">タイトル</p>
+                        <div class="photo-create-form-input">
+                            <input type="text" name="name" class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}" value="{{ old('name') }}" size=61>
+                            @if ($errors->has('name'))
+                                <div class="invalid-feedback">
+                                    {{ $errors->first('name') }}
+                                </div>
+                            @endif
+                        </div>
+                    </div>
+                    
+                    <div class="form-group row">
+                        <p class="col-sm-2 col-form-label photo-create-form-item">画像</p>
+                        <div class="photo-create-form-input">
+                            <input type="file" name="image" class="{{ $errors->has('image') ? 'is-invalid' : '' }}" value="{{ old('image') }}">
+                            @if ($errors->has('image'))
+                                <div class="invalid-feedback">
+                                    {{ $errors->first('image') }}
+                                </div>
+                            @endif
+                        </div>
+                    </div>
+        
+                    <div class="form-group row">
+                        <p class="col-sm-2 col-form-label photo-create-form-item">詳細</p>
+                        <div class="photo-create-form-input">
+                            <textarea name="description" class="form-control {{ $errors->has('description') ? 'is-invalid' : '' }}" value="{{ old('description') }}" cols="60" rows="10"></textarea>
+                            @if ($errors->has('description'))
+                                <div class="invalid-feedback">
+                                    {{ $errors->first('description') }}
+                                </div>
+                            @endif
+                        </div>
+                    </div>
+        
+                    <div class="text-center photo-create-button">
+                        <button type="submit">アップロード</button>
+                    </div>
+                </form>
             </div>
-
-            <div class="text-center">
-                <input type="submit" value="アップロード">
-            </div>
-        </form>
+        </div>
     </div>
 @endsection

@@ -2,7 +2,6 @@
 
 @section('content')
     <div class="service-index">
-
         <div class="service-top">
             <img src="/images/beach-g9fd94e74e_1920.jpg" alt="photo-top-image" class="service-top-image">
             <h1>見る <span style="letter-spacing: -0.2em;">—</span> Photo<span style="letter-spacing: -0.2em;">—</span></h1>

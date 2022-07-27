@@ -26,7 +26,7 @@ class PhotoRequest extends FormRequest
         return [
             'name' => 'required|max:30',
             'image' => 'required',
-            'description' => 'max:80',
+            'description' => 'max:600',
         ];
     }
 
@@ -36,7 +36,7 @@ class PhotoRequest extends FormRequest
             'name.required' => '写真のタイトルを入力してください',
             'name.max' => '写真のタイトルは30文字以内で入力してください',
             'image.required' => '写真を選択してください',
-            'description.max' => '写真の説明は80文字以内で入力してください',
+            'description.max' => '写真の説明は600文字以内で入力してください',
         ];
     }
 }
