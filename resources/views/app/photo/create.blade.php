@@ -41,7 +41,7 @@
                     <div class="form-group row">
                         <p class="col-sm-2 col-form-label photo-create-form-item">詳細</p>
                         <div class="photo-create-form-input">
-                            <textarea name="description" class="form-control {{ $errors->has('description') ? 'is-invalid' : '' }}" value="{{ old('description') }}" cols="60" rows="10"></textarea>
+                            <textarea name="description" class="form-control {{ $errors->has('description') ? 'is-invalid' : '' }}" cols="60" rows="10">{{ old('description') }}</textarea>
                             @if ($errors->has('description'))
                                 <div class="invalid-feedback">
                                     {{ $errors->first('description') }}
