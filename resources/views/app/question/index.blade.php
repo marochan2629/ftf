@@ -1,20 +1,31 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1 class="text-center mt-2 mb-5">質問一覧</h1>
-    <div class="container">
-    <h1>一覧画面</h1>
-        @foreach ($questions as $question)
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                    <h5 class="card-title">{{ $question->title }}</h5>
-                    <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
-                    <p class="card-text">{{ $question->body }}</p>
-                    <!-- <a href="#" class="card-link">Card link</a>
-                    <a href="#" class="card-link">Another link</a> -->
-                </div>
+    <div class="service-index">
+        <div class="service-top">
+            <img src="/images/beach-g9fd94e74e_1920.jpg" alt="photo-top-image" class="service-top-image">
+            <h1>聞く <span style="letter-spacing: -0.2em;">—</span> Photo<span style="letter-spacing: -0.2em;">—</span></h1>
+    
+            <div class="service-search-form">
+                <form class="d-flex" action="{{ route('question.search') }}" method="GET">
+                    <input type="text" class="service-input" name="keyword"  placeholder="Search" value="{{ $keyword }}">
+                    <button type="submit" class="service-input"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
             </div>
-        @endforeach
+        </div>
+
+        <div class="articles-and-sidebar">
+            <div class="article-sidebar">
+                @foreach ($questions as $question)
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $question->title }}</h5>
+                            <p class="card-text">{{ $question->body }}</p>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
     </div>
 
 @endsection
