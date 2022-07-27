@@ -41,8 +41,8 @@ class QuestionController extends Controller
             return view('app.question.show', compact('question'));
     }
 
-    public function create() {
-
+    public function create()
+    {
         if (\Auth::guard('user')->check()) {
             return view('app.question.create');
         } else {
@@ -51,9 +51,8 @@ class QuestionController extends Controller
     }
 
     public function store(QuestionRequest $request)
-    {
+    {   
         $title = $request->title;
-        // dd($title);
         $body = $request->body;
         $user_id = Auth::id();
 
@@ -78,14 +77,7 @@ class QuestionController extends Controller
                     'user_id' => $user_id,
                 ]);
             }
-
-            // store処理が実行できたらDBに保存処理を実行
-            // if ($path) {
-                // DBに登録する処理
-            // }
         }
-
-        // dd('title');
 
         return redirect()->route('question.index');
     }
@@ -99,7 +91,7 @@ class QuestionController extends Controller
         }
     }
 
-    public function store_answer(Request $request, $id)
+    public function store_answer(QuestionRequest $request, $id)
     {
         $answer = $request->answer;
 

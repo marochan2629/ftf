@@ -20,10 +20,15 @@
         <form action="{{ route('answer.store', ['id' => $question->id]) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PATCH')
-             <div class="form-group row">
+            <div class="form-group row">
                 <p class="col-sm-2 col-form-label">回答</p>
                 <div class="col-sm-10">
-                    <textarea class="form-control" name="answer" id="answer" cols="100" rows="15"></textarea>
+                    <textarea class="form-control {{ $errors->has('answer') ? 'is-invalid' : '' }}" name="answer" id="answer" cols="100" rows="15">{{ old('answer') }}</textarea>
+                    @if ($errors->has('answer'))
+                        <div class="invalid-feedback">
+                            {{ $errors->first('answer') }}
+                        </div>
+                    @endif
                 </div>
             </div>
 

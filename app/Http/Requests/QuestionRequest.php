@@ -23,11 +23,18 @@ class QuestionRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            'title' => 'required|max:40',
-            'body' => 'required|max:4000',
-            'answer' => 'required|max:4000',
-        ];
+        $rules = [];
+
+        if (strpos($this->url(), 'question/create') !== false) {
+            $rules['title'] = 'required|max:40';
+            $rules['body'] = 'required|max:4000';
+        }
+
+        if (strpos($this->url(), 'question/answer') !== false) {
+            $rules['answer'] = 'required|max:4000';
+        }
+
+        return $rules;
     }
 
     public function messages()
@@ -37,6 +44,8 @@ class QuestionRequest extends FormRequest
             'title.max' => 'タイトルは40文字以内で入力してください',
             'body.required' => '本文を入力してください',
             'body.max' => '本文は4000文字以内で入力してください',
+            'answer.required' => '回答を入力してください',
+            'answer.max' => '本文は4000文字以内で入力してください',
         ];
     }
 }

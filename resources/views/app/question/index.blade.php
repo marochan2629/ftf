@@ -3,7 +3,7 @@
 @section('content')
     <div class="service-index">
         <div class="service-top">
-            <img src="/images/beach-g9fd94e74e_1920.jpg" alt="photo-top-image" class="service-top-image">
+            <img src="/images/buddhism-g799a2cde1_1920.jpg" alt="photo-top-image" class="service-top-image">
             <h1>聞く <span style="letter-spacing: -0.2em;">—</span> Photo<span style="letter-spacing: -0.2em;">—</span></h1>
     
             <div class="service-search-form">
@@ -14,7 +14,7 @@
             </div>
         </div>
 
-        <div class="articles-and-sidebar">
+        <div class="questions-and-sidebarP">
             <div class="article-sidebar">
                 @foreach ($questions as $question)
                     <div class="card" style="width: 18rem;">

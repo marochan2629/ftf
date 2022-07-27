@@ -46,17 +46,13 @@ class PhotoController extends Controller
 
     public function store(PhotoRequest $request)
     {
-        // dd($request);
-        // $user_id = Auth::id();
         $user_id = Auth::guard('user')->id();
         $associate_id = Auth::guard('associate')->id();
-        // dd($associate_id);
         $name = $request->name;
 
         // 画像フォームでリクエストした画像を取得
         $img = $request->file('image');
         $description = $request->description;
-        // dd($description);
 
         // 画像情報がセットされていれば、保存処理を実行
         if (isset($img)) {
