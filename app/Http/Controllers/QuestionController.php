@@ -15,7 +15,24 @@ class QuestionController extends Controller
     public function index()
     {
         $questions = Question::whereNotNull('answer')->get();
-        return view('app.question.index', compact('questions'));
+        $keyword = '';
+
+        return view('app.question.index', compact('questions', 'keyword'));
+    }
+
+    public function search(Request $request)
+    {
+        $keyword = $request->input('keyword');
+        $query = Question::query();
+
+        if(!empty($keyword)) {
+            $query->where('title', 'LIKE', "%{$keyword}%")
+                ->orWhere('body', 'LIKE', "%{$keyword}%");
+        }
+
+        $questions = $query->paginate(20);
+
+        return view('app.question.index', compact('questions', 'keyword'));
     }
 
     public function show($id)
@@ -32,10 +49,6 @@ class QuestionController extends Controller
             return redirect()->route('user.login');
         }
     }
-
-    // public function store() {
-    //     return view('app.question.create');
-    // }
 
     public function store(QuestionRequest $request)
     {
