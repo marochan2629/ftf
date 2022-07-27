@@ -295,18 +295,46 @@
 /* ユーザー・アソシエイト登録画面 */
 
 .register-form {
-    margin-top: 21%;
-    margin-bottom: 15%;
+    padding: 10% 0;
 }
 
-/* .register-header {
-    font-size: 2vw;
-} */
+/* 画像投稿画面 */
+.photo-create {
+    padding: 5% 5%;
+    margin: 5% 10%;
+    background: linear-gradient(#b29f86 0%, #b29f86 20.43%, #473f35 100%);
+}
 
-/* 写真一覧 */
+.photo-create-form {
+    padding: 7% 0;
+    background-color: rgba(255, 255, 255, .8);
+}
 
-.article-top {
-    padding-top: 10%;
+.photo-create-form-title {
+    text-align: center;
+    margin-bottom: 5%;
+    font-family: 'Osaka', 'Yu Gothic UI', 'ヒラギノ角ゴシック','Hiragino Sans', sans-serif;
+
+}
+
+
+.photo-create-form-item {
+    margin-left: 15%;
+    font-family: 'M PLUS 2', sans-serif;
+}
+
+.photo-create-form-input {
+    margin-left: 5%;
+}
+
+.photo-create-button button {
+    background-color: #355469;
+    color: white;
+    box-shadow: 6px 6px 5px rgb(0 0 0 / 16%) inset;
+    border: none;
+    height: 2.5vw;
+    width: 10vw;
+    font-family: 'M PLUS 2', sans-serif;
 }
 
 /* 画像一覧 */
