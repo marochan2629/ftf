@@ -17,14 +17,16 @@
         <div class="questions">
             @foreach ($questions as $question)
                 <div class="card question">
-                    <div class="card-body question-body">
-                        <div class="question-title">
-                            <h5 class="card-title">{{ $question->title }}</h5>
+                    <a href="/question/show/{{ $question->id }}">
+                        <div class="card-body question-body">
+                            <div class="question-title">
+                                <h5 class="card-title">{{ $question->title }}</h5>
+                            </div>
+                            <!-- <div class="question-body">
+                                <p class="card-text question-body">{{ $question->body }}</p>
+                            </div> -->
                         </div>
-                        <!-- <div class="question-body">
-                            <p class="card-text question-body">{{ $question->body }}</p>
-                        </div> -->
-                    </div>
+                    </a>
                 </div>
             @endforeach
         </div>
