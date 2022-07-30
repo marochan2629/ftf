@@ -630,3 +630,15 @@
     height: 100%;
     /* height: 10vw; */
 }
+
+.question-show-answer-wrapper {
+    margin: 5%;
+}
+
+.question-show-answer-wrapper h2 {
+    margin-bottom: 5%;
+}
+
+.question-show-answer {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+}
