@@ -14,17 +14,19 @@
             </div>
         </div>
 
-        <div class="questions-and-sidebarP">
-            <div class="article-sidebar">
-                @foreach ($questions as $question)
-                    <div class="card" style="width: 18rem;">
-                        <div class="card-body">
+        <div class="questions">
+            @foreach ($questions as $question)
+                <div class="card question">
+                    <div class="card-body question-body">
+                        <div class="question-title">
                             <h5 class="card-title">{{ $question->title }}</h5>
-                            <p class="card-text">{{ $question->body }}</p>
                         </div>
+                        <!-- <div class="question-body">
+                            <p class="card-text question-body">{{ $question->body }}</p>
+                        </div> -->
                     </div>
-                @endforeach
-            </div>
+                </div>
+            @endforeach
         </div>
     </div>
 
