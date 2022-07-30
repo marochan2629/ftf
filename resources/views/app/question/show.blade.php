@@ -5,23 +5,17 @@
         <div class="container mb-5">
             <div class="question-show-outer">
                 <div class="question-show-inner">
-                    <!-- <div class="form-group row"> -->
+                    <div class="question-show-question-wrapper">
                         <div class="col-sm-12 question-show-title">
                             <p>{{ $question->title }}</p>
                         </div>
-                    <!-- </div> -->
-                        
-                    <!-- <div class="form-group row">
-                        <p class="col-sm-2 col-form-label">質問 ー 本文</p> -->
+
                         <div class="col-sm-12 question-show-body">
                             <p>{!! nl2br(e($question->body)) !!}</p>
                         </div>
-                    <!-- </div> -->
-                </div>
-            </div>
+                    </div>
+                    
 
-            <div class="question-show-question-outer">
-                <div class="question-show-answer-inner">
                     <div class="form-group row">
                        <p class="col-sm-2 col-form-label">回答</p>
                        <div class="col-sm-10">
@@ -38,6 +32,12 @@
                        </div>
                    @endif
                 </div>
+                </div>
+            </div>
+
+            <div class="question-show-question-outer">
+                <div class="question-show-answer-inner">
+                    
             </div>
         </div>
     </div>
