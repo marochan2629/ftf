@@ -543,10 +543,15 @@
 }
 
 .question {
-    padding: 2%;
+    padding: 2.5%;
     width: 45%;
     margin: 1.5% 2.5%;
-    background-color: lightgreen;
+    background-color: #339999;
+}
+
+.question a {
+    text-decoration: none;
+    color: black;
 }
 
 .question-body {

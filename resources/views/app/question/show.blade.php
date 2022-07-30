@@ -13,14 +13,14 @@
         <div class="form-group row">
             <p class="col-sm-2 col-form-label">質問 ー 本文</p>
             <div class="col-sm-10">
-                <div>{{ $question->body }}</div>
+                <div>{!! nl2br(e($question->body)) !!}</div>
             </div>
         </div>
 
          <div class="form-group row">
             <p class="col-sm-2 col-form-label">回答</p>
             <div class="col-sm-10">
-                <div>{{ $question->answer }}</div>
+                <div>{!! nl2br(e($question->answer)) !!}</div>
             </div>
         </div>
 
