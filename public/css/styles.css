@@ -642,3 +642,8 @@
 .question-show-answer {
     font-family: 'M PLUS Rounded 1c', sans-serif;
 }
+
+.question-show-sup_image img {
+    margin-top: 5%;
+    width: 50%;
+}

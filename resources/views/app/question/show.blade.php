@@ -23,8 +23,10 @@
                         </div>
                
                        @if($question->sup_image)
-                            <div class="col-sm-12">
-                                <img src="{{ Storage::url($question->sup_image) }}" width="25%">
+                            <div class="col-sm-12 question-show-sup_image">
+                                <a href="{{ Storage::url($question->sup_image) }}" rel="lightbox">
+                                    <img src="{{ Storage::url($question->sup_image) }}" width="25%">
+                                </a>
                             </div>
                        @endif
                     </div>
