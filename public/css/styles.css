@@ -353,11 +353,9 @@
     right: 0%;
     top: 5%;
     object-fit: cover;
-    /* z-index: ; */
 }
 
 .service-index {
-    /* margin-top: 10%; */
     padding: 10% 3% 3% 3%;
 }
 
@@ -373,7 +371,6 @@
     background-color: transparent;
     border-bottom: black 1px solid;
     border-radius: 0;
-    
 }
 
 .service-input:-webkit-autofill {
@@ -532,6 +529,45 @@
 .latest-article h5 {
     width: 60%;
     margin: auto 0;
+}
+
+/* 記事詳細 */
+
+.article-show {
+    padding: 5% 0;
+    /* margin: 0; */
+    width: 50%;
+}
+
+.article-show-image {
+    /* text-align: center; */
+    margin: 5% auto;
+}
+
+.article-show-image img {
+    width: 100%;
+    /* height: 65%; */
+    object-fit: cover;
+}
+
+.article-show-title {
+    margin: 8% 0;
+}
+
+.article-show-title h1 {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 3em;
+}
+
+.article-show-title p {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 1.5em;
+}
+
+.article-show-body p {
+    font-family: YuGothic,'Yu Gothic','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3', sans-serif;
+
+    font-size: 1.25em;
 }
 
 /* 質問一覧画面 */
