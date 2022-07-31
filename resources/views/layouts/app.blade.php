@@ -54,6 +54,14 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('question.create') }}">
+                                        {{ __('質問を送る') }}
+                                    </a>
+
+                                    <a class="dropdown-item" href="{{ route('photo.create') }}">
+                                        {{ __('写真を投稿する') }}
+                                    </a>
+
                                     <a class="dropdown-item" href="{{ route('user.logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -108,9 +116,9 @@
                     </a>
                     <div class="footer-services">
                         <ul class="footer-service-list">
-                            <li><a href="#">読む</a></li>
-                            <li><a href="#">学ぶ</a></li>
-                            <li><a href="#">見る</a></li>
+                            <li><a href="/article/index">読む</a></li>
+                            <li><a href="/question/index">聞く</a></li>
+                            <li><a href="/photo/index">見る</a></li>
                         </ul>
                     </div>
                 </div>
