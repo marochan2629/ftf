@@ -34,29 +34,38 @@
                     <span class="like-counter">{{$article->likes_count}}</span>
                     </span><!-- /.likes -->
                 @endif
-                <div class="text-center">
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#commentModal" data-whatever={{ $article->title }}>コメントを投稿する</button>
-                </div>
             @else
                 <span class="likes">
                     <i class="fas fa-heart heart"></i>
                     <span class="like-counter">{{$article->likes_count}}</span>
                 </span><!-- /.likes -->
-                <div class="text-center">
-                    <a  href="/user/login">ログインしてコメントを投稿</a>
-                </div>
-                
-            @endguest
-    
+            @endif
+        </div>
+
+        <div class="article-show-comments">
+            <div class="article-show-comments-index">
+                <p><i class="fa-solid fa-comment-dots"></i>コメント（{{ $comments->count() }}）</p>
+            </div>
             @foreach($comments as $comment)
-                <div class="row">
+                <div class="row article-show-comment">
                     <p class="col-sm-2">{{ $comment->user->name }}</p>
-                    <p class="col-sm-10">{{ $comment->body }}</p>
+                    <p class="col-sm-10">{!! nl2br(e($comment->body)) !!}</p>
                 </div>
             @endforeach
 
+            @if(\Auth::guard('user')->check())
+                <div class="text-center article-show-comment-button">
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#commentModal" data-whatever={{ $article->title }}>コメントを投稿する</button>
+                </div>
+            @else
+                <div class="text-center">
+                    <a  href="/user/login">ログインしてコメントを投稿</a>
+                </div>
+            @endif
+        </div>
+        
 
-            <div class="modal fade" id="commentModal" tabindex="-1" role="dialog" aria-labelledby="commentModalLabel" aria-hidden="true">
+        <div class="modal fade" id="commentModal" tabindex="-1" role="dialog" aria-labelledby="commentModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <form action="{{ route('comment.store') }}" method="POST">
@@ -87,7 +96,6 @@
                     </div>
                 </div>
             </div>
-        </div>
     <!-- </div> -->
 @endsection
 
