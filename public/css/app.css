@@ -4532,9 +4532,6 @@ input[type=button].btn-block {
 }
 
 .navbar {
-  /* position: relative; */
-  /* background-color: #f6f6f3; */
-  font-family: 'Rubik Moonrocks', cursive;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
