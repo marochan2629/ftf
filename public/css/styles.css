@@ -395,6 +395,7 @@
     flex-shrink: 0;
     display: flex;
     flex-wrap: wrap;
+    align-content: flex-start;
     width: 75%;
 }
 

@@ -37,7 +37,9 @@ class ArticleController extends Controller
 
         $articles = $query->paginate(20);
 
-        return view('app.article.index', compact('articles', 'keyword'));
+        $latest_articles = Article::orderBy('id', 'desc')->take(5)->get();
+
+        return view('app.article.index', compact('articles', 'latest_articles', 'keyword'));
     }
 
     public function tagSearch(Request $request)
@@ -52,9 +54,10 @@ class ArticleController extends Controller
         }
 
         $articles = $query->paginate(20);
+        $latest_articles = Article::orderBy('id', 'desc')->take(5)->get();
         $keyword = '';
 
-        return view('app.article.index', compact('articles', 'keyword'));
+        return view('app.article.index', compact('articles', 'latest_articles', 'keyword'));
     }
 
     public function show($id)
