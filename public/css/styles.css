@@ -9,7 +9,6 @@
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap');
 
 /* トップ画面 */
-
 .top-page {
     background-color: #f6f6f3;
 }
@@ -57,9 +56,12 @@
     }
 }
 
-.main .catchphrase {
+.catchphrase {
     font-family: "YuKyokasho Yoko";
     font-size: 4vw;
+}
+
+.catchphrase2 {
     margin-bottom: 10vw;
 }
 
@@ -693,4 +695,9 @@
 .question-show-sup_image img {
     margin-top: 5%;
     width: 50%;
+}
+
+/* 質問投稿画面 */ 
+.question-create {
+    padding: 5% 0;
 }
