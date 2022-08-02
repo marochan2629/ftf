@@ -16,7 +16,7 @@
 
         <div class="card-columns" id="photo">
             @foreach ($photos as $photo)
-                    <div class="card">
+                    <div class="card photo-index-photo">
                         <a href="{{ Storage::url($photo->image) }}" rel="lightbox">
                             <img src="{{ Storage::url($photo->image) }}" width="100%">
                         </a>
