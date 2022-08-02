@@ -50,25 +50,20 @@
 
 <script>
     window.addEventListener('DOMContentLoaded', function(){
-        // 一旦各要素を透明にする
-        $("#catchphrase1").css({opacity:'0'});
-        $("#catchphrase2").css({opacity:'0'});
-        $("#title").css({opacity:'0'});
-
         // 最初の要素は画面を開いた直後にフェードイン
         setTimeout(function(){
-            $("#catchphrase1").stop().animate({opacity:'1'},1500);
+            $("#catchphrase1").animate({opacity:'1'},1500);
         }, 0)
 
         // 次の要素は少し後からフェードイン
         setTimeout(function(){
-            $("#catchphrase2").stop().animate({opacity:'1'},1500);
+            $("#catchphrase2").animate({opacity:'1'},1500);
         }, 1200)
 
         // 最後も同様に
         setTimeout(function(){
-            $("#title").stop().animate({opacity:'1'},1500);
-        }, 2400)
+            $("#title").animate({opacity:'1'},1500);
+        }, 2500)
         
     });
 </script>
