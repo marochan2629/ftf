@@ -17,6 +17,9 @@ Route::get('/', function () {
     return view('app.home');
 });
 
+// aboutページ
+Route::get('/about', 'MainController@about')->name('ftf.about');
+
 // 写真投稿関係
 Route::get('/photo/index', 'PhotoController@index')->name('photo.index');
 Route::get('/photo/index/search', 'PhotoController@search')->name('photo.search');

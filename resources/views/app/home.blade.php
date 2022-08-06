@@ -13,7 +13,7 @@
             <div class="main">
                 <h1 class="catchphrase catchphrase1" id="catchphrase1">宗教を知る</h1>
                 <h1 class="catchphrase catchphrase2" id="catchphrase2">宗教に向き合う</h1>
-                <a href="#" class="title" id="title">Face to Faith</a>
+                <a href="/about" class="title" id="title">Face to Faith</a>
             </div>
         </div>
 
