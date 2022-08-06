@@ -110,7 +110,7 @@
         <footer class="py-0 footer">
             <div class="footer-wrapper">
                 <div class="footer-main">
-                    <a class="footer-title" href="#">
+                    <a class="footer-title" href="/">
                         Face to Faith
                     </a>
                     <div class="footer-services">
@@ -124,8 +124,8 @@
 
                 <div class="footer-second">
                     <ul class="footer-detail">
-                        <li><a href="#">Face to Faithとは</a></li>
-                        <li><a href="#">プライバイシーポリシー</a></li>
+                        <li><a href="/about">Face to Faithとは</a></li>
+                        <li><a href="#">プライバシーポリシー</a></li>
                         <li><a href="#">企業情報</a></li>
                         <li><a href="#">お問い合わせ</a></li>
                     </ul>

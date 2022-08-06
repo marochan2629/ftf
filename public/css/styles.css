@@ -7,6 +7,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 
 /* トップ画面 */
 .top-page {
@@ -306,6 +307,131 @@
 
 .register-form {
     padding: 10% 0;
+}
+
+/* アバウトページ */
+.about {
+    padding-bottom: 5%;
+}
+
+.about-hero-image {
+    position: relative;
+    background-image: url("/images/japan-g9f509a5d8_1920.jpg");
+    background-position: center;
+    background-size: cover;
+    height: 45vw;
+}
+
+.about-hero-image-concept {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    /* text-align: center; */
+    color: white;
+    position: relative;
+}
+
+.about-hero-image-concept h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    font-size: 3.5vw;
+    font-family: 'Playfair Display', serif;
+}
+
+.about-hero-image-concept p {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    font-size: 1.5vw;
+    font-family: "YuKyokasho Yoko";
+}
+
+.about-hero-image img {
+    width: 100%;
+    height: 35vw;
+    object-fit: cover;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.about-main {
+    font-family: YuMincho;
+}
+
+.about-main-prologue {
+    margin: 5% 5% 10% 5%;
+    text-align: center;
+}
+
+.about-main-prologue-heading {
+    margin-bottom: 3%;
+}
+
+.about-main-prologue-content {
+    font-size: 1.25vw;
+}
+
+.row--split {
+    margin: 7% 5% 0 5%;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(30px);
+    transition: opacity 1s, visibility 1.5s, transform 1.5s;
+}
+
+.is-fadein {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+.row--split-heading {
+    width: 40%;
+}
+
+.row--split-content {
+    width: 60%;
+    font-size: 1.25vw;
+}
+
+.about-main-insert-image {
+    width: 50%;
+}
+
+.about-main-insert-image img {
+    width: 100%;
+}
+
+.about-main-insert-content {
+    width: 45%;
+    margin-right: 5%;
+    font-size: 1.25vw;
+}
+
+.about-main-insert-content p {
+    margin-top: 5%;
+}
+
+.about-main-profile-image {
+    width: 40%;
+}
+
+.about-main-profile-image img {
+    width: 100%;
+}
+
+.about-main-profile-carrier {
+    width: 50%;
+    margin: 0 5%;
+}
+
+.about-main-profile-carrier {
+    font-size: 1.25vw;
 }
 
 /* 画像投稿画面 */
