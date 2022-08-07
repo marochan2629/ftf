@@ -12,7 +12,7 @@ class LoginController extends Controller
 {
     use AuthenticatesUsers;
 
-    protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo = RouteServiceProvider::USER_HOME;
 
     public function __construct()
     {
@@ -28,6 +28,7 @@ class LoginController extends Controller
     // ログイン画面
     public function showLoginForm()
     {
+        session(['url.intended' => url()->previous()]);
         return view('user.auth.login');
     }
 
