@@ -15,12 +15,12 @@
 }
 
 .hero-images {
-    margin-top: 3.5%;
+    /* margin-top: 3.5%; */
 }
 
 @media screen and (max-width:767px) {
     .hero-images {
-        margin-top: 10%;
+        margin-top: 1.5%;
     }
 }
 
@@ -434,6 +434,20 @@
     font-size: 1.25vw;
 }
 
+/* プライバシーポリシー */
+
+.policy {
+    padding: 5% 0;
+}
+
+.policy-body {
+    margin: 5%;
+}
+
+.policy-title {
+    border-bottom: 3px solid #339999;
+}
+
 /* 画像投稿画面 */
 .photo-create {
     padding: 5% 5%;
@@ -676,7 +690,7 @@
 /* 記事詳細 */
 
 .article-show {
-    padding: 5% 0;
+    /* padding: 5% 0; */
     width: 50%;
 }
 
