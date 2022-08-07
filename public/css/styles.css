@@ -658,6 +658,11 @@
     margin-top: 15%;
 }
 
+.latest-articles a {
+    text-decoration: none;
+    color: black;
+}
+
 .latest-articles-title {
     padding-bottom: 3%;
     display: flex;
