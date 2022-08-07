@@ -103,7 +103,7 @@
             </div>
         </nav>
 
-        <main class="py-0" style="background-color:#f6f6f3;">
+        <main class="pt-5" style="background-color:#f6f6f3;">
             @yield('content')
         </main>
 
@@ -125,7 +125,7 @@
                 <div class="footer-second">
                     <ul class="footer-detail">
                         <li><a href="/about">Face to Faithとは</a></li>
-                        <li><a href="#">プライバシーポリシー</a></li>
+                        <li><a href="/policy">プライバシーポリシー</a></li>
                         <li><a href="#">企業情報</a></li>
                         <li><a href="#">お問い合わせ</a></li>
                     </ul>

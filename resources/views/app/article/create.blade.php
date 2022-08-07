@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1 class="text-center mt-2 mb-5">記事画面</h1>
-    <div class="container mb-5">
+    <h1 class="text-center mt-5 mb-5">記事画面</h1>
+    <div class="container pb-5">
         <form action="{{ route('article.store') }}" method="POST"  enctype="multipart/form-data">
             @csrf
             <div class="form-group row">

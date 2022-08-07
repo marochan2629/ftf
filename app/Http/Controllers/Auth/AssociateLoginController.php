@@ -26,6 +26,7 @@ class AssociateLoginController extends Controller
 
     public function showLoginForm()
     {
+        session(['url.intended' => url()->previous()]);
         return view('associate.auth.login');
     }
 

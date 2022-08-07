@@ -10,4 +10,9 @@ class MainController extends Controller
     {
         return view('app.about');
     }
+
+    public function policy()
+    {
+        return view('app.policy');
+    }
 }

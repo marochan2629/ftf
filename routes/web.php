@@ -20,6 +20,9 @@ Route::get('/', function () {
 // aboutページ
 Route::get('/about', 'MainController@about')->name('ftf.about');
 
+// プライバシーポリシー
+Route::get('/policy', 'MainController@policy')->name('ftf.policy');
+
 // 写真投稿関係
 Route::get('/photo/index', 'PhotoController@index')->name('photo.index');
 Route::get('/photo/index/search', 'PhotoController@search')->name('photo.search');
@@ -79,13 +82,6 @@ Route::prefix('user')->name('user.')->group(function () {
 // 管理者
 Route::prefix('associate')->name('associate.')->group(function () {
 
-    // ログイン認証関連
-    // Auth::routes([
-    //     'register' => true,
-    //     'reset'    => false,
-    //     'verify'   => false
-    // ]);
-
     Route::get('login', 'Auth\AssociateLoginController@showLoginForm')->name('login');
     Route::post('login', 'Auth\AssociateLoginController@login');
     Route::post('logout', 'Auth\AssociateLoginController@logout')->name('logout');
@@ -106,9 +102,3 @@ Route::prefix('associate')->name('associate.')->group(function () {
 
     });
 });
-
-// Route::get('/home', 'HomeController@index')->name('home');
-
-// Auth::routes();
-
-// Route::get('/home', 'HomeController@index')->name('home');
