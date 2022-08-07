@@ -448,6 +448,10 @@
     border-bottom: 3px solid #339999;
 }
 
+.policy-text h4 {
+    border-bottom: 1px solid #339999;
+}
+
 /* 画像投稿画面 */
 .photo-create {
     padding: 5% 5%;

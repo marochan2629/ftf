@@ -5,7 +5,7 @@
         <div class="card">
             <div class="card-body policy-body">
                 <h2 class="card-title policy-title">プライバシーポリシー</h2>
-                <div class="card-text">
+                <div class="card-text policy-text">
                     <br>
                     <h4>基本方針</h4>
                     <p>当サイトは、個人情報の重要性を認識し、個人情報を保護することが社会的責務であると考え、個人情報に関する法令を遵守し、当サイトで取扱う個人情報の取得、利用、管理を適正に行います。</p>
