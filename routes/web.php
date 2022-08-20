@@ -74,7 +74,10 @@ Route::prefix('user')->name('user.')->group(function () {
     Route::middleware('auth:user')->group(function () {
 
         // TOPページ
-        Route::resource('home', 'UserHomeController', ['only' => 'index']);
+        Route::resource('home', 'UserHomeController', ['only' => ['index', 'mypage']]);
+        // Route::get('/mypage', 'UserHomeController@mypage')->name('user.mypage');
+        // Route::view('mypage', 'app.mypage')->name('mypage');
+        Route::get('/show/{id}', 'UserHomeController@show')->name('mypage');
 
     });
 });
