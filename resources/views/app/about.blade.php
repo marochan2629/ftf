@@ -81,7 +81,7 @@
                 </p>
             </div>
             <div class="about-main-insert-image">
-                <img src="/images/suit-g156c1e88c_1920.jpg" alt="">
+                <img src="/images/IMG_1089.jpeg" alt="">
             </div>
         </div>
 

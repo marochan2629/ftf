@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\User;
+use App\Models\Like;
+use App\Models\Article;
 
 class UserHomeController extends Controller
 {
@@ -51,7 +54,16 @@ class UserHomeController extends Controller
      */
     public function show($id)
     {
-        //
+        $user = User::findOrFail($id);
+
+        $likes = Like::where('user_id', $id)->get();
+        $liked_articles = array();
+        foreach($likes as $like)
+        {
+            array_push($liked_articles, Article::find($like['article_id']));
+        }
+
+        return view('app.mypage', compact('user', 'liked_articles'));
     }
 
     /**
@@ -84,6 +96,11 @@ class UserHomeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
+    {
+        //
+    }
+
+    public function mypage($id)
     {
         //
     }

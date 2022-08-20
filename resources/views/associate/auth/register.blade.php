@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card register-form">
-                <div class="card-header"><i class="fa fa-pencil"></i>{{ __(' ユーザー登録') }}</div>
+                <div class="card-header"><i class="fa fa-pencil"></i>{{ __(' アソシエイト登録') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('associate.register') }}">

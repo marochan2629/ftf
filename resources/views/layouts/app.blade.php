@@ -61,6 +61,10 @@
                                         {{ __('写真を投稿する') }}
                                     </a>
 
+                                    <a class="dropdown-item" href="{{ route('user.mypage', auth()->user()) }}">
+                                        {{ __('マイページ') }}
+                                    </a>
+
                                     <a class="dropdown-item" href="{{ route('user.logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
