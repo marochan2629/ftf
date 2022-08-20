@@ -71,21 +71,15 @@
                         <form action="{{ route('comment.store') }}" method="POST">
                             @csrf
                             <div class="modal-body">
-                                <!-- <form action="{{ route('comment.store') }}" method="POST"> -->
-                                    <!-- <div class="form-group">
-                                        <label for="recipient-name" class="control-label">Recipient:</label>
-                                        <input type="text" class="form-control" id="recipient-name">
-                                    </div> -->
-                                    <div class="form-group">
-                                        <label for="message-text" class="control-label">コメント</label>
-                                        <textarea class="form-control {{ $errors->has('body') ? 'is-invalid' : '' }}" id="message-text" name="body"></textarea>
-                                        @if ($errors->has('body'))
-                                            <div class="invalid-feedback">
-                                                {{ $errors->first('body') }}
-                                            </div>
-                                        @endif
-                                    </div>
-                                <!-- </form> -->
+                                <div class="form-group">
+                                    <label for="message-text" class="control-label">コメント</label>
+                                    <textarea class="form-control {{ $errors->has('body') ? 'is-invalid' : '' }}" id="message-text" name="body"></textarea>
+                                    @if ($errors->has('body'))
+                                        <div class="invalid-feedback">
+                                            {{ $errors->first('body') }}
+                                        </div>
+                                    @endif
+                                </div>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-default" data-dismiss="modal">戻る</button>
@@ -106,7 +100,6 @@ window.addEventListener('DOMContentLoaded', function(){
         var recipient = button.data('whatever') //data-whatever の値を取得
 
         //Ajaxの処理はここに
-
         var modal = $(this)  //モーダルを取得
         modal.find('.modal-title').text('associateid:' + recipient) //モーダルのタイトルに値を表示
         modal.find('.modal-body input#recipient-name').val(recipient) //inputタグにも表示
