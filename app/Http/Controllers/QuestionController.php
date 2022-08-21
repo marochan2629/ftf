@@ -94,11 +94,10 @@ class QuestionController extends Controller
     public function store_answer(QuestionRequest $request, $id)
     {
         $answer = $request->answer;
-
         // 画像フォームでリクエストした画像を取得
         $sup_img = $request->sup_image;
 
-        // 画像情報がセットされていれば、保存処理を実行
+        // 回答がセットされていれば、保存処理を実行
         if (isset($answer)) {
             // storage > public > img配下に画像が保存される
             if(isset($sup_img)) {

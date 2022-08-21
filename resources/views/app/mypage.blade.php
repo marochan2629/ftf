@@ -38,6 +38,7 @@
                             プロフィール更新
                         </button>
                     </div>
+
                     <div class="content-wrap mypage-profile-liked-articles">
                         <h4>いいね！した記事</h4>
                         <div class="content-txt mypage-profile-cards js-accordion">
@@ -57,6 +58,7 @@
                             <p class="opener">もっと見る</p>
                         </div>
                     </div>
+
                     <div class="content-wrap mypage-profile-questions">
                         <h4>送った質問</h4>
                         <div class="content-txt mypage-profile-cards">
@@ -74,6 +76,7 @@
                             <p class="opener">もっと見る</p>
                         </div>
                     </div>
+                    
                     <div class="content-wrap mypage-photos">
                         <h4>投稿した写真</h4>
                         <div class="content-txt mypage-profile-cards">
@@ -91,18 +94,6 @@
                     </div>
                 </div>
             </div>
-            <div class="mypage-likes">
-    
-            </div>
-            <div class="mypage-comments">
-    
-            </div>
-            <div class="mypage-questions">
-    
-            </div>
-            <div class="mypage-photos">
-    
-            </div>
         </div>
     </div>
 
@@ -115,64 +106,67 @@
                     <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form action="{{ route('user.mypage.update', auth()->user()) }}" method="PATCH">
-                    @csrf
-                    <div class="form-group row">
-                        <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('名前') }}</label>
-                        <div class="col-md-6">
-                            <input id="name" type="text" class="form-control" name="name" required autocomplete="name" autofocus value="{{ $user->name }}">
+                <div class="modal-body">
+                    <form action="{{ route('user.mypage.update', auth()->user()) }}" method="POST">
+                        @csrf
+                        @method('PATCH')
+                        <div class="form-group row">
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('名前') }}</label>
+                            <div class="col-md-6">
+                                <input id="name" type="text" class="form-control" name="name" required autocomplete="name" autofocus value="{{ $user->name }}">
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="form-group row">
-                        <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('メールアドレス') }}</label>
-                        <div class="col-md-6">
-                            <input id="email" type="email" class="form-control" name="email" required autocomplete="email" value="{{ $user->email }}">
+    
+                        <div class="form-group row">
+                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('メールアドレス') }}</label>
+                            <div class="col-md-6">
+                                <input id="email" type="email" class="form-control" name="email" required autocomplete="email" value="{{ $user->email }}">
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="form-group row">
-                        <label for="age" class="col-md-4 col-form-label text-md-right">{{ __('年齢') }}</label>
-                        <div class="col-md-6">
-                            <input id="age" type="age" class="form-control" name="age" required autocomplete="age" value="{{ $user->age }}">
+    
+                        <div class="form-group row">
+                            <label for="age" class="col-md-4 col-form-label text-md-right">{{ __('年齢') }}</label>
+                            <div class="col-md-6">
+                                <input id="age" type="age" class="form-control" name="age" required autocomplete="age" value="{{ $user->age }}">
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="form-group row">
-                        <label for="religion" class="col-md-4 col-form-label text-md-right">{{ __('宗教') }}</label>
-                        <div class="col-md-6">
-                            <select class="form-control" id="religion" name="religion">
-                                @foreach (config('religion.religions') as $key => $value)
-                                    @if($value == $user->religion)
-                                        <option value="{{ $value }}" selected>{{ $value }}</option>
-                                    @else
-                                    <option value="{{ $value }}">{{ $value }}</option>
-                                    @endif
-                                @endforeach
-                            </select>
+    
+                        <div class="form-group row">
+                            <label for="religion" class="col-md-4 col-form-label text-md-right">{{ __('宗教') }}</label>
+                            <div class="col-md-6">
+                                <select class="form-control" id="religion" name="religion">
+                                    @foreach (config('religion.religions') as $key => $value)
+                                        @if($value == $user->religion)
+                                            <option value="{{ $value }}" selected>{{ $value }}</option>
+                                        @else
+                                            <option value="{{ $value }}">{{ $value }}</option>
+                                        @endif
+                                    @endforeach
+                                </select>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="form-group row">
-                        <label for="country" class="col-md-4 col-form-label text-md-right">{{ __('国籍') }}</label>
-                        <div class="col-md-6">
-                            <select class="form-control" id="country" name="country">
-                                @foreach (config('country.countries') as $key => $value)
-                                    @if($value == $user->country)
-                                        <option value="{{ $value }}" selected>{{ $value }}</option>
-                                    @else
-                                        <option value="{{ $value }}">{{ $value }}</option>
-                                    @endif
-                                @endforeach
-                            </select>
+    
+                        <div class="form-group row">
+                            <label for="country" class="col-md-4 col-form-label text-md-right">{{ __('国籍') }}</label>
+                            <div class="col-md-6">
+                                <select class="form-control" id="country" name="country">
+                                    @foreach (config('country.countries') as $key => $value)
+                                        @if($value == $user->country)
+                                            <option value="{{ $value }}" selected>{{ $value }}</option>
+                                        @else
+                                            <option value="{{ $value }}">{{ $value }}</option>
+                                        @endif
+                                    @endforeach
+                                </select>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">戻る</button>
-                        <input type="submit" id="comment_submit" class="btn btn-primary" value='投稿' disabled>
-                    </div>
-                </form>
+    
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">戻る</button>
+                            <input type="submit" id="profile_submit" class="btn btn-primary" value='投稿' disabled>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
@@ -198,9 +192,9 @@
                 var emailInput = $('input[name="email"]').val(); //メールアドレス入力欄に入力された文字を取得
                 var ageInput = $('input[name="age"]').val(); //年齢入力欄に入力された文字を取得
                 if(nameInput && emailInput && ageInput){ //もしそれぞれの入力欄に文字が入っていれば
-                    $("#comment_submit").prop('disabled', false); //disabled を無効にする＝ボタンが押せる
+                    $("#profile_submit").prop('disabled', false); //disabled を無効にする＝ボタンが押せる
                 }else{
-                    $("#comment_submit").prop('disabled', true); //disabled を有効にする＝ボタンが押せない
+                    $("#profile_submit").prop('disabled', true); //disabled を有効にする＝ボタンが押せない
                 }
             });
         })
