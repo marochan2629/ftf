@@ -61,7 +61,7 @@
                                         {{ __('写真を投稿する') }}
                                     </a>
 
-                                    <a class="dropdown-item" href="{{ route('user.mypage', auth()->user()) }}">
+                                    <a class="dropdown-item" href="{{ route('user.mypage', Auth::guard('user')->user()->id) }}">
                                         {{ __('マイページ') }}
                                     </a>
 
@@ -83,6 +83,10 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('associate.mypage', Auth::guard('associate')->user()->id) }}">
+                                        {{ __('マイページ') }}
+                                    </a>
+
                                     <a class="dropdown-item" href="{{ route('associate.logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -132,6 +136,7 @@
                         <li><a href="/policy">プライバシーポリシー</a></li>
                         <li><a href="#">企業情報</a></li>
                         <li><a href="#">お問い合わせ</a></li>
+                        <li><a href="/associate/login">FTFアソシエイトはこちら</a></li>
                     </ul>
                 </div>
             </div>

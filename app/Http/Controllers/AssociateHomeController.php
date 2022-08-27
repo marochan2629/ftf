@@ -51,7 +51,18 @@ class AssociateHomeController extends Controller
      */
     public function show($id)
     {
-        //
+        // $user = User::findOrFail($id);
+
+        // $likes = Like::where('user_id', $id)->get();
+        // $liked_articles = array();
+        // foreach($likes as $like)
+        // {
+        //     array_push($liked_articles, Article::find($like['article_id']));
+        // }
+
+        // return view('app.mypage', compact('user', 'liked_articles'));
+
+        return view('app.associate_mypage');
     }
 
     /**
