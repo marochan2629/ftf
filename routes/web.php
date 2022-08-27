@@ -73,9 +73,10 @@ Route::prefix('user')->name('user.')->group(function () {
     // ログイン認証後
     Route::middleware('auth:user')->group(function () {
 
-        // UserHomeControllerってログイン認証しないと使えないの？別にログインしないでもよくない？
         Route::resource('home', 'UserHomeController', ['only' => ['index', 'show', 'update']]);
         Route::get('/show/{id}', 'UserHomeController@show')->name('mypage');
+
+        // UserHomeControllerってログイン認証しないと使えないの？別にログインしないでもよくない？
         Route::patch('/show/{id}', 'UserHomeController@update')->name('mypage.update');
 
     });

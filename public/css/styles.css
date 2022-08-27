@@ -419,8 +419,15 @@
     color: black;
 }
 
-.content-wrap {
+.content-wrap-default {
     height: 450px;
+    overflow: hidden;
+    position: relative;
+    margin: 0 0 5% 0;
+}
+
+.content-wrap-alternative {
+    height: 100%;
     overflow: hidden;
     position: relative;
     margin: 0 0 5% 0;
