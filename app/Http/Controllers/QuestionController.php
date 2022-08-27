@@ -43,11 +43,7 @@ class QuestionController extends Controller
 
     public function create()
     {
-        if (\Auth::guard('user')->check()) {
-            return view('app.question.create');
-        } else {
-            return redirect()->route('user.login');
-        }
+        return view('app.question.create');
     }
 
     public function store(QuestionRequest $request)

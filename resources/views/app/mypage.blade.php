@@ -33,15 +33,16 @@
                             コードが長くなるので改行したよ。ブラウザで見ると改行されないので見る人には関係ないけどね。
                         </p>
                     </div>
-                    <div class="mypage-profile-update">
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#profileUpdate">
-                            プロフィール更新
-                        </button>
-                    </div>
-
-                    <div class="content-wrap mypage-profile-liked-articles">
+                    @if(\Auth::id() == $user->id)
+                        <div class="mypage-profile-update">
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#profileUpdate">
+                                プロフィール更新
+                            </button>
+                        </div>
+                    @endif
+                    <div class="content-wrap-default mypage-profile-liked-articles">
                         <h4>いいね！した記事</h4>
-                        <div class="content-txt mypage-profile-cards js-accordion">
+                        <div class="content-txt mypage-profile-cards">
                             @foreach($liked_articles as $liked_article)
                                 <div class="card mypage-profile-card mypage-profile-liked-article">
                                     <a href="{{ route('article.show', $liked_article->id) }}">
@@ -54,12 +55,16 @@
                                 </div>
                             @endforeach
                         </div>
-                        <div class="more-btn">
-                            <p class="opener">もっと見る</p>
-                        </div>
+                        @if(count($liked_articles) >= 4)
+                            <div class="more-btn more-liked">
+                                <p class="opener">もっと見る</p>
+                            </div>
+                        @elseif(count($liked_articles) == 0)
+                            <p>いいね！した記事がありません</p>
+                        @endif
                     </div>
 
-                    <div class="content-wrap mypage-profile-questions">
+                    <div class="content-wrap-default mypage-profile-questions">
                         <h4>送った質問</h4>
                         <div class="content-txt mypage-profile-cards">
                             @foreach($user->questions as $question)
@@ -72,12 +77,16 @@
                                 </div>
                             @endforeach
                         </div>
-                        <div class="more-btn">
-                            <p class="opener">もっと見る</p>
-                        </div>
+                        @if(count($user->questions) >= 4)
+                            <div class="more-btn more-questions">
+                                <p class="opener">もっと見る</p>
+                            </div>
+                        @elseif(count($user->questions) == 0)
+                            <p>まだ質問していません</p>
+                        @endif
                     </div>
-                    
-                    <div class="content-wrap mypage-photos">
+
+                    <div class="content-wrap-default mypage-profile-photos">
                         <h4>投稿した写真</h4>
                         <div class="content-txt mypage-profile-cards">
                             @foreach($user->photos as $photo)
@@ -88,9 +97,13 @@
                                 </div>
                             @endforeach
                         </div>
-                        <div class="more-btn">
-                            <p class="opener">もっと見る</p>
-                        </div>
+                        @if($user->photos->count() >= 4)
+                            <div class="more-btn more-photos">
+                                <p class="opener">もっと見る</p>
+                            </div>
+                        @elseif($user->photos->count() == 0)
+                            <p>まだ写真を投稿していません</p>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -107,7 +120,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="{{ route('user.mypage.update', auth()->user()) }}" method="POST">
+                    <form action="{{ route('user.mypage.update', $user->id) }}" method="POST">
                         @csrf
                         @method('PATCH')
                         <div class="form-group row">
@@ -163,7 +176,7 @@
     
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">戻る</button>
-                            <input type="submit" id="profile_submit" class="btn btn-primary" value='投稿' disabled>
+                            <input type="submit" id="profile_submit" class="btn btn-primary" value='更新' disabled>
                         </div>
                     </form>
                 </div>
@@ -179,14 +192,12 @@
                 if( $(this).children().is('.opener') ) {
                     $(this).html('<p class="closer">閉じる</p>').addClass('close-btn');
                     $(this).parent().removeClass('slide-up').addClass('slide-down');
-                    } else {
+                } else {
                     $(this).html('<p class="opener">もっと見る</p>').removeClass('close-btn');
                     $(this).parent().removeClass('slide-down').addClass('slide-up');
                 }
             });
-        });
 
-        $(function() {
             $(document).on('input', function() {
                 var nameInput = $('input[name="name"]').val(); //名前入力欄に入力された文字を取得
                 var emailInput = $('input[name="email"]').val(); //メールアドレス入力欄に入力された文字を取得
@@ -197,6 +208,21 @@
                     $("#profile_submit").prop('disabled', true); //disabled を有効にする＝ボタンが押せない
                 }
             });
-        })
+
+            if (!$('.mypage-profile-liked-articles').find('.more-liked').length > 0) {
+                $('.mypage-profile-liked-articles').removeClass('content-wrap-default').addClass('content-wrap-alternative');
+                console.log('OK');
+            }
+            
+            if(!$('.mypage-profile-questions').find('.more-questions').length > 0) {
+                $('.mypage-profile-questions').removeClass('content-wrap-default').addClass('content-wrap-alternative');
+                console.log('OK');
+            }
+
+            if(!$('.mypage-profile-photos').find('.more-photos').length > 0) {
+                $('.mypage-profile-photos').removeClass('content-wrap-default').addClass('content-wrap-alternative');
+                console.log('OK');
+            }
+        });
     });
 </script>
