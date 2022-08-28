@@ -103,7 +103,7 @@ Route::prefix('associate')->name('associate.')->group(function () {
 
         // TOPページ
         Route::resource('home', 'AssociateHomeController', ['only' => 'index']);
-        Route::patch('/show/{id}', 'UserHomeController@update')->name('mypage.update');
+        Route::patch('/show/{id}', 'AssociateHomeController@update')->name('mypage.update');
 
     });
 });
