@@ -13,12 +13,10 @@ class Authenticate extends Middleware
     protected function redirectTo($request)
     {
         // ルーティングに応じて未ログイン時のリダイレクト先を振り分ける
-        if (!$request->expectsJson()) {
-            if (Route::is('user.*')) {
-                return route($this->user_route);
-            } elseif (Route::is('associate.*')) {
-                return route($this->associate_route);
-            }
+        if (Route::is('photo.create', 'question.create')) {
+            return route($this->user_route);
+        } elseif (Route::is('article.create', 'answer.create' ,'unanswered.questions')) {
+            return route($this->associate_route);
         }
     }
 }

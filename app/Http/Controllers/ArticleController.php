@@ -68,11 +68,7 @@ class ArticleController extends Controller
     }
 
     public function create() {
-        if (\Auth::guard('associate')->check()) {
-            return view('app.article.create');
-        } else {
-            return redirect()->route('associate.login');
-        }
+        return view('app.article.create');
     }
 
     public function store(ArticleRequest $request)
