@@ -26,7 +26,7 @@ Route::get('/policy', 'MainController@policy')->name('ftf.policy');
 // 写真投稿関係
 Route::get('/photo/index', 'PhotoController@index')->name('photo.index');
 Route::get('/photo/index/search', 'PhotoController@search')->name('photo.search');
-Route::get('/photo/create', 'PhotoController@create')->name('photo.create');
+Route::middleware('auth:user,associate')->get('/photo/create', 'PhotoController@create')->name('photo.create');
 Route::post('/photo/confirm', 'PhotoController@store')->name('photo.store');
 
 // 質問関係
@@ -41,8 +41,9 @@ Route::get('/question/show/{id}', function($id) {
         return view('app.question.show', compact('question'));
     }
 })->name('question.show');
-Route::get('/question/create', 'QuestionController@create')->name('question.create');
+Route::middleware('auth:user')->get('/question/create', 'QuestionController@create')->name('question.create');
 Route::post('/question/create', 'QuestionController@store')->name('question.store');
+Route::middleware('auth:associate')->get('/question/unanswered', 'QuestionController@unanswered')->name('unanswered.questions');
 
 // 回答関係
 Route::get('/question/answer/{id}', 'QuestionController@create_answer')->name('answer.create');
@@ -54,7 +55,7 @@ Route::get('/article/index/search', 'ArticleController@search')->name('article.s
 Route::get('/article/index/tag-search', 'ArticleController@tagSearch')->name('article.tag-search');
 Route::get('/article/show/{id}', 'ArticleController@show')->name('article.show');
 Route::post('/article/show/{id}', 'ArticleController@like')->name('article.like');
-Route::get('/article/create', 'ArticleController@create')->name('article.create');
+Route::middleware('auth:associate')->get('/article/create', 'ArticleController@create')->name('article.create');
 Route::post('/article/create', 'ArticleController@store')->name('article.store');
 
 // コメント関係

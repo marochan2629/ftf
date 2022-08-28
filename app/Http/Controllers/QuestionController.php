@@ -38,7 +38,7 @@ class QuestionController extends Controller
     public function show($id)
     {
         $question = Question::findOrFail($id);
-            return view('app.question.show', compact('question'));
+        return view('app.question.show', compact('question'));
     }
 
     public function create()
@@ -110,5 +110,11 @@ class QuestionController extends Controller
         }
 
         return redirect()->route('question.index');
+    }
+
+    public function unanswered()
+    {
+        $questions = Question::whereNull('answer')->get();
+        dd($questions);
     }
 }
