@@ -87,6 +87,10 @@
                                         {{ __('マイページ') }}
                                     </a>
 
+                                    <a class="dropdown-item" href="{{ route('photo.create') }}">
+                                        {{ __('写真を投稿する') }}
+                                    </a>
+
                                     <a class="dropdown-item" href="{{ route('associate.logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
