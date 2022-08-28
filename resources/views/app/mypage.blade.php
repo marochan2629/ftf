@@ -12,6 +12,7 @@
                         <div class="mypage-profile-icon">
                             <img src="/images/cat-g06fa9aedb_1920.jpg" alt="">
                         </div>
+
                         <div class="mypage-profile-detail">
                             <div class="mypage-profile-name">
                                 <h2>{{ $user->name }}（{{ $user->age }}）</h2>
@@ -26,13 +27,16 @@
                                 <h6>メールアドレス　/　{{ $user->email }}</h6>
                             </div>
                         </div>
+                        
                     </div>
+
                     <div class="mypage-profile-self-introduction">
                         <p>
                             usersテーブルに自己紹介をするカラムを追加してここに表示させる予定です。何文字に制限するかわかりませんが今は適当に入力しておきます。ああお腹すいた何食べようかな家に帰って作るのもめんどいけど買うとお金かかるしどうしようかなあああ塊魂したいな
                             コードが長くなるので改行したよ。ブラウザで見ると改行されないので見る人には関係ないけどね。
                         </p>
                     </div>
+
                     @if(\Auth::id() == $user->id)
                         <div class="mypage-profile-update">
                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#profileUpdate">
@@ -40,6 +44,7 @@
                             </button>
                         </div>
                     @endif
+
                     <div class="content-wrap-default mypage-profile-liked-articles">
                         <h4>いいね！した記事</h4>
                         <div class="content-txt mypage-profile-cards">

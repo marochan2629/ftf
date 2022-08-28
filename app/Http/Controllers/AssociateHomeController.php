@@ -4,14 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Models\Associate;
 
 class AssociateHomeController extends Controller
 {
 
-    public function __construct()
-    {
-        $this->middleware('auth:associate');
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('auth:associate');
+    // }
     /**
      * Display a listing of the resource.
      *
@@ -51,18 +53,10 @@ class AssociateHomeController extends Controller
      */
     public function show($id)
     {
-        // $user = User::findOrFail($id);
+        $auth_associate = Auth::guard('associate')->user();
+        $associate = Associate::findOrFail($id);
 
-        // $likes = Like::where('user_id', $id)->get();
-        // $liked_articles = array();
-        // foreach($likes as $like)
-        // {
-        //     array_push($liked_articles, Article::find($like['article_id']));
-        // }
-
-        // return view('app.mypage', compact('user', 'liked_articles'));
-
-        return view('app.associate_mypage');
+        return view('app.associate_mypage', compact('associate', 'auth_associate'));
     }
 
     /**
