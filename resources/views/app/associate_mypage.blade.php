@@ -41,11 +41,11 @@
                         </div>
                     @endif
 
-                    <div class="content-wrap-default mypage-profile-liked-articles">
-                        <h4>送った質問</h4>
+                    <div class="content-wrap-default mypage-profile-articles">
+                        <h4>作成した記事</h4>
                         <div class="content-txt mypage-profile-cards">
                             @foreach($associate->articles as $article)
-                                <div class="card mypage-profile-card mypage-profile-liked-article">
+                                <div class="card mypage-profile-card mypage-profile-article">
                                     <a href="{{ route('article.show', $article->id) }}">
                                         <img class="card-img-top" src="{{ Storage::url($article->image) }}" alt="Card image cap">
                                         <div class="card-body">
@@ -57,7 +57,7 @@
                             @endforeach
                         </div>
                         @if(count($associate->articles) >= 4)
-                            <div class="more-btn more-questions">
+                            <div class="more-btn more-articles">
                                 <p class="opener">もっと見る</p>
                             </div>
                         @elseif(count($associate->articles) == 0)
@@ -188,7 +188,7 @@
                 }
             });
 
-            if (!$('.mypage-profile-articles').find('.more-liked').length > 0) {
+            if (!$('.mypage-profile-articles').find('.more-articles').length > 0) {
                 $('.mypage-profile-articles').removeClass('content-wrap-default').addClass('content-wrap-alternative');
                 console.log('OK');
             }

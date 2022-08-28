@@ -216,17 +216,14 @@
 
             if (!$('.mypage-profile-liked-articles').find('.more-liked').length > 0) {
                 $('.mypage-profile-liked-articles').removeClass('content-wrap-default').addClass('content-wrap-alternative');
-                console.log('OK');
             }
             
             if(!$('.mypage-profile-questions').find('.more-questions').length > 0) {
                 $('.mypage-profile-questions').removeClass('content-wrap-default').addClass('content-wrap-alternative');
-                console.log('OK');
             }
 
             if(!$('.mypage-profile-photos').find('.more-photos').length > 0) {
                 $('.mypage-profile-photos').removeClass('content-wrap-default').addClass('content-wrap-alternative');
-                console.log('OK');
             }
         });
     });
