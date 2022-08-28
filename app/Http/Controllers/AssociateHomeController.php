@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Associate;
+use Illuminate\Validation\Rule;
 
 class AssociateHomeController extends Controller
 {
@@ -79,7 +80,29 @@ class AssociateHomeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', Rule::unique('associates')->ignore($id)],
+            'age' => ['required', 'integer', 'between:0, 130'],
+            'religion' => ['string'],
+            'country' => ['string'],
+        ]);
+
+        $name = $request->name;
+        $email = $request->email;
+        $age = $request->age;
+        $religion = $request->religion;
+        $country = $request->country;
+
+        Associate::where('id', $id)->update([
+            'name' => $name,
+            'email' => $email,
+            'age' => $age,
+            'religion' => $religion,
+            'country' => $country,
+        ]);
+
+        return redirect()->route('associate.mypage', $id);
     }
 
     /**
