@@ -4,7 +4,7 @@
     <div class="service-index">
         <div class="service-top">
             <img src="/images/buddhism-g799a2cde1_1920.jpg" alt="photo-top-image" class="service-top-image">
-            <h1>聞く <span style="letter-spacing: -0.2em;">—</span> Questions<span style="letter-spacing: -0.2em;">—</span></h1>
+            <h1>未回答の質問 <span style="letter-spacing: -0.2em;">—</span> Unanswered<span style="letter-spacing: -0.2em;">—</span></h1>
     
             <div class="service-search-form">
                 <form class="d-flex" action="{{ route('question.search') }}" method="GET">
