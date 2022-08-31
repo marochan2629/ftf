@@ -115,6 +115,7 @@ class QuestionController extends Controller
     public function unanswered()
     {
         $questions = Question::whereNull('answer')->get();
-        dd($questions);
+        $keyword = '';
+        return view('app.question.unanswered', compact('questions', 'keyword'));
     }
 }

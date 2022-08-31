@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Question;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,10 +35,11 @@ Route::get('/question/index', 'QuestionController@index')->name('question.index'
 Route::get('/question/index/search', 'QuestionController@search')->name('question.search');
 Route::get('/question/show/{id}', function($id) {
     $question = Question::findOrFail($id);
-    if (!$question->answer) {
+    if (!$question->answer && Auth::guard('associate')->id() == null) {
         abort(403, '未回答の質問です');
+    } elseif(!$question->answer && Auth::guard('associate')->id() !== null) {
+        return view('app.question.create_answer', compact('question'));
     } else {
-        $question = Question::findOrFail($id);
         return view('app.question.show', compact('question'));
     }
 })->name('question.show');
