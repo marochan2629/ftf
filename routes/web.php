@@ -48,7 +48,7 @@ Route::post('/question/create', 'QuestionController@store')->name('question.stor
 Route::middleware('auth:associate')->get('/question/unanswered', 'QuestionController@unanswered')->name('unanswered.questions');
 
 // 回答関係
-Route::get('/question/answer/{id}', 'QuestionController@create_answer')->name('answer.create');
+Route::middleware('auth:associate')->get('/question/answer/{id}', 'QuestionController@create_answer')->name('answer.create');
 Route::patch('/question/answer/{id}', 'QuestionController@store_answer')->name('answer.store');
 
 // 記事関係
@@ -61,7 +61,7 @@ Route::middleware('auth:associate')->get('/article/create', 'ArticleController@c
 Route::post('/article/create', 'ArticleController@store')->name('article.store');
 
 // コメント関係
-Route::post('/comment/store', 'CommentController@store')->name('comment.store');
+Route::middleware('auth:user')->post('/comment/store', 'CommentController@store')->name('comment.store');
 
 // ユーザー
 Route::prefix('user')->name('user.')->group(function () {

@@ -78,13 +78,10 @@ class QuestionController extends Controller
         return redirect()->route('question.index');
     }
 
-    public function create_answer($id) {
-        if (\Auth::guard('associate')->check()) {
-            $question = Question::findOrFail($id);
-            return view('app.question.create_answer', compact('question'));
-        } else {
-            return redirect()->route('associate.login');
-        }
+    public function create_answer($id)
+    {
+        $question = Question::findOrFail($id);
+        return view('app.question.create_answer', compact('question'));
     }
 
     public function store_answer(QuestionRequest $request, $id)

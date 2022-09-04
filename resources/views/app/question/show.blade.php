@@ -17,7 +17,6 @@
                     
                     <div class="question-show-answer-wrapper">
                         <h2>Answer</h2>
-                        <!-- <br> -->
                         <div class="col-sm-12 question-show-answer">
                             <div>{!! nl2br(e($question->answer)) !!}</div>
                         </div>
@@ -32,11 +31,6 @@
                     </div>
                 </div>
                 </div>
-            </div>
-
-            <div class="question-show-question-outer">
-                <div class="question-show-answer-inner">
-                    
             </div>
         </div>
     </div>
