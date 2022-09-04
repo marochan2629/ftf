@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
     return view('app.home');
-});
+})->name('top');
 
 // aboutページ
 Route::get('/about', 'MainController@about')->name('ftf.about');

@@ -14,10 +14,12 @@
     background-color: #f6f6f3;
 }
 
-@media screen and (max-width:767px) {
-    .hero-images {
-        margin-top: 1.5%;
-    }
+.flash-message {
+    z-index: 100;
+}
+
+.hero-area {
+    position: relative;
 }
 
 .hero-image {
@@ -29,7 +31,7 @@
 .fadein {
     opacity: 1;
     transition: opacity 2s;
-  }
+}
   
 .fadeout {
     opacity: 0;
@@ -50,6 +52,7 @@
 @media screen and (max-width:767px) {
     .main {
         margin-top: 10%;
+        top: 7vw;
     }
 }
 
@@ -911,7 +914,7 @@
 /* 記事詳細 */
 
 .article-show {
-    /* padding: 5% 0; */
+    padding: 3% 0;
     width: 50%;
 }
 
