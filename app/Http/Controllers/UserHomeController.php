@@ -60,6 +60,7 @@ class UserHomeController extends Controller
 
         $likes = Like::where('user_id', $id)->get();
         $liked_articles = array();
+
         foreach($likes as $like)
         {
             array_push($liked_articles, Article::find($like['article_id']));

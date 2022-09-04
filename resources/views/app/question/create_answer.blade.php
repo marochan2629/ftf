@@ -44,12 +44,6 @@
                         </form>
                     </div>
                 </div>
-                </div>
-            </div>
-
-            <div class="question-show-question-outer">
-                <div class="question-show-answer-inner">
-                    
             </div>
         </div>
     </div>

@@ -22,12 +22,12 @@
             @if (!$article->isLikedBy(Auth::user()))
                 <span class="likes">
                     <i class="fas fa-heart like-toggle" data-article-id="{{ $article->id }}"></i>
-                <span class="like-counter">{{$article->likes_count}}</span>
+                    <span class="like-counter">{{$article->likes_count}}</span>
                 </span><!-- /.likes -->
             @else
                 <span class="likes">
                     <i class="fas fa-heart heart like-toggle liked" data-article-id="{{ $article->id }}"></i>
-                <span class="like-counter">{{$article->likes_count}}</span>
+                    <span class="like-counter">{{$article->likes_count}}</span>
                 </span><!-- /.likes -->
             @endif
         @else

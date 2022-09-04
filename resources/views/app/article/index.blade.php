@@ -72,13 +72,10 @@ $tag_names = ['キリスト教','イスラム教','仏教','イエス','ブッ�
                         @endforeach
                     </div>
             </div>
-
-            
         </div>
 
         <div class="test">{{ $articles->links() }}</div>
 
-        
     </div>
 
 @endsection

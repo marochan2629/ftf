@@ -37,11 +37,7 @@ class PhotoController extends Controller
 
     public function create()
     {
-        if (\Auth::guard('user')->check() || \Auth::guard('associate')->check()) {
-            return view('app.photo.create');
-        } else {
-            return redirect()->route('user.login');
-        }
+        return view('app.photo.create');
     }
 
     public function store(PhotoRequest $request)
