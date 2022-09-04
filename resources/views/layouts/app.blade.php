@@ -13,7 +13,6 @@
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css" rel="stylesheet">
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -120,6 +119,11 @@
         </nav>
 
         <main class="pt-5" style="background-color:#f6f6f3;">
+            @if (session('flash_message'))
+                <div class="flash-message bg-warning text-center pb-3 pt-4 my-0">
+                    {{ session('flash_message') }}
+                </div>
+            @endif
             @yield('content')
         </main>
 

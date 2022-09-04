@@ -26,7 +26,12 @@ class AssociateLoginController extends Controller
 
     public function showLoginForm()
     {
+        if(Auth::guard('user')->id() !== null){
+            return redirect(route('top'))->with('flash_message', 'ユーザーとしてログイン済です');
+        }
+
         session(['url.intended' => url()->previous()]);
+
         return view('associate.auth.login');
     }
 
