@@ -17,8 +17,13 @@ class ArticleController extends Controller
 
     public function index()
     {
+        // 記事を取得して２０件ずつ表示
         $articles = Article::paginate(20);
+        
+        // 最新記事を５件取得
         $latest_articles = Article::orderBy('id', 'desc')->take(5)->get();
+
+        // 検索ワードを設定
         $keyword = '';
 
         return view('app.article.index', compact('articles', 'latest_articles', 'keyword'));
@@ -26,9 +31,11 @@ class ArticleController extends Controller
     
     public function search(Request $request)
     {
+        // キーワードをリクエストから取得
         $keyword = $request->input('keyword');
+        
+        // キーワードから記事を検索
         $query = Article::query();
-
         if(!empty($keyword)) {
             $query->where('title', 'LIKE', "%{$keyword}%")
                 ->orWhere('body', 'LIKE', "%{$keyword}%");
