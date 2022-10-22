@@ -118,7 +118,7 @@
             </div>
         </nav>
 
-        <main class="pt-5" style="background-color:#f6f6f3;">
+        <main class="app-main" style="background-color:#f6f6f3;">
             @if (session('flash_message'))
                 <div class="flash-message bg-warning text-center pb-3 pt-4 my-0">
                     {{ session('flash_message') }}

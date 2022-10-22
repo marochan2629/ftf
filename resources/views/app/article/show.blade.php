@@ -42,22 +42,23 @@
         <div class="article-show-comments-index">
             <p><i class="fa-solid fa-comment-dots"></i>コメント（{{ $comments->count() }}）</p>
         </div>
-        @foreach($comments as $comment)
-            <div class="row article-show-comment">
-                <p class="col-sm-2">{{ $comment->user->name }}</p>
-                <p class="col-sm-10">{!! nl2br(e($comment->body)) !!}</p>
-            </div>
-        @endforeach
 
         @if(\Auth::guard('user')->check())
             <div class="text-center article-show-comment-button">
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#commentModal" data-whatever={{ $article->title }}>コメントを投稿する</button>
             </div>
         @else
-            <div class="text-center">
+            <div class="text-center login-to-comment">
                 <a  href="/user/login">ログインしてコメントを投稿</a>
             </div>
         @endif
+
+        @foreach($comments as $comment)
+            <div class="row article-show-comment">
+                <p class="col-sm-2">{{ $comment->user->name }}</p>
+                <p class="col-sm-10">{!! nl2br(e($comment->body)) !!}</p>
+            </div>
+        @endforeach
     </div>
 
     <div class="modal fade" id="commentModal" tabindex="-1" role="dialog" aria-labelledby="commentModalLabel" aria-hidden="true">
