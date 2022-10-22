@@ -74,7 +74,7 @@ $tag_names = ['キリスト教','イスラム教','仏教','イエス','ブッ�
             </div>
         </div>
 
-        <div class="test">{{ $articles->links() }}</div>
+        <div class="article-pagination">{{ $articles->links() }}</div>
 
     </div>
 
