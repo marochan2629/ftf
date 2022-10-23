@@ -6,11 +6,11 @@
             <div class="question-show-outer">
                 <div class="question-show-inner">
                     <div class="question-show-question-wrapper">
-                        <div class="col-sm-12 question-show-title">
+                        <div class="question-show-title">
                             <p>{{ $question->title }}</p>
                         </div>
 
-                        <div class="col-sm-12 question-show-body">
+                        <div class="question-show-body">
                             <p>{!! nl2br(e($question->body)) !!}</p>
                         </div>
                     </div>
@@ -20,8 +20,8 @@
                         <form action="{{ route('answer.store', ['id' => $question->id]) }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             @method('PATCH')
-                            <div class="form-group row">
-                                <div class="col-sm-12">
+                            <div class="form-group">
+                                <div class="question-show-create-answer">
                                     <textarea class="form-control {{ $errors->has('answer') ? 'is-invalid' : '' }}" name="answer" id="answer" cols="100" rows="15">{{ old('answer') }}</textarea>
                                     @if ($errors->has('answer'))
                                         <div class="invalid-feedback">

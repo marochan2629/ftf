@@ -1251,12 +1251,12 @@
         padding: 15% 3% 0% 3%;
     }
 
-    .question-show-inner {
+    /* .question-show-inner {
         padding: 0 5%;
-    }
+    } */
 
     .question-show-question-wrapper {
-        padding: 0;
+        padding: 0 5%;
         margin: 0;
         border-bottom: none;
     }
@@ -1270,12 +1270,17 @@
     }
 
     .question-show-body p {
-        font-size: 13px;
+        font-size: 14px;
     }
 
     .question-show-answer-wrapper {
+        padding: 0 5%;
         margin: 8% 0;
     }
+
+    /* .question-show-create-answer textarea {
+        padding: 0;
+    } */
 
     .question-show-sup_image img {
         width: 100%;
