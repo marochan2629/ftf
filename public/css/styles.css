@@ -110,24 +110,28 @@
     visibility: visible;
   }
 
-.concept {
+.concept-pc {
     padding-top: 63vw;
     padding-bottom: 5vw;
     text-align: center;
     background-color: #f6f6f3;
 }
 
-.concept h1 {
+.concept-pc h1 {
     font-family: "YuKyokasho Yoko";
     color: black;
     font-size: 3.5vw;
 }
 
-.concept p {
+.concept-pc p {
     font-family: serif;
     font-size: 1.5vw;
     color: black;
     margin: 3vw 0;
+}
+
+.concept-sp {
+    display: none;
 }
 
 .service {
@@ -164,16 +168,51 @@
     font-size: 2vw;
     font-weight: 700;
     position: absolute;
-    bottom: 1vw;
+    bottom: 1%;
     left: 10%;
     font-family: 'Playfair Display', serif;
     text-decoration: none;
     pointer-events: none
 }
 
-@media screen and (max-width:767px) {
+@media screen and (max-width:400px) {
+    .catchphrase {
+        font-size: 24px;
+    }
+
+    .main .title {
+        font-size: 24px;
+    }
+
+    .concept-pc {
+        display: none;
+    }
+
+    .concept-sp {
+        display: block;
+        padding-top: 63vw;
+        padding-bottom: 5vw;
+        text-align: center;
+        background-color: #f6f6f3;
+    }
+    
+    .concept-sp h1 {
+        font-family: "YuKyokasho Yoko";
+        color: black;
+        font-size: 24px;
+    }
+    
+    .concept-sp p {
+        font-family: serif;
+        font-size: 13px;
+        color: black;
+        margin: 3vw 0;
+    }
+
     .service-name {
-    bottom: -2.5vw;
+        bottom: -2%;
+        font-size: 13px;
+        margin: 0;
     }
 }
 
@@ -279,12 +318,9 @@
     }
 
     .footer-service-list li {
-        font-family: 'Playfair Display', serif;
         font-size: 19px;
         margin-left: 0;
         margin-right: 5vw;
-        list-style: none;
-        display: inline;
     }
 
     .footer-second {
@@ -1076,7 +1112,7 @@
     }
 
     .article-show-title h1 {
-        font-size: 30px;
+        font-size: 24px;
     }
     
     .article-show-title p {
@@ -1086,7 +1122,7 @@
 
     .article-show-body {
         margin: 1.5% 4%;
-        font-size: 13px;
+        font-size: 15px;
     }
 
     .likes {
@@ -1148,8 +1184,6 @@
     justify-content: center;
     align-items: center;
 }
-
-
 
 @media screen and (max-width:400px) {
     .questions {
@@ -1267,11 +1301,11 @@
     }
 
     .question-show-title p {
-        font-size: 18px;
+        font-size: 24px;
     }
 
     .question-show-body p {
-        font-size: 14px;
+        font-size: 15px;
     }
 
     .question-show-answer-wrapper {
