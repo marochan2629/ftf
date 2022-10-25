@@ -1231,11 +1231,15 @@
 
 .question-show-inner {
     margin: 5%;
-    padding: 0;
+    padding: 0 5%;
     background-color: white;
     width: 100%;
     height: auto;
     border-radius: 1rem;
+}
+
+.question-show-inner h1 {
+    margin-bottom: 5%;
 }
 
 .question-show-question-wrapper {
@@ -1286,9 +1290,14 @@
         padding: 15% 3% 0% 3%;
     }
 
-    /* .question-show-inner {
-        padding: 0 5%;
-    } */
+    .question-show-inner {
+        padding: 0 2.5%;
+    }
+
+    .question-show-inner h1 {
+        font-size: 24px;
+        margin-bottom: 10%;
+    }
 
     .question-show-question-wrapper {
         padding: 0 5%;
