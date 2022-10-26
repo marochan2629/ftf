@@ -15,8 +15,8 @@
                 <form action="{{ route('photo.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group row">
-                        <p class="col-sm-2 col-form-label photo-create-form-item">タイトル</p>
-                        <div class="photo-create-form-input">
+                        <p class="col-lg-2 col-form-label photo-create-form-item">タイトル</p>
+                        <div class="photo-create-form-input col-lg-10">
                             <input type="text" name="name" class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}" value="{{ old('name') }}" size=61>
                             @if ($errors->has('name'))
                                 <div class="invalid-feedback">
@@ -27,8 +27,8 @@
                     </div>
                     
                     <div class="form-group row">
-                        <p class="col-sm-2 col-form-label photo-create-form-item">画像</p>
-                        <div class="photo-create-form-input">
+                        <p class="col-lg-2 col-form-label photo-create-form-item">画像</p>
+                        <div class="photo-create-form-input col-lg-10">
                             <input type="file" name="image" class="{{ $errors->has('image') ? 'is-invalid' : '' }}" value="{{ old('image') }}">
                             @if ($errors->has('image'))
                                 <div class="invalid-feedback">
@@ -39,8 +39,8 @@
                     </div>
         
                     <div class="form-group row">
-                        <p class="col-sm-2 col-form-label photo-create-form-item">詳細</p>
-                        <div class="photo-create-form-input">
+                        <p class="col-lg-2 col-form-label photo-create-form-item">詳細</p>
+                        <div class="photo-create-form-input col-lg-10">
                             <textarea name="description" class="form-control {{ $errors->has('description') ? 'is-invalid' : '' }}" cols="60" rows="10">{{ old('description') }}</textarea>
                             @if ($errors->has('description'))
                                 <div class="invalid-feedback">

@@ -9,8 +9,8 @@
                         <form action="{{ route('question.store') }}" method="POST"  enctype="multipart/form-data">
                             @csrf
                             <div class="form-group row">
-                                <p class="col-lg-2 col-12">タイトル</p>
-                                <div class="col-lg-10 col-12">
+                                <p class="col-lg-2">タイトル</p>
+                                <div class="col-lg-10">
                                     <input type="text" name="title" class="form-control {{ $errors->has('title') ? 'is-invalid' : '' }}" value="{{ old('title') }}">
                                     @if ($errors->has('title'))
                                         <div class="invalid-feedback">
@@ -21,8 +21,8 @@
                             </div>
                             
                             <div class="form-group row">
-                                <p class="col-lg-2 col-12">本文</p>
-                                <div class="col-lg-10 col-12">
+                                <p class="col-lg-2">本文</p>
+                                <div class="col-lg-10">
                                     <textarea class="form-control {{ $errors->has('body') ? 'is-invalid' : '' }}" name="body" id="body" cols="100" rows="15">{{ old('body') }}</textarea>
                                     @if ($errors->has('body'))
                                         <div class="invalid-feedback">
@@ -33,8 +33,8 @@
                             </div>
                 
                             <div class="form-group row">
-                                <p class="col-lg-2 col-12">画像</p>
-                                <div class="col-lg-10 col-12">
+                                <p class="col-lg-2">画像</p>
+                                <div class="col-lg-10">
                                     <input type="file" name="image">
                                 </div>
                             </div>

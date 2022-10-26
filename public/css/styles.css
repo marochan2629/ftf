@@ -724,7 +724,7 @@
 }
 
 .photo-create-form {
-    padding: 7% 0;
+    padding: 7% 5%;
     background-color: rgba(255, 255, 255, .8);
 }
 
@@ -736,12 +736,10 @@
 }
 
 .photo-create-form-item {
-    margin-left: 15%;
     font-family: 'M PLUS 2', sans-serif;
 }
 
 .photo-create-form-input {
-    margin-left: 5%;
 }
 
 .photo-create-button button {
@@ -752,6 +750,13 @@
     height: 2.5vw;
     width: 10vw;
     font-family: 'M PLUS 2', sans-serif;
+}
+
+@media screen and (max-width:400px) {
+    .photo-create-button button {
+        width: 50%;
+        height: 10%;
+    }
 }
 
 /* 画像一覧 */
