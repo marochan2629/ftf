@@ -41,14 +41,14 @@
                         </div>
                     @endif
 
-                    <div class="content-wrap-default mypage-profile-articles">
+                    <div class="content-wrap-default">
                         <h4>作成した記事</h4>
-                        <div class="content-txt mypage-profile-cards">
+                        <div class="content-txt mypage-profile-cards mypage-profile-articles">
                             @foreach($associate->articles as $article)
                                 <div class="card mypage-profile-card mypage-profile-article">
                                     <a href="{{ route('article.show', $article->id) }}">
-                                        <img class="card-img-top" src="{{ Storage::url($article->image) }}" alt="Card image cap">
-                                        <div class="card-body">
+                                        <img class="card-img-top mypage-profile-article-image" src="{{ Storage::url($article->image) }}" alt="Card image cap">
+                                        <div class="card-body mypage-profile-article-body">
                                             <h6>{{ $article->title }}</h6>
                                             <p>{{ $article->associate->name }}</p>
                                         </div>
@@ -69,7 +69,7 @@
                         <h4>投稿した写真</h4>
                         <div class="content-txt mypage-profile-cards">
                             @foreach($associate->photos as $photo)
-                                <div class="mypage-profile-card">
+                                <div class="mypage-profile-photo">
                                     <a href="{{ Storage::url($photo->image) }}" rel="lightbox">
                                         <img src="{{ Storage::url($photo->image) }}" width="100%">
                                     </a>
