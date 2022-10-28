@@ -429,7 +429,6 @@
 .mypage-profile-self-introduction {
     padding-top: 8%;
     padding-bottom: 3%;
-    /* border-top: 1px solid lightgray; */
 }
 
 .mypage-profile-self-introduction p {
@@ -566,14 +565,128 @@
     align-items: center;
 }
 
-/* .mypage-profile-question-body h6 {
-    border-radius: 1rem;
-    margin: auto;
-    height: 10vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} */
+.mypage-profile-question-body h6 {
+    margin: 0;
+}
+
+.mypage-profile-photo {
+    width: 32.3%;
+    margin: 0.5%;
+}
+
+@media screen and (max-width:400px) {
+    .mypage-top-image {
+        height: 250px;
+    }
+
+    .mypage-top-image h1 {
+        font-size: 24px;
+    }
+
+    .mypage-profile {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .mypage-profile-information {
+        display: inline;
+        flex-wrap: nowrap;
+        /* margin: 5% 0; */
+        /* margin-bottom: 7%; */
+    }
+
+    .mypage-profile-icon {
+        width: 100%;
+        /* margin: 10% 0; */
+        text-align: center;
+    }
+
+    .mypage-profile-icon img {
+        width: 100px;
+        height: 100px;
+        position: static;
+        transform: none;
+    }
+
+    .mypage-profile-detail {
+        width: 100%;
+        margin: 5% 0;
+    }
+
+    .mypage-profile-name h2 {
+        font-size: 20px;
+    }
+
+    .mypage-profile-update {
+        padding-top: 3%;
+        padding-bottom: 6%;
+    }
+
+    .mypage-profile-liked-articles h4 {
+        font-size: 20px;
+    }
+
+    .mypage-profile-liked-articles p {
+        font-size: 14px;
+    }
+
+    .mypage-profile-liked-article {
+        width: 100%;
+        margin: 1.5% 0;
+    }
+
+    .mypage-profile-liked-article a {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .mypage-profile-liked-article img {
+        width: 110px;
+        height: 110px;
+        object-fit:cover;
+    }
+
+    .mypage-profile-liked-article-body {
+        width: 40%;
+    }
+
+    .mypage-profile-liked-article-body p {
+        margin: 0;
+    }
+
+    .mypage-profile-questions h4 {
+        font-size: 20px;
+    }
+
+    .mypage-profile-questions p {
+        font-size: 14px;
+    }
+
+    .mypage-profile-photos {
+        font-size: 20px;
+    }
+
+    .mypage-profile-photos h4 {
+        font-size: 20px;
+    }
+
+    .mypage-profile-photos p {
+        font-size: 14px;
+    }
+
+    .mypage-profile-question {
+        width: 100%;
+        height: auto;
+    }
+
+    .mypage-profile-question-body {
+        height: 100%;
+    }
+
+    .mypage-profile-photo {
+        width: 49%;
+    }
+}
 
 /* アバウトページ */
 .about {
@@ -737,9 +850,6 @@
 
 .photo-create-form-item {
     font-family: 'M PLUS 2', sans-serif;
-}
-
-.photo-create-form-input {
 }
 
 .photo-create-button button {

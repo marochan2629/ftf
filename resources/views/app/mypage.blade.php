@@ -3,7 +3,11 @@
 @section('content')
     <div class="mypage">
         <div class="mypage-top-image">
-            <h1>Your Profile</h1>
+            @if(\Auth::id() == $user->id)
+                <h1>Your Profile</h1>
+            @else
+                <h1>Profile</h1>
+            @endif
         </div>
         <div class="mypage-main">
             <div class="mypage-profile card">
@@ -52,7 +56,7 @@
                                 <div class="card mypage-profile-card mypage-profile-liked-article">
                                     <a href="{{ route('article.show', $liked_article->id) }}">
                                         <img class="card-img-top" src="{{ Storage::url($liked_article->image) }}" alt="Card image cap">
-                                        <div class="card-body">
+                                        <div class="card-body mypage-profile-liked-article-body">
                                             <h6>{{ $liked_article->title }}</h6>
                                             <p>{{ $liked_article->associate->name }}</p>
                                         </div>
@@ -95,7 +99,7 @@
                         <h4>投稿した写真</h4>
                         <div class="content-txt mypage-profile-cards">
                             @foreach($user->photos as $photo)
-                                <div class="mypage-profile-card">
+                                <div class="mypage-profile-photo">
                                     <a href="{{ Storage::url($photo->image) }}" rel="lightbox">
                                         <img src="{{ Storage::url($photo->image) }}" width="100%">
                                     </a>
