@@ -346,10 +346,6 @@
     margin-top: 1vw;
 }
 
-/* .login-header {
-    font-size: 2vw;
-} */
-
 /* ユーザー・アソシエイト登録画面 */
 
 .register-form {
@@ -380,14 +376,11 @@
 }
 
 .mypage-profile {
-    /* text-align: center; */
     width: 60%;
     margin: 0 auto;
 }
 
 .mypage-profile-main {
-    /* text-align: center; */
-    /* width: 60%; */
     margin: 0 auto;
     padding: 5%;
 }
@@ -395,17 +388,10 @@
 .mypage-profile-information {
     display: flex;
     flex-wrap: wrap;
-    /* margin: 5% 0; */
-    /* margin-bottom: 7%; */
 }
-
-/* .mypage-profile {
-    text-align: center;
-} */
 
 .mypage-profile-icon {
     width: 40%;
-    /* margin: 10% 0; */
     position: relative;
 }
 
@@ -591,13 +577,10 @@
     .mypage-profile-information {
         display: inline;
         flex-wrap: nowrap;
-        /* margin: 5% 0; */
-        /* margin-bottom: 7%; */
     }
 
     .mypage-profile-icon {
         width: 100%;
-        /* margin: 10% 0; */
         text-align: center;
     }
 
@@ -686,6 +669,43 @@
     .mypage-profile-photo {
         width: 49%;
     }
+}
+
+/* アソシエイトマイページ */
+
+@media screen and (max-width:400px) {
+    .mypage-profile-articles {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .mypage-profile-article {
+        width: 100%;
+    }
+
+    .mypage-profile-article a {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .mypage-profile-article-image {
+        width: 110px;
+        height: 110px;
+        object-fit:cover;
+    }
+
+    .mypage-profile-article-body {
+        width: 40%;
+    }
+
+    .mypage-profile-article-body h6 {
+        margin: 0;
+    }
+
+    .mypage-profile-article-body p {
+        margin: 0;
+    }
+
 }
 
 /* アバウトページ */
