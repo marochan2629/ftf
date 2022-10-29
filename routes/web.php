@@ -74,15 +74,15 @@ Route::prefix('user')->name('user.')->group(function () {
     ]);
 
     // ログイン認証後
-    Route::middleware('auth:user')->group(function () {
+    // Route::middleware('auth:user')->group(function () {
 
-        Route::resource('home', 'UserHomeController', ['only' => ['index', 'show', 'update']]);
-        Route::get('/show/{id}', 'UserHomeController@show')->name('mypage');
+    Route::resource('home', 'UserHomeController', ['only' => ['index', 'show', 'update']]);
+    Route::get('/show/{id}', 'UserHomeController@show')->name('mypage');
 
-        // UserHomeControllerってログイン認証しないと使えないの？別にログインしないでもよくない？
-        Route::patch('/show/{id}', 'UserHomeController@update')->name('mypage.update');
+    // UserHomeControllerってログイン認証しないと使えないの？別にログインしないでもよくない？
+    Route::patch('/show/{id}', 'UserHomeController@update')->name('mypage.update');
 
-    });
+    // });
 });
 
 // 管理者
@@ -105,7 +105,7 @@ Route::prefix('associate')->name('associate.')->group(function () {
     Route::middleware('auth:associate')->group(function () {
 
         // TOPページ
-        Route::resource('home', 'AssociateHomeController', ['only' => 'index']);
+        // Route::resource('home', 'AssociateHomeController', ['only' => 'index']);  この1行が必要なさそうなのでコメントアウト。resource使ってるくせにonly indexってなに？しかもindexページ無いし(10/29)
         Route::patch('/show/{id}', 'AssociateHomeController@update')->name('mypage.update');
 
     });
