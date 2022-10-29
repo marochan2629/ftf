@@ -995,6 +995,33 @@
     border-bottom: 1px solid #339999;
 }
 
+.policy-text ul {
+    padding-left: 20px;
+}
+
+@media screen and (max-width:400px) {
+    .policy-inner {
+        /* padding: 5% 0; */
+        margin: 5% 5% 0 5%;
+    }
+
+    .policy-body {
+        margin: 2.5%;
+    }
+
+    .policy-body h2 {
+        font-size: 24px;
+    }
+
+    .policy-text h4 {
+        font-size: 20px;
+    }
+
+    .policy-text p {
+        font-size: 14px;
+    }
+}
+
 /* 画像投稿画面 */
 .photo-create {
     padding: 5% 5%;
