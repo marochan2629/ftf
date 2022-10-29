@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="policy container">
-        <div class="card">
+        <div class="card policy-inner">
             <div class="card-body policy-body">
                 <h2 class="card-title policy-title">プライバシーポリシー</h2>
                 <div class="card-text policy-text">
