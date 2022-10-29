@@ -3,7 +3,11 @@
 @section('content')
     <div class="mypage">
         <div class="mypage-top-image">
-            <h1>Your Profile</h1>
+            @if(Auth::guard('associate')->id() == $associate->id)
+                <h1>Your Profile</h1>
+            @else
+                <h1>Profile</h1>
+            @endif
         </div>
         <div class="mypage-main">
             <div class="mypage-profile card">
@@ -41,9 +45,9 @@
                         </div>
                     @endif
 
-                    <div class="content-wrap-default">
+                    <div class="content-wrap-default mypage-profile-articles">
                         <h4>作成した記事</h4>
-                        <div class="content-txt mypage-profile-cards mypage-profile-articles">
+                        <div class="content-txt mypage-profile-cards">
                             @foreach($associate->articles as $article)
                                 <div class="card mypage-profile-card mypage-profile-article">
                                     <a href="{{ route('article.show', $article->id) }}">
@@ -188,14 +192,12 @@
                 }
             });
 
-            if (!$('.mypage-profile-articles').find('.more-articles').length > 0) {
+            if(!$('.mypage-profile-articles').find('.more-articles').length > 0) {
                 $('.mypage-profile-articles').removeClass('content-wrap-default').addClass('content-wrap-alternative');
-                console.log('OK');
             }
 
             if(!$('.mypage-profile-photos').find('.more-photos').length > 0) {
                 $('.mypage-profile-photos').removeClass('content-wrap-default').addClass('content-wrap-alternative');
-                console.log('OK');
             }
         });
     });

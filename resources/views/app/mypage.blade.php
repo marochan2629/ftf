@@ -3,7 +3,7 @@
 @section('content')
     <div class="mypage">
         <div class="mypage-top-image">
-            @if(\Auth::id() == $user->id)
+            @if(Auth::guard('user')->id() == $user->id)
                 <h1>Your Profile</h1>
             @else
                 <h1>Profile</h1>
