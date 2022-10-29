@@ -729,6 +729,10 @@
     position: relative;
 }
 
+.about-hero-image-concept-sp {
+    display: none;
+}
+
 .about-hero-image-concept h1 {
     position: absolute;
     top: 50%;
@@ -829,6 +833,148 @@
 
 .about-main-profile-carrier {
     font-size: 1.25vw;
+}
+
+@media screen and (max-width:400px) {
+    .about-hero-image {
+        height: 300px;
+    }
+
+    .about-hero-image-concept {
+        display: none;
+    }
+
+    .about-hero-image-concept-sp {
+        display: block;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        color: white;
+        position: relative;
+    }
+
+    .about-hero-image-concept-sp h1 {
+        font-size: 30px;
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin: 0;
+        font-family: 'Playfair Display', serif;
+    }
+
+    .about-hero-image-concept-sp p {
+        font-size: 16px;
+        position: absolute;
+        top: 65%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin: 0;
+        font-family: "YuKyokasho Yoko";
+    }
+
+    .about-main-prologue-heading h1 {
+        font-size: 30px;
+    }
+
+    .about-main-prologue-content p {
+        font-size: 16px;
+    }
+
+    .about-main-introduction-heading h1 {
+        font-size: 30px;
+    }
+
+    .about-main-introduction-content p {
+        font-size: 16px;
+    }
+
+    .about-main-development-heading h1 {
+        font-size: 30px;
+    }
+
+    .about-main-development-content p {
+        font-size: 16px;
+    }
+
+    .about-main-insert-content {
+        width: 100%;
+        margin-right: 0%;
+    }
+
+    .about-main-insert-content h1 {
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .about-main-insert-content p {
+        font-size: 16px;
+    }
+
+    .about-main-insert-image {
+        width: 100%;
+        text-align: center;
+    }
+
+    .about-main-insert-image img {
+        width: 75%;
+    }
+
+    .about-main-twist {
+        text-align: end;
+    }
+
+    .about-main-twist-heading h1 {
+        font-size: 30px;
+    }
+
+    .about-main-twist-content p {
+        font-size: 16px;
+    }
+
+    .about-main-conclusion {
+        text-align: center;
+    }
+
+    .about-main-conclusion-heading h1 {
+        font-size: 30px;
+    }
+
+    .about-main-conclusion-content p {
+        font-size: 16px;
+    }
+
+    .about-main-profile-image {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 10%;
+    }
+
+    .about-main-profile-image img {
+        width: 85%;
+    }
+
+    .about-main-profile-carrier {
+        width: 100%;
+    }
+
+    .about-main-profile-carrier h2 {
+        font-size: 20px;
+    }
+
+    .about-main-profile-carrier p {
+        font-size: 16px;
+        margin-top: 5%;
+    }
+
+    .row--split-heading {
+        width: 100%;
+    }
+    
+    .row--split-content {
+        width: 100%;
+        font-size: 1.25vw;
+    }
 }
 
 /* プライバシーポリシー */
