@@ -4,7 +4,9 @@
     <div class="article-show container">  
         @if($article->image)
             <div class="article-show-image">
-                <img src="{{ Storage::url($article->image) }}">
+                <a href="{{ $article['image'] }}">
+                    <img src="{{ $article['image'] }}">
+                </a>
             </div>
         @endif
 

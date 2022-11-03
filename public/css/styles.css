@@ -1038,7 +1038,6 @@
     text-align: center;
     margin-bottom: 5%;
     font-family: 'Osaka', 'Yu Gothic UI', 'ヒラギノ角ゴシック','Hiragino Sans', sans-serif;
-
 }
 
 .photo-create-form-item {
@@ -1147,6 +1146,32 @@
     .service-search-form {
         top: 20%;
     }
+}
+
+/* 記事作成 */
+
+.article-create {
+    margin-top: 5%;
+}
+
+.article-create-title {
+    text-align: center;
+    margin-bottom: 3%;
+    font-family: 'Osaka', 'Yu Gothic UI', 'ヒラギノ角ゴシック','Hiragino Sans', sans-serif;
+}
+
+.article-create-title h3 {
+   font-size: 35px;
+}
+
+@media screen and (max-width:400px) {
+    .article-create {
+        margin-top: 15%;
+    }
+
+    .article-create-title h3 {
+        font-size: 24px;
+     }
 }
 
 /* 記事一覧 */
@@ -1329,14 +1354,6 @@
     .article-pagination ul {
         justify-content: center;
     }
-
-    /* .article-tag-search-title p {
-        display: none;
-    }
-
-    .latest-articles-title p {
-        display: none;
-    } */
 }
 
 /* 記事詳細 */
@@ -1588,7 +1605,7 @@
     font-family: 'M PLUS Rounded 1c', sans-serif;
 }
 
-.question-show-sup_image img {
+.question-show-images img {
     margin-top: 5%;
     width: 50%;
 }
@@ -1630,11 +1647,7 @@
         margin: 8% 0;
     }
 
-    /* .question-show-create-answer textarea {
-        padding: 0;
-    } */
-
-    .question-show-sup_image img {
+    .question-show-images img {
         width: 100%;
     }
 }

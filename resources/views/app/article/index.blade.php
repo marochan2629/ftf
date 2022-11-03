@@ -26,7 +26,7 @@ $tag_names = ['キリスト教','イスラム教','仏教','イエス','ブッ�
                     <div class="article-wrapper">
                         <a href="/article/show/{{ $article->id }}">
                             <div class="article-image">
-                                <img src="{{ Storage::url($article->image) }}" alt="Card image cap">
+                                <img src="{{ $article['image'] }}" alt="Card image cap">
                             </div>
                             <div class="article-contents">
                                 <h3 class="article-title">{{ $article->title }}</h5>
@@ -65,7 +65,7 @@ $tag_names = ['キリスト教','イスラム教','仏教','イエス','ブッ�
                         @foreach ($latest_articles as $latest_article)
                             <a href="/article/show/{{ $latest_article->id }}">
                                 <div class="latest-article">
-                                    <img src="{{ Storage::url($latest_article->image) }}" alt="Card image cap">
+                                    <img src="{{ $article['image'] }}" alt="Card image cap">
                                     <h5>{{ $latest_article->title }}</h5>
                                 </div>
                             </a>
