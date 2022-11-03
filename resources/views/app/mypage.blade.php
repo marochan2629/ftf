@@ -100,8 +100,8 @@
                         <div class="content-txt mypage-profile-cards">
                             @foreach($user->photos as $photo)
                                 <div class="mypage-profile-photo">
-                                    <a href="{{ Storage::url($photo->image) }}" rel="lightbox">
-                                        <img src="{{ Storage::url($photo->image) }}" width="100%">
+                                    <a href="{{ $photo['image'] }}" rel="lightbox">
+                                        <img src="{{ $photo['image'] }}" width="100%">
                                     </a>
                                 </div>
                             @endforeach

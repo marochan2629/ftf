@@ -9,6 +9,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\DB; 
 use Illuminate\Support\Facades\Config; 
 use App\Http\Requests\PhotoRequest;
+use Storage;
 
 class PhotoController extends Controller
 {
@@ -52,15 +53,15 @@ class PhotoController extends Controller
 
         // 画像情報がセットされていれば、保存処理を実行
         if (isset($img)) {
-            // storage > public > img配下に画像が保存される
-            $path = $img->store('img','public');
+            // S3に画像が保存される
+            $path = Storage::disk('s3')->putFile('/', $img);
 
             // store処理が実行できたらDBに保存処理を実行
             if ($path) {
                 // DBに登録する処理
                 Photo::create([
                     'name' => $name,
-                    'image' => $path,
+                    'image' => Storage::disk('s3')->url($path),
                     'description' => $description,
                     'user_id' => $user_id,
                     'associate_id' => $associate_id,

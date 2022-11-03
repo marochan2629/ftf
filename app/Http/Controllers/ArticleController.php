@@ -11,6 +11,7 @@ use App\Models\Associate;
 use App\Models\Like;
 use App\Models\Comment;
 use Illuminate\Support\Facades\DB; 
+use Storage;
 
 class ArticleController extends Controller
 {
@@ -90,13 +91,13 @@ class ArticleController extends Controller
 
         // 画像情報がセットされていれば、保存処理を実行
         if (isset($title, $body)) {
-            // storage > public > img配下に画像が保存される
             if(isset($img)) {
-                $path = $img->store('img','public');
+                $path = Storage::disk('s3')->putFile('/', $img);
+
                 $article = Article::create([
                     'title' => $title,
                     'body' => $body,
-                    'image' => $path,
+                    'image' => Storage::disk('s3')->url($path),
                     'associate_id' => $associate_id,
                 ]);
             } else {

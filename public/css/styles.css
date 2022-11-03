@@ -1588,7 +1588,7 @@
     font-family: 'M PLUS Rounded 1c', sans-serif;
 }
 
-.question-show-sup_image img {
+.question-show-images img {
     margin-top: 5%;
     width: 50%;
 }
@@ -1630,11 +1630,7 @@
         margin: 8% 0;
     }
 
-    /* .question-show-create-answer textarea {
-        padding: 0;
-    } */
-
-    .question-show-sup_image img {
+    .question-show-images img {
         width: 100%;
     }
 }
