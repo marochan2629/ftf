@@ -13,6 +13,12 @@
                         <div class="question-show-body">
                             <p>{!! nl2br(e($question->body)) !!}</p>
                         </div>
+
+                        <div class="question-show-images">
+                            <a href="{{ $question['image'] }}" rel="lightbox">
+                                <img src="{{ $question['image'] }}" width="100%">
+                            </a>
+                        </div>
                     </div>
                     
                     <div class="question-show-answer-wrapper">
@@ -22,9 +28,9 @@
                         </div>
                
                        @if($question->sup_image)
-                            <div class="question-show-sup_image">
-                                <a href="{{ Storage::url($question->sup_image) }}" rel="lightbox">
-                                    <img src="{{ Storage::url($question->sup_image) }}" width="25%">
+                            <div class="question-show-images">
+                                <a href="{{ $question['sup_image'] }}" rel="lightbox">
+                                    <img src="{{ $question['sup_image'] }}" width="100%">
                                 </a>
                             </div>
                        @endif

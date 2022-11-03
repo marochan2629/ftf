@@ -160,7 +160,7 @@
     <script src="{{ asset('js/main.js') }}" defer></script>
     <script src="{{ asset('js/photo.js') }}" defer></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js" type="text/javascript"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js" type="text/javascript"></script> -->
     <!-- <script src="/node_modules/readmore-js/readmore.min.js"></script> -->
 
 </body>

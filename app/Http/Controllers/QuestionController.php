@@ -8,6 +8,7 @@ use App\Models\Question;
 use App\Models\User;
 use Illuminate\Support\Facades\DB; 
 use App\Http\Requests\QuestionRequest;
+use Storage;
 
 class QuestionController extends Controller
 {
@@ -57,13 +58,14 @@ class QuestionController extends Controller
 
         // 画像情報がセットされていれば、保存処理を実行
         if (isset($title, $body)) {
-            // storage > public > img配下に画像が保存される
+            // S3に画像が保存される
             if(isset($img)) {
-                $path = $img->store('img','public');
+                $path = Storage::disk('s3')->putFile('/', $img);
+
                 Question::create([
                     'title' => $title,
                     'body' => $body,
-                    'image' => $path,
+                    'image' => Storage::disk('s3')->url($path),
                     'user_id' => $user_id,
                 ]);
             } else {
@@ -92,12 +94,13 @@ class QuestionController extends Controller
 
         // 回答がセットされていれば、保存処理を実行
         if (isset($answer)) {
-            // storage > public > img配下に画像が保存される
+            // S3に画像が保存される
             if(isset($sup_img)) {
-                $path = $sup_img->store('img','public');
+                $path = Storage::disk('s3')->putFile('/', $sup_img);
+
                 Question::where("id", $id)->update([
                     'answer' => $answer,
-                    'sup_image' => $path,
+                    'sup_image' => Storage::disk('s3')->url($path),
                 ]);
             } else {
                 Question::where("id", $id)->update([
