@@ -86,6 +86,10 @@
                                         {{ __('マイページ') }}
                                     </a>
 
+                                    <a class="dropdown-item" href="{{ route('article.create') }}">
+                                        {{ __('記事を作成する') }}
+                                    </a>
+
                                     <a class="dropdown-item" href="{{ route('unanswered.questions') }}">
                                         {{ __('質問に回答する') }}
                                     </a>
