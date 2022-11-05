@@ -13,6 +13,11 @@
     padding: 1% 0;
 }
 
+.login-error {
+    padding-top: 50px;
+    padding-bottom: 10px;
+}
+
 @media screen and (max-width:400px) {
     .app-main {
         padding: 8.5% 0 1% 0;
