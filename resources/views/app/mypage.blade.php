@@ -55,7 +55,7 @@
                             @foreach($liked_articles as $liked_article)
                                 <div class="card mypage-profile-card mypage-profile-liked-article">
                                     <a href="{{ route('article.show', $liked_article->id) }}">
-                                        <img class="card-img-top" src="{{ Storage::url($liked_article->image) }}" alt="Card image cap">
+                                        <img class="card-img-top" src="{{ $liked_article['image'] }}" alt="Card image cap">
                                         <div class="card-body mypage-profile-liked-article-body">
                                             <h6>{{ $liked_article->title }}</h6>
                                             <p>{{ $liked_article->associate->name }}</p>

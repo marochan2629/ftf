@@ -51,7 +51,7 @@
                             @foreach($associate->articles as $article)
                                 <div class="card mypage-profile-card mypage-profile-article">
                                     <a href="{{ route('article.show', $article->id) }}">
-                                        <img class="card-img-top mypage-profile-article-image" src="{{ Storage::url($article->image) }}" alt="Card image cap">
+                                        <img class="card-img-top mypage-profile-article-image" src="{{ $article['image'] }}" alt="Card image cap">
                                         <div class="card-body mypage-profile-article-body">
                                             <h6>{{ $article->title }}</h6>
                                             <p>{{ $article->associate->name }}</p>
@@ -74,8 +74,8 @@
                         <div class="content-txt mypage-profile-cards">
                             @foreach($associate->photos as $photo)
                                 <div class="mypage-profile-photo">
-                                    <a href="{{ Storage::url($photo->image) }}" rel="lightbox">
-                                        <img src="{{ Storage::url($photo->image) }}" width="100%">
+                                    <a href="{{ $photo['image'] }}" rel="lightbox">
+                                        <img src="{{ $photo['image'] }}" width="100%">
                                     </a>
                                 </div>
                             @endforeach
