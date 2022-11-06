@@ -18,7 +18,7 @@
     padding-bottom: 10px;
 }
 
-@media screen and (max-width:400px) {
+@media screen and (max-width:425px) {
     .app-main {
         padding: 8.5% 0 1% 0;
         /* padding-top: 8.5%; */
@@ -180,7 +180,7 @@
     pointer-events: none
 }
 
-@media screen and (max-width:400px) {
+@media screen and (max-width:425px) {
     .catchphrase {
         font-size: 24px;
     }
@@ -305,7 +305,7 @@
     transition: 0.5s;
 }
 
-@media screen and (max-width:400px) {
+@media screen and (max-width:425px) {
     .footer-wrapper {
         display: block;
         padding-left: 1vw;
@@ -565,7 +565,7 @@
     margin: 0.5%;
 }
 
-@media screen and (max-width:400px) {
+@media screen and (max-width:425px) {
     .mypage-top-image {
         height: 250px;
     }
@@ -678,7 +678,7 @@
 
 /* アソシエイトマイページ */
 
-@media screen and (max-width:400px) {
+@media screen and (max-width:425px) {
     .mypage-profile-articles {
         display: flex;
         flex-wrap: wrap;
@@ -719,17 +719,24 @@
 }
 
 .about-hero-image {
-    position: relative;
     background-image: url("/images/japan-g9f509a5d8_1920.jpg");
     background-position: center;
     background-size: cover;
-    height: 45vw;
+    height: 650px;
+}
+
+.about-hero-image-shadow {
+    height: 650px;
+    position: relative;
+    background: rgba(0, 0, 0, 0.5);
+    text-align: center;
 }
 
 .about-hero-image-concept {
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     color: white;
     position: relative;
 }
@@ -739,20 +746,12 @@
 }
 
 .about-hero-image-concept h1 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     margin: 0;
     font-size: 3.5vw;
     font-family: 'Playfair Display', serif;
 }
 
 .about-hero-image-concept p {
-    position: absolute;
-    top: 60%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     margin: 0;
     font-size: 1.5vw;
     font-family: "YuKyokasho Yoko";
@@ -840,7 +839,7 @@
     font-size: 1.25vw;
 }
 
-@media screen and (max-width:400px) {
+@media screen and (max-width:425px) {
     .about-hero-image {
         height: 300px;
     }
@@ -849,31 +848,29 @@
         display: none;
     }
 
+    .about-hero-image-shadow {
+        height: 300px;
+        text-align: start;
+    }
+
     .about-hero-image-concept-sp {
         display: block;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.5);
+        position: absolute;
+        width: 200px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         color: white;
-        position: relative;
     }
 
     .about-hero-image-concept-sp h1 {
         font-size: 30px;
-        position: absolute;
-        top: 45%;
-        left: 50%;
-        transform: translate(-50%, -50%);
         margin: 0;
         font-family: 'Playfair Display', serif;
     }
 
     .about-hero-image-concept-sp p {
         font-size: 16px;
-        position: absolute;
-        top: 65%;
-        left: 50%;
-        transform: translate(-50%, -50%);
         margin: 0;
         font-family: "YuKyokasho Yoko";
     }
@@ -1004,7 +1001,7 @@
     padding-left: 20px;
 }
 
-@media screen and (max-width:400px) {
+@media screen and (max-width:425px) {
     .policy-inner {
         /* padding: 5% 0; */
         margin: 5% 5% 0 5%;
@@ -1059,7 +1056,7 @@
     font-family: 'M PLUS 2', sans-serif;
 }
 
-@media screen and (max-width:400px) {
+@media screen and (max-width:425px) {
     .photo-create-button button {
         width: 50%;
         height: 10%;
@@ -1072,7 +1069,7 @@
     transition:0.5s all;
 }
 
-@media screen and (max-width:400px) {
+@media screen and (max-width:425px) {
     .photo-index {
         margin-top: 20%;
     }
@@ -1130,7 +1127,7 @@
     margin-top: 22%;
 }
 
-@media screen and (max-width:400px) {
+@media screen and (max-width:425px) {
     .service-top-image {
         width: 100%;
         height: 50%;
@@ -1169,7 +1166,7 @@
    font-size: 35px;
 }
 
-@media screen and (max-width:400px) {
+@media screen and (max-width:425px) {
     .article-create {
         margin-top: 15%;
     }
@@ -1333,7 +1330,7 @@
     margin: auto 0;
 }
 
-@media screen and (max-width:400px) {
+@media screen and (max-width:425px) {
     .articles {
         width: 100%;
         margin: 1% 0;
@@ -1427,7 +1424,7 @@
     padding: 1% 3% 5% 3%;
 }
 
-@media screen and (max-width:400px) {
+@media screen and (max-width:425px) {
     .article-show {
         padding-bottom: 5%;
         width: 100%;
@@ -1515,7 +1512,7 @@
     align-items: center;
 }
 
-@media screen and (max-width:400px) {
+@media screen and (max-width:425px) {
     .questions {
         margin-top: 20%;
         width: 100%;
@@ -1615,7 +1612,7 @@
     width: 50%;
 }
 
-@media screen and (max-width:400px) {
+@media screen and (max-width:425px) {
     .question-show {
         padding: 15% 3% 0% 3%;
     }
