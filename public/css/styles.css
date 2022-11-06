@@ -1549,7 +1549,7 @@
 }
 
 .question-show-outer {
-    height: 100%;
+    height: auto;
     min-height: 35vw;
     background-color: #339999;
     display: flex;
@@ -1561,7 +1561,7 @@
     padding: 0 5%;
     background-color: white;
     width: 100%;
-    height: auto;
+    height: 100%;
     border-radius: 1rem;
 }
 
@@ -1658,3 +1658,49 @@
 .question-create {
     padding: 5% 0;
 }
+
+.question-create-question-wrapper {
+    border-bottom: none;
+}
+
+.question-create-image label {
+    padding: 10px 30px;
+    margin-left: 15px;
+    color: #ffffff;
+    background-color: #384878;
+    cursor: pointer;
+}
+
+.question-create-image p1 {
+    margin: 10px 0 0 0;
+}
+
+.question-create-image p2 {
+    margin: 10px 0 0 0;
+    margin-left: 15px;
+}
+
+.question-create-image input[type="file"] {
+    display: none;
+}
+
+.question-create-submit {
+    display       : inline-block;
+    border-radius : 5%;          /* 角丸       */
+    font-size     : 13pt;        /* 文字サイズ */
+    text-align    : center;      /* 文字位置   */
+    cursor        : pointer;     /* カーソル   */
+    padding       : 12px 12px;   /* 余白       */
+    background    : #000066;     /* 背景色     */
+    color         : #ffffff;     /* 文字色     */
+    line-height   : 1em;         /* 1行の高さ  */
+    transition    : .3s;         /* なめらか変化 */
+    box-shadow    : 3px 3px 3px #666666;  影の設定
+    border        : 2px solid #000066;    /* 枠の指定 */
+}
+
+.question-create-submit:hover {
+    box-shadow    : none;        /* カーソル時の影消去 */
+    color         : #000066;     /* 背景色     */
+    background    : #ffffff;     /* 文字色     */
+  }
