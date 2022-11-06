@@ -3,13 +3,15 @@
 @section('content')
 <div class="about">
     <div class="about-hero-image">
-        <div class="about-hero-image-concept">
-            <h1>History of Face to Faith</h1>
-            <p>宗教をもっと身近に、宗教をもっとわかりやすく</p>
-        </div>
-        <div class="about-hero-image-concept-sp">
-            <h1>History of Face to Faith</h1>
-            <p>宗教をもっと身近に<br>宗教をもっとわかりやすく</p>
+        <div class="about-hero-image-shadow">
+            <div class="about-hero-image-concept">
+                <h1>History of Face to Faith</h1>
+                <p>宗教をもっと身近に、宗教をもっとわかりやすく</p>
+            </div>
+            <div class="about-hero-image-concept-sp">
+                <h1>History of<br>Face to Faith</h1>
+                <p>宗教をもっと身近に<br>宗教をもっとわかりやすく</p>
+            </div>
         </div>
     </div>
 
@@ -167,6 +169,10 @@
 
                     if (windowSize <= 400) {
                         if (scroll > targetPosition - windowHeight + 3900) {
+                            $(this).addClass("is-fadein");
+                        }
+                    } else if(windowSize > 400 && windowSize <= 425) {
+                        if (scroll > targetPosition - windowHeight + 3950) {
                             $(this).addClass("is-fadein");
                         }
                     } else {
