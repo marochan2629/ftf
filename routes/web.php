@@ -59,6 +59,7 @@ Route::get('/article/show/{id}', 'ArticleController@show')->name('article.show')
 Route::post('/article/show/{id}', 'ArticleController@like')->name('article.like');
 Route::middleware('auth:associate')->get('/article/create', 'ArticleController@create')->name('article.create');
 Route::post('/article/create', 'ArticleController@store')->name('article.store');
+Route::post('/article/delete/{id}/', 'ArticleController@delete');
 
 // コメント関係
 Route::middleware('auth:user')->post('/comment/store', 'CommentController@store')->name('comment.store');
