@@ -148,4 +148,13 @@ class ArticleController extends Controller
         ];
         return response()->json($param); //6.JSONデータをjQueryに返す
     }
+
+    public function delete($id){
+        //削除対象レコードを検索
+        $article = Article::find($id);
+        //削除
+        $article->delete();
+        //リダイレクト
+        return redirect()->route('article.index');
+    }
 }

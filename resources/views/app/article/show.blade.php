@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@yield('script')
 
 @section('content')
     <div class="article-show container">  
@@ -18,6 +19,15 @@
         <div class="article-show-body">
             <p>{!! nl2br(e($article->body)) !!}</p>
         </div>
+
+        @if(\Auth::guard('associate')->check())
+            <div class="article-show-delete text-center">
+                <form action="/article/delete/{{$article->id}}" method="POST">
+                    {{ csrf_field() }}
+                    <input type="submit" value="削除" class="btn btn-danger btn-sm btn-dell">
+                </form>
+            </div>
+        @endif
 
         @if(\Auth::guard('user')->check())
         <!-- Review.phpに作ったisLikedByメソッドをここで使用 -->
@@ -101,6 +111,15 @@
             var modal = $(this)  //モーダルを取得
             modal.find('.modal-title').text('associateid:' + recipient) //モーダルのタイトルに値を表示
             modal.find('.modal-body input#recipient-name').val(recipient) //inputタグにも表示
+        });
+
+        $(".btn-dell").click(function(){
+            if(confirm("本当に削除しますか？")){
+                //そのままsubmit（削除）
+            }else{
+                //cancel
+                return false;
+            }
         });
     })
 </script>
