@@ -1,5 +1,4 @@
 @extends('layouts.app')
-@yield('script')
 
 @section('content')
     <div class="article-show container">  
