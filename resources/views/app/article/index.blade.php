@@ -66,7 +66,7 @@ $tag_names = ['キリスト教','イスラム教','仏教','イエス','ブッ�
                             <a href="/article/show/{{ $latest_article->id }}">
                                 <div class="latest-article">
                                     <img src="{{ $latest_article['image'] }}" alt="Card image cap">
-                                    <h5>{{ $latest_article->title }}</h5>
+                                    <h5>{{ Str::limit($latest_article->title, 40) }}</h5>
                                 </div>
                             </a>
                         @endforeach
