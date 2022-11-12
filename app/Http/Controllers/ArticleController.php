@@ -149,6 +149,77 @@ class ArticleController extends Controller
         return response()->json($param); //6.JSONデータをjQueryに返す
     }
 
+    public function edit($id){
+        $article = Article::find($id);
+
+        // タグ名格納用の空の配列を定義
+        $tag_name = array();
+
+        // 記事に紐づいているタグを取得し、foreachでタグ名のみを配列に格納
+        foreach ($article->tags as $tag){
+            array_push($tag_name, $tag->name);
+        }
+
+        // コンマで区切られている配列の中身を連結して文字列に
+        $tag_name = implode(",", $tag_name);
+
+        //この時点の文字列は各タグ名がコンマで区切られた状態なので、タグ名を#に置換
+        $tag_name = str_replace( ',' , '#' , $tag_name);
+
+        //文字列の先頭に#が無いので#を挿入
+        $tag_name = substr_replace($tag_name, '#', 0, 0);
+
+        return view('app.article.edit', compact('article', 'tag_name'));
+    }
+
+    public function update(ArticleRequest $request ,$id){
+        $title = $request->title;
+        $body = $request->body;
+        preg_match_all('/#([a-zA-Z0-9０-９ぁ-んァ-ヶー一-龠]+)/', $request->tags, $match);
+        $associate_id = Auth::guard('associate')->id();
+
+        // 画像フォームでリクエストした画像を取得
+        $img = $request->file('image');
+
+        // 画像情報がセットされていれば、保存処理を実行
+        if (isset($title, $body)) {
+            if(isset($img)) {
+                $path = Storage::disk('s3')->putFile('/', $img);
+
+                $article = Article::where('id', $id)->update([
+                    'title' => $title,
+                    'body' => $body,
+                    'image' => Storage::disk('s3')->url($path),
+                    'associate_id' => $associate_id,
+                ]);
+            } else {
+                $article = Article::where('id', $id)->update([
+                    'title' => $title,
+                    'body' => $body,
+                    'associate_id' => $associate_id,
+                ]);
+            }
+        }
+
+        if($request->tags != null) {
+            $tags = [];
+            foreach($match[1] as $tag) {
+                $record = Tag::firstOrCreate(['name' => $tag]);
+                array_push($tags, $record);
+            }
+         
+            $tag_ids = [];
+            foreach($tags as $tag) {
+                array_push($tag_ids, $tag->id);
+            }
+
+            $article = Article::where('id', $id)->first();
+            $article->tags()->sync($tag_ids);
+        }
+
+        return redirect()->route('article.index');
+    }
+
     public function delete($id){
         //削除対象レコードを検索
         $article = Article::find($id);
