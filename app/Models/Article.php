@@ -41,4 +41,14 @@ class Article extends Model
     public function isLikedBy($user): bool {
         return Like::where('user_id', $user->id)->where('article_id', $this->id)->first() !==null;
     }
+
+    public static function boot()
+    {
+        parent::boot();
+
+        static::deleting(function ($article) {
+            $article->likes()->delete();
+            $article->comments()->delete();
+        });
+    }
 }
