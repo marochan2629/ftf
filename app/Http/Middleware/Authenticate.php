@@ -15,7 +15,7 @@ class Authenticate extends Middleware
         // ルーティングに応じて未ログイン時のリダイレクト先を振り分ける
         if (Route::is('photo.create', 'question.create')) {
             return route($this->user_route);
-        } elseif (Route::is('article.create', 'answer.create' ,'unanswered.questions')) {
+        } elseif (Route::is('article.create', 'article.edit', 'answer.create' ,'unanswered.questions')) {
             return route($this->associate_route);
         }
     }
