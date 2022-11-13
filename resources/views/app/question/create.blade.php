@@ -2,10 +2,10 @@
 
 @section('content')
     <div class="question-show">
-        <div class="container mb-5">
+        <div class="container">
             <div class="question-show-outer">
                 <div class="question-show-inner">
-                    <div class="question-show-question-wrapper question-create-question-wrapper py-4">
+                    <div class="question-show-question-wrapper question-create-question-wrapper">
                         <h1 class="text-center">質問投稿</h1>
                         <form action="{{ route('question.store') }}" method="POST"  enctype="multipart/form-data">
                             @csrf

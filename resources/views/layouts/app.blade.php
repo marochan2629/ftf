@@ -24,7 +24,7 @@
     <!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> -->
     <!-- <script src="https://js.stripe.com/v3/"></script> -->
 </head>
-<body>
+<body style="padding-top: 55px; background-color:#f6f6f3;">
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
@@ -111,7 +111,7 @@
                             </li>
                         @else
                             <li class="nav-item header-logo">
-                                <a class="nav-link" href="{{ route('user.login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link" href="{{ route('user.login') }}">{{ __('User Login') }}</a>
                             </li>
                             <li class="nav-item header-logo">
                                 <a class="nav-link" href="{{ route('user.register') }}">{{ __('Register') }}</a>
@@ -122,7 +122,7 @@
             </div>
         </nav>
 
-        <main class="app-main" style="background-color:#f6f6f3;">
+        <main>
             @if (session('flash_message'))
                 <div class="login-error flash-message bg-warning text-center">
                     {{ session('flash_message') }}
