@@ -56,6 +56,10 @@
                                             <h6>{{ $article->title }}</h6>
                                             <p>{{ $article->associate->name }}</p>
                                         </div>
+                                        <div class="card-body mypage-profile-article-body-sp">
+                                            <h6>{{ Str::limit($article->title, 50) }}</h6>
+                                            <p>{{ $article->associate->name }}</p>
+                                        </div>
                                     </a>
                                 </div>
                             @endforeach

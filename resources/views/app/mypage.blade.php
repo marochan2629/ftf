@@ -60,6 +60,10 @@
                                             <h6>{{ $liked_article->title }}</h6>
                                             <p>{{ $liked_article->associate->name }}</p>
                                         </div>
+                                        <div class="card-body mypage-profile-liked-article-body-sp">
+                                            <h6>{{ Str::limit($liked_article->title, 50) }}</h6>
+                                            <p>{{ $liked_article->associate->name }}</p>
+                                        </div>
                                     </a>
                                 </div>
                             @endforeach
@@ -106,7 +110,7 @@
                                 </div>
                             @endforeach
                         </div>
-                        @if($user->photos->count() >= 4)
+                        @if($user->photos->count() >= 7)
                             <div class="more-btn more-photos">
                                 <p class="opener">もっと見る</p>
                             </div>

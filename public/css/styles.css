@@ -9,20 +9,8 @@
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 
-.app-main {
-    padding: 1% 0;
-}
-
 .login-error {
-    padding-top: 50px;
-    padding-bottom: 10px;
-}
-
-@media screen and (max-width:425px) {
-    .app-main {
-        padding: 8.5% 0 1% 0;
-        /* padding-top: 8.5%; */
-    }
+    padding: 10px 0;
 }
 
 /* トップ画面 */
@@ -209,7 +197,7 @@
     
     .concept-sp p {
         font-family: serif;
-        font-size: 13px;
+        font-size: 16px;
         color: black;
         margin: 3vw 0;
     }
@@ -440,6 +428,10 @@
     font-family: 'Shippori Mincho', serif;
 }
 
+.mypage-profile-liked-article-body-sp {
+    display: none;
+}
+
 .mypage-profile-question {
     font-family: 'Hannotate SC', 'Kosugi Maru', 'MS UI Gothic', sans-serif;
 }
@@ -452,7 +444,7 @@
 
 .mypage-profile-card {
     width: 32.3%;
-    margin: 0.5%;
+    margin: 1% 0.5%;
 }
 
 .mypage-profile-card a {
@@ -635,10 +627,19 @@
     }
 
     .mypage-profile-liked-article-body {
+        display: none;
+    }
+
+    .mypage-profile-liked-article-body-sp {
+        display: inline;
+        padding: 0.75rem;
+    }
+
+    .mypage-profile-liked-article-body-sp {
         width: 40%;
     }
 
-    .mypage-profile-liked-article-body p {
+    .mypage-profile-liked-article-body-sp p {
         margin: 0;
     }
 
@@ -678,7 +679,12 @@
 
 /* アソシエイトマイページ */
 
+.mypage-profile-article-body-sp {
+    display: none;
+}
+
 @media screen and (max-width:425px) {
+
     .mypage-profile-articles {
         display: flex;
         flex-wrap: wrap;
@@ -700,14 +706,20 @@
     }
 
     .mypage-profile-article-body {
-        width: 40%;
+        display: none;
     }
 
-    .mypage-profile-article-body h6 {
+    .mypage-profile-article-body-sp {
+        display: inline;
+        width: 40%;
+        padding: 0.75rem;
+    }
+
+    .mypage-profile-article-body-sp h6 {
         margin: 0;
     }
 
-    .mypage-profile-article-body p {
+    .mypage-profile-article-body-sp p {
         margin: 0;
     }
 
@@ -1003,7 +1015,6 @@
 
 @media screen and (max-width:425px) {
     .policy-inner {
-        /* padding: 5% 0; */
         margin: 5% 5% 0 5%;
     }
 
@@ -1071,7 +1082,7 @@
 
 @media screen and (max-width:425px) {
     .photo-index {
-        margin-top: 20%;
+        margin-top: 10%;
     }
 }
 
@@ -1088,7 +1099,7 @@
     height: 85%;
     position: absolute;
     right: 0%;
-    top: 5%;
+    top: 0%;
     object-fit: cover;
 }
 
@@ -1121,10 +1132,9 @@
     font-family: 'Cormorant', serif;
     font-weight: 500;
     font-size: 6vw;
-    /* color: rgb(185, 149, 118); */
     color: maroon;
     z-index: 1;
-    margin-top: 22%;
+    margin-top: 15%;
 }
 
 @media screen and (max-width:425px) {
@@ -1133,12 +1143,12 @@
         height: 50%;
         position: absolute;
         right: 0%;
-        top: 5%;
+        top: 0%;
         object-fit: cover;
     }
 
     .service-top h1 {
-        margin: 20% 10% 10% 10%;
+        margin: 10%;
     }
 
     .service-index {
@@ -1358,10 +1368,16 @@
     }
 }
 
+@media screen and (max-width:390px) {
+    .articles {
+        width: 100%;
+        margin: 10% 0 3% 0;
+    }
+}
+
 /* 記事詳細 */
 
 .article-show {
-    padding: 3% 0;
     width: 50%;
 }
 
@@ -1431,7 +1447,7 @@
     }
 
     .article-show-image {
-        margin: 2.3% auto;
+        margin: 1.5% auto;
     }
 
     .article-show-title {
@@ -1449,7 +1465,10 @@
 
     .article-show-body {
         margin: 1.5% 4%;
-        font-size: 15px;
+    }
+
+    .article-show-body p {
+        font-size: 16px;
     }
 
     .likes {
@@ -1514,7 +1533,7 @@
 
 @media screen and (max-width:425px) {
     .questions {
-        margin-top: 20%;
+        margin-top: 10%;
         width: 100%;
     }
 
@@ -1545,7 +1564,7 @@
 /* 質問詳細画面 */
 
 .question-show {
-    padding: 8% 3% 3% 3%;
+    padding:3%;
 }
 
 .question-show-outer {
@@ -1566,7 +1585,7 @@
 }
 
 .question-show-inner h1 {
-    margin-bottom: 5%;
+    margin: 5% 0;
 }
 
 .question-show-question-wrapper {
@@ -1614,7 +1633,7 @@
 
 @media screen and (max-width:425px) {
     .question-show {
-        padding: 15% 3% 0% 3%;
+        padding: 10% 3%;
     }
 
     .question-show-inner {
@@ -1695,7 +1714,7 @@
     color         : #ffffff;     /* 文字色     */
     line-height   : 1em;         /* 1行の高さ  */
     transition    : .3s;         /* なめらか変化 */
-    box-shadow    : 3px 3px 3px #666666;  影の設定
+    box-shadow    : 3px 3px 3px #666666; /* 影の設定*/
     border        : 2px solid #000066;    /* 枠の指定 */
 }
 
