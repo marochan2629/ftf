@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="question-show">
-        <div class="container mb-5">
+        <div class="container">
             <div class="question-show-outer">
                 <div class="question-show-inner">
                     <div class="question-show-question-wrapper">
