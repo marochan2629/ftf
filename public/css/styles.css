@@ -1188,6 +1188,10 @@
 
 /* 記事一覧 */
 
+.service-search-form-tag-sp {
+    display: none;
+}
+
 .articles {
     flex-shrink: 0;
     display: flex;
@@ -1341,6 +1345,18 @@
 }
 
 @media screen and (max-width:425px) {
+    .service-search-form-tag-sp {
+        display: inline;
+    }
+
+    .service-search-form-dropdown-sp li {
+        margin-left: 15px;
+    }
+
+    .service-search-form-dropdown-sp li a {
+        color: #212529;
+    }
+
     .articles {
         width: 100%;
         margin: 1% 0;
@@ -1356,11 +1372,11 @@
     }
 
     .article-title {
-        font-size: medium;
+        font-size: 16px;
     }
 
     .article-tags p {
-        font-size: small;
+        font-size: 12px;
     }
 
     .article-pagination ul {
@@ -1459,7 +1475,6 @@
     }
     
     .article-show-title p {
-        font-family: 'Shippori Mincho', serif;
         font-size: 20px;
     }
 
@@ -1479,7 +1494,6 @@
         width: 80%;
         padding: 3% 0% 2% 0%;
         margin: auto;
-        border-top: 1px lightgray solid;
         border-width: 120%;
     }
 }
@@ -1722,4 +1736,4 @@
     box-shadow    : none;        /* カーソル時の影消去 */
     color         : #000066;     /* 背景色     */
     background    : #ffffff;     /* 文字色     */
-  }
+}

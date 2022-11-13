@@ -16,6 +16,17 @@ $tag_names = ['キリスト教','イスラム教','仏教','イエス','ブッ�
                 <form class="d-flex" action="{{ route('article.search') }}" method="GET">
                     <input type="text" class="service-input" name="keyword"  placeholder="Search" value="{{ $keyword }}">
                     <button type="submit" class="service-input"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    <div class="service-search-form-tag-sp">
+                        <button type="button" class="btn dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <div class="dropdown-menu service-search-form-dropdown-sp">
+                            <!-- <h6>タグ検索</h6> -->
+                            @for($i = 0; $i < 6; $i++)
+                                <li><a href="javascript:keyword[{{ $i }}].submit()">#{{ $tag_names[$i] }}</a></li>
+                            @endfor
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>
